@@ -18,10 +18,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="M80-ee-Dzv" kind="relationship" relationship="viewControllers" id="pmI-76-Cl9"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0b-IY-3gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1557.9710144927537" y="-289.28571428571428"/>
+        </scene>
+        <!--NearBy-->
+        <scene sceneID="I2i-zP-XHd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NearBy" id="M80-ee-Dzv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="bbT-cr-GK4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qg9-LH-WVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2234" y="-581"/>
         </scene>
     </scenes>
 </document>

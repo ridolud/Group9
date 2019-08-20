@@ -16,12 +16,9 @@
 		7FC35835230BCF8800EA761D /* Group9UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35834230BCF8800EA761D /* Group9UITests.swift */; };
 		7FC35845230BD0BA00EA761D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC35844230BD0BA00EA761D /* CloudKit.framework */; };
 		7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3584B230C0AE100EA761D /* MainTabBarController.swift */; };
-		7FC35855230C0E6F00EA761D /* NearByController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35853230C0E6F00EA761D /* NearByController.swift */; };
-		7FC35856230C0E6F00EA761D /* NearByController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35854230C0E6F00EA761D /* NearByController.xib */; };
-		7FC35859230C12C000EA761D /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35857230C12C000EA761D /* SearchController.swift */; };
-		7FC3585A230C12C000EA761D /* SearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35858230C12C000EA761D /* SearchController.xib */; };
-		7FC3585F230C151D00EA761D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3585D230C151D00EA761D /* ProfileController.swift */; };
-		7FC35860230C151D00EA761D /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3585E230C151D00EA761D /* ProfileController.xib */; };
+		7FC35862230C188600EA761D /* NearBy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35861230C188600EA761D /* NearBy.storyboard */; };
+		7FC35864230C18C700EA761D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35863230C18C700EA761D /* Search.storyboard */; };
+		7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35865230C19AC00EA761D /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +55,9 @@
 		7FC35842230BD0B300EA761D /* Group9.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Group9.entitlements; sourceTree = "<group>"; };
 		7FC35844230BD0BA00EA761D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7FC3584B230C0AE100EA761D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		7FC35853230C0E6F00EA761D /* NearByController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByController.swift; sourceTree = "<group>"; };
-		7FC35854230C0E6F00EA761D /* NearByController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearByController.xib; sourceTree = "<group>"; };
-		7FC35857230C12C000EA761D /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		7FC35858230C12C000EA761D /* SearchController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchController.xib; sourceTree = "<group>"; };
-		7FC3585D230C151D00EA761D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		7FC3585E230C151D00EA761D /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
+		7FC35861230C188600EA761D /* NearBy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NearBy.storyboard; sourceTree = "<group>"; };
+		7FC35863230C18C700EA761D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		7FC35865230C19AC00EA761D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,11 +161,11 @@
 		7FC35847230C069800EA761D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7FC35854230C0E6F00EA761D /* NearByController.xib */,
-				7FC3585E230C151D00EA761D /* ProfileController.xib */,
-				7FC35858230C12C000EA761D /* SearchController.xib */,
 				7FC35815230BCF8600EA761D /* Main.storyboard */,
 				7FC3581D230BCF8700EA761D /* LaunchScreen.storyboard */,
+				7FC35861230C188600EA761D /* NearBy.storyboard */,
+				7FC35863230C18C700EA761D /* Search.storyboard */,
+				7FC35865230C19AC00EA761D /* Profile.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,9 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				7FC3584B230C0AE100EA761D /* MainTabBarController.swift */,
-				7FC35853230C0E6F00EA761D /* NearByController.swift */,
-				7FC35857230C12C000EA761D /* SearchController.swift */,
-				7FC3585D230C151D00EA761D /* ProfileController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,12 +304,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */,
 				7FC3581F230BCF8700EA761D /* LaunchScreen.storyboard in Resources */,
+				7FC35862230C188600EA761D /* NearBy.storyboard in Resources */,
 				7FC3581C230BCF8700EA761D /* Assets.xcassets in Resources */,
-				7FC35860230C151D00EA761D /* ProfileController.xib in Resources */,
 				7FC35817230BCF8600EA761D /* Main.storyboard in Resources */,
-				7FC35856230C0E6F00EA761D /* NearByController.xib in Resources */,
-				7FC3585A230C12C000EA761D /* SearchController.xib in Resources */,
+				7FC35864230C18C700EA761D /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
-				7FC35859230C12C000EA761D /* SearchController.swift in Sources */,
 				7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */,
-				7FC35855230C0E6F00EA761D /* NearByController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
-				7FC3585F230C151D00EA761D /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
