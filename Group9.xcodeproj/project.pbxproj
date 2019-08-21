@@ -119,6 +119,7 @@
 				7FC35811230BCF8600EA761D /* AppDelegate.swift */,
 				7FC3581B230BCF8700EA761D /* Assets.xcassets */,
 				7FC35820230BCF8700EA761D /* Info.plist */,
+				7FC35842230BD0B300EA761D /* Group9.entitlements */,
 			);
 			path = Group9;
 			sourceTree = "<group>";
@@ -152,7 +153,6 @@
 		7FC35846230C067C00EA761D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7FC35842230BD0B300EA761D /* Group9.entitlements */,
 				7FC35818230BCF8600EA761D /* Group9.xcdatamodeld */,
 			);
 			path = Models;
