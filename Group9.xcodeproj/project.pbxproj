@@ -19,6 +19,13 @@
 		7FC35862230C188600EA761D /* NearBy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35861230C188600EA761D /* NearBy.storyboard */; };
 		7FC35864230C18C700EA761D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35863230C18C700EA761D /* Search.storyboard */; };
 		7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35865230C19AC00EA761D /* Profile.storyboard */; };
+		7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A96C230D46F600EA1C71 /* PlaceModel.swift */; };
+		7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */; };
+		7FF8A977230D57D600EA1C71 /* StoreCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A976230D57D600EA1C71 /* StoreCollection.xib */; };
+		7FF8A97A230E41CD00EA1C71 /* StoreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A979230E41CD00EA1C71 /* StoreCollectionView.swift */; };
+		7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */; };
+		7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */; };
+		7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A9A1230E88C200EA1C71 /* RecordType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,13 @@
 		7FC35861230C188600EA761D /* NearBy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NearBy.storyboard; sourceTree = "<group>"; };
 		7FC35863230C18C700EA761D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		7FC35865230C19AC00EA761D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		7FF8A96C230D46F600EA1C71 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByControllerViewController.swift; sourceTree = "<group>"; };
+		7FF8A976230D57D600EA1C71 /* StoreCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollection.xib; sourceTree = "<group>"; };
+		7FF8A979230E41CD00EA1C71 /* StoreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionView.swift; sourceTree = "<group>"; };
+		7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionCell.swift; sourceTree = "<group>"; };
+		7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollectionCell.xib; sourceTree = "<group>"; };
+		7FF8A9A1230E88C200EA1C71 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				7FC35818230BCF8600EA761D /* Group9.xcdatamodeld */,
+				7FF8A96C230D46F600EA1C71 /* PlaceModel.swift */,
+				7FF8A9A1230E88C200EA1C71 /* RecordType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +177,7 @@
 		7FC35847230C069800EA761D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FF8A978230E419F00EA1C71 /* Components */,
 				7FC35815230BCF8600EA761D /* Main.storyboard */,
 				7FC3581D230BCF8700EA761D /* LaunchScreen.storyboard */,
 				7FC35861230C188600EA761D /* NearBy.storyboard */,
@@ -174,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				7FC3584B230C0AE100EA761D /* MainTabBarController.swift */,
+				7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,8 +206,19 @@
 		7FC3584A230C076700EA761D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				7FF8A979230E41CD00EA1C71 /* StoreCollectionView.swift */,
+				7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		7FF8A978230E419F00EA1C71 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7FF8A976230D57D600EA1C71 /* StoreCollection.xib */,
+				7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */,
+				7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */,
 				7FC3581F230BCF8700EA761D /* LaunchScreen.storyboard in Resources */,
+				7FF8A977230D57D600EA1C71 /* StoreCollection.xib in Resources */,
 				7FC35862230C188600EA761D /* NearBy.storyboard in Resources */,
 				7FC3581C230BCF8700EA761D /* Assets.xcassets in Resources */,
 				7FC35817230BCF8600EA761D /* Main.storyboard in Resources */,
@@ -334,7 +365,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */,
+				7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */,
+				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
+				7FF8A97A230E41CD00EA1C71 /* StoreCollectionView.swift in Sources */,
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
+				7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */,
 				7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
 			);

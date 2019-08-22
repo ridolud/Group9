@@ -10,21 +10,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Near By Controller View Controller-->
         <scene sceneID="Kfe-9i-4EG">
             <objects>
-                <viewController id="v8C-1L-d4J" sceneMemberID="viewController">
+                <viewController id="v8C-1L-d4J" customClass="NearByControllerViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8f-9m-iwf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-JY-JO9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="187"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="hia-nX-48a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gMM-JY-JO9" firstAttribute="top" secondItem="pbL-ZB-nfj" secondAttribute="top" id="IDk-3r-KvF"/>
+                            <constraint firstItem="gMM-JY-JO9" firstAttribute="leading" secondItem="pbL-ZB-nfj" secondAttribute="leading" id="XUY-hM-pXV"/>
+                            <constraint firstItem="gMM-JY-JO9" firstAttribute="trailing" secondItem="pbL-ZB-nfj" secondAttribute="trailing" id="eea-8d-1BS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pbL-ZB-nfj"/>
                     </view>
                     <navigationItem key="navigationItem" id="X4O-MP-G4m"/>
+                    <connections>
+                        <outlet property="storeCollection" destination="gMM-JY-JO9" id="oEE-Iy-ppS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgm-Fn-Zee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.072463768116" y="-38.169642857142854"/>
+            <point key="canvasLocation" x="1239.1304347826087" y="-38.169642857142854"/>
         </scene>
         <!--Near By-->
         <scene sceneID="aXf-Cm-4cu">
