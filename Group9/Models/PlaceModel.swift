@@ -34,3 +34,31 @@ struct Place {
     let category: CategoryPlace
 }
 
+class PlaceModel {
+    
+    static let instance = PlaceModel()
+    
+    private let database = CKContainer.default().publicCloudDatabase
+    
+    private let query = CKQuery(recordType: RecordType.place.description, predicate: .init(value: true))
+    
+    init() {}
+    
+    var places = [Place]()
+    
+    var records = [CKRecord]()
+    
+    func fetchAll( callback: ((_ result: [CKRecord]) -> Void)? ) {
+        
+        self.database.perform(self.query, inZoneWith: nil) { (records, error) in
+            guard let records = records else { return }
+                self.records = records
+            
+            DispatchQueue.main.async {
+                callback!(self.records)
+            }
+        }
+    }
+    
+}
+

@@ -16,9 +16,10 @@ class NearByControllerViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let wrapper = StoreCollectionView.instance.wrapper
+        let wrapper = StoreCollectionView.instance
+        wrapper.categoryName = "Bulk Store"
         
-        storeCollection.addSubview(wrapper!)
+        storeCollection.addSubview(wrapper.wrapper!)
         
     }
 

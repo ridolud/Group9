@@ -10,13 +10,15 @@ import CloudKit
 
 class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    let placeModel = PlaceModel.instance
+    
+    public var categoryName: String = ""
+    
     static let instance = StoreCollectionView()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet var wrapper: UIView!
-    
-    let database = CKContainer.default().publicCloudDatabase
     
     var places = [CKRecord]()
     
@@ -31,22 +33,16 @@ class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDat
         collectionView.register(nibName, forCellWithReuseIdentifier: "storeCell")
         
         collectionView.isPagingEnabled = true
-        self.fetchPlace()
+        
+        self.placeModel.fetchAll { (records) in
+            self.places = records
+            self.collectionView.reloadData()
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func fetchPlace() {
-        let query = CKQuery(recordType: RecordType.place.rawValue, predicate: .init(value: true))
-        database.perform(query, inZoneWith: nil) { (records, error) in
-            guard let records = records else {return}
-            self.places = records
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

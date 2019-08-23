@@ -9,6 +9,17 @@
 import CloudKit
 import UIKit
 
-enum RecordType: String {
+enum RecordType: String, CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .user:
+            return "User"
+        case .place:
+            return "Place"
+        case .favorite:
+            return "Favorite"
+        }
+    }
+    
     case user = "User", place = "Place", favorite = "Favorite"
 }
