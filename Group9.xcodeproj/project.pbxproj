@@ -29,6 +29,8 @@
 		7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A9A1230E88C200EA1C71 /* RecordType.swift */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
+		DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490FD231050D800288143 /* ReviewTableViewCell.swift */; };
+		DCE49100231050D800288143 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FE231050D800288143 /* ReviewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		7FF8A9A1230E88C200EA1C71 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
+		DCE490FD231050D800288143 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		DCE490FE231050D800288143 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 				7FF8A979230E41CD00EA1C71 /* StoreCollectionView.swift */,
 				7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */,
 				DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */,
+				DCE490FD231050D800288143 /* ReviewTableViewCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */,
 				7FF8A976230D57D600EA1C71 /* StoreCollection.xib */,
 				7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */,
+				DCE490FE231050D800288143 /* ReviewTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */,
 				7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */,
 				7FC3581F230BCF8700EA761D /* LaunchScreen.storyboard in Resources */,
+				DCE49100231050D800288143 /* ReviewTableViewCell.xib in Resources */,
 				7FF8A977230D57D600EA1C71 /* StoreCollection.xib in Resources */,
 				7FC35862230C188600EA761D /* NearBy.storyboard in Resources */,
 				7FC3581C230BCF8700EA761D /* Assets.xcassets in Resources */,
@@ -381,6 +388,7 @@
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				7FF8A97A230E41CD00EA1C71 /* StoreCollectionView.swift in Sources */,
 				2FDB7985230FEF5A004789F9 /* Article.swift in Sources */,
+				DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */,
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
 				7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */,
 				7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */,
