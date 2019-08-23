@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Near By Controller View Controller-->
+        <!--Nearby-->
         <scene sceneID="Kfe-9i-4EG">
             <objects>
                 <viewController id="v8C-1L-d4J" customClass="NearByControllerViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pbL-ZB-nfj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="X4O-MP-G4m"/>
+                    <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="X4O-MP-G4m"/>
                     <connections>
                         <outlet property="storeCollection" destination="gMM-JY-JO9" id="oEE-Iy-ppS"/>
                     </connections>
