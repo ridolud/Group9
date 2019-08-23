@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="1557.9710144927537" y="-289.28571428571428"/>
         </scene>
-        <!--PlaceDetail-->
+        <!--NearBy-->
         <scene sceneID="I2i-zP-XHd">
             <objects>
-                <viewControllerPlaceholder storyboardName="PlaceDetail" id="M80-ee-Dzv" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="NearBy" id="M80-ee-Dzv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="bbT-cr-GK4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qg9-LH-WVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
