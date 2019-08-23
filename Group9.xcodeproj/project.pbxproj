@@ -26,6 +26,8 @@
 		7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */; };
 		7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */; };
 		7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A9A1230E88C200EA1C71 /* RecordType.swift */; };
+		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
+		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionCell.swift; sourceTree = "<group>"; };
 		7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollectionCell.xib; sourceTree = "<group>"; };
 		7FF8A9A1230E88C200EA1C71 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
+		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
+		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 			children = (
 				7FF8A979230E41CD00EA1C71 /* StoreCollectionView.swift */,
 				7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */,
+				DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 		7FF8A978230E419F00EA1C71 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */,
 				7FF8A976230D57D600EA1C71 /* StoreCollection.xib */,
 				7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */,
 			);
@@ -341,6 +347,7 @@
 				7FC3581C230BCF8700EA761D /* Assets.xcassets in Resources */,
 				7FC35817230BCF8600EA761D /* Main.storyboard in Resources */,
 				7FC35864230C18C700EA761D /* Search.storyboard in Resources */,
+				DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */,
 				7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */,
 				7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
