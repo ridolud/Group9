@@ -27,6 +27,7 @@
 		7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */; };
 		7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */; };
 		7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A9A1230E88C200EA1C71 /* RecordType.swift */; };
+		BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B573231029AD0000AA27 /* LocationManager.swift */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		7FF8A97B230E479C00EA1C71 /* StoreCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionCell.swift; sourceTree = "<group>"; };
 		7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollectionCell.xib; sourceTree = "<group>"; };
 		7FF8A9A1230E88C200EA1C71 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
+		BE94B573231029AD0000AA27 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 				7FF8A96C230D46F600EA1C71 /* PlaceModel.swift */,
 				7FF8A9A1230E88C200EA1C71 /* RecordType.swift */,
 				2FDB7984230FEF5A004789F9 /* Article.swift */,
+				BE94B573231029AD0000AA27 /* LocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */,
 				7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */,
 				7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */,
+				BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				7FF8A97A230E41CD00EA1C71 /* StoreCollectionView.swift in Sources */,
 				2FDB7985230FEF5A004789F9 /* Article.swift in Sources */,
