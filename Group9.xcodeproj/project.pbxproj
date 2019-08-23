@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47D2CA6F230E83D7003EE10E /* PlaceDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */; };
+		47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2CA70230E89E0003EE10E /* PlaceDetailViewController.swift */; };
 		7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35811230BCF8600EA761D /* AppDelegate.swift */; };
 		7FC35817230BCF8600EA761D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35815230BCF8600EA761D /* Main.storyboard */; };
 		7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35818230BCF8600EA761D /* Group9.xcdatamodeld */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceDetail.storyboard; sourceTree = "<group>"; };
+		47D2CA70230E89E0003EE10E /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		7FC3580E230BCF8600EA761D /* Group9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC35811230BCF8600EA761D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FC35816230BCF8600EA761D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				7FC35861230C188600EA761D /* NearBy.storyboard */,
 				7FC35863230C18C700EA761D /* Search.storyboard */,
 				7FC35865230C19AC00EA761D /* Profile.storyboard */,
+				47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				7FC3584B230C0AE100EA761D /* MainTabBarController.swift */,
+				47D2CA70230E89E0003EE10E /* PlaceDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */,
 				7FC3581F230BCF8700EA761D /* LaunchScreen.storyboard in Resources */,
 				7FC35862230C188600EA761D /* NearBy.storyboard in Resources */,
+				47D2CA6F230E83D7003EE10E /* PlaceDetail.storyboard in Resources */,
 				7FC3581C230BCF8700EA761D /* Assets.xcassets in Resources */,
 				7FC35817230BCF8600EA761D /* Main.storyboard in Resources */,
 				7FC35864230C18C700EA761D /* Search.storyboard in Resources */,
@@ -335,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
+				47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */,
 				7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
 			);
@@ -514,7 +522,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = 7K72X54MJB;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,7 +543,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = 7K72X54MJB;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
