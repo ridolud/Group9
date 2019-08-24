@@ -13,13 +13,14 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeTypeLabel: UILabel!
     @IBOutlet weak var placeTimeLabel: UILabel!
+    @IBOutlet weak var placeAddressLabel: UILabel!
     @IBOutlet weak var directionButtonOutlet: UIButton!
     @IBOutlet weak var callButtonOutlet: UIButton!
     @IBOutlet weak var calendarButtonOutlet: UIButton!
     @IBOutlet weak var favoriteButtonOutlet: UIButton!
     @IBOutlet weak var mapOutlet: MKMapView!
     @IBOutlet weak var reviewButtonOutlet: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var similarPlaceView: UIView!
     
     var isFavorite = false
     var currentLocation : CLLocation?
@@ -29,28 +30,33 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         super.viewDidLoad()
         setupNavigationBar()
         setupPlace()
+        setupSimilarPlace()
     }
     
     func setupPlace(){
         placeNameLabel.text = "Lulu Hypermart"
         placeTypeLabel.text = "Bulk Store"
         placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
-        
+        placeAddressLabel.text = "Jln.Pagedangan no. 99"
         locationManager.allowAccess()
         locationManager.locationDelegate = self
         locationManager.checkCurrentLocation(viewController: self)
-        
-        print(locationManager.currentLocation)
-        
     }
     
     func setupNavigationBar(){
-        navigationItem.title = "Test"
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.view.backgroundColor = .clear
         setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    func setupSimilarPlace(){
+        let wrapper = StoreCollectionView()
+        wrapper.backgroundColor = .white
+        wrapper.categoryName = "Similar Places"
+        similarPlaceView.addSubview(wrapper.wrapper!)
+        view.setNeedsLayout()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
