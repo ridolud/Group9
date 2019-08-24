@@ -41,16 +41,7 @@ class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDat
     }
     
     func didFetchRecords() {
-        print(placeModel.places)
         collectionView.reloadData()
-    }
-    
-    func willFetchRecord() {
-        print("start")
-    }
-    
-    func errorConection(error: Error) {
-        print(error)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
