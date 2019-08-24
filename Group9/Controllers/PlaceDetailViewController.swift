@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-class PlaceDetailViewController: UIViewController {
+class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
 
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeTypeLabel: UILabel!
@@ -23,6 +23,7 @@ class PlaceDetailViewController: UIViewController {
     
     var isFavorite = false
     var currentLocation : CLLocation?
+    let locationManager = LocationManager.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,13 @@ class PlaceDetailViewController: UIViewController {
         placeNameLabel.text = "Lulu Hypermart"
         placeTypeLabel.text = "Bulk Store"
         placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
+        
+        locationManager.allowAccess()
+        locationManager.locationDelegate = self
+        locationManager.checkCurrentLocation(viewController: self)
+        
+        print(locationManager.currentLocation)
+        
     }
     
     func setupNavigationBar(){
@@ -50,16 +58,39 @@ class PlaceDetailViewController: UIViewController {
     }
     
     
-    @IBAction func favoriteButtonAction(_ sender: Any) {
+    @IBAction func favoriteButtonHaptic(_ sender: UIButton) {
+        let haptic = UINotificationFeedbackGenerator()
+        haptic.notificationOccurred(.success)
+    }
+    
+    @IBAction func favoriteButtonAction(_ sender: UIButton) {
+        isFavorite = !isFavorite
+        if isFavorite {
+            favoriteButtonOutlet.backgroundColor = .blue
+        } else {
+            favoriteButtonOutlet.backgroundColor = .white
+        
+        }
     }
     
     @IBAction func directionButtonAction(_ sender: Any) {
+        
         let navigate = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let aMaps = UIAlertAction(title: "Navigate with Maps", style: .default) { _ in
-            
+            let coordinate = CLLocationCoordinate2DMake(40,40)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = "Target location"
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
         }
         let gMaps = UIAlertAction(title: "Navigate with Google Maps", style: .default) { _ in
-            
+            let testURL = URL(string: "comgooglemaps-x-callback://")
+            if UIApplication.shared.canOpenURL(testURL!) {
+                let directionRequest = "comgooglemaps-x-callback://" + "?daddr=\(40),\(40)&directionsmode=driving"
+                UIApplication.shared.openURL(URL(string: directionRequest)!)
+                
+            } else {
+                NSLog("Can't use comgooglemaps://");
+            }
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             
@@ -83,6 +114,9 @@ class PlaceDetailViewController: UIViewController {
     @IBAction func reviewButtonAction(_ sender: Any) {
     }
     
-    
+    func reloadView() {
+        currentLocation = locationManager.currentLocation
+        print(#function, currentLocation)
+    }
     
 }
