@@ -19,14 +19,18 @@ class NearByControllerViewController: UIViewController {
         
         
         self.nearbyTableView.register(UINib.init(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "articleTableViewCell")
+        self.nearbyTableView.register(UINib.init(nibName: "RecomendedTableViewCell", bundle: nil), forCellReuseIdentifier: "recomendedTableViewCell")
+        
+        
+        
         nearbyTableView.delegate = self
+        
+        
         //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
     
-        
-        
         //ridho
 //        let wrapper = StoreCollectionView.instance
 //        wrapper.categoryName = "Bulk Store"
@@ -40,12 +44,13 @@ class NearByControllerViewController: UIViewController {
 
 extension NearByControllerViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 1{
-            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
+            
+            let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
             return cell
         }else{
             let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
@@ -55,7 +60,7 @@ extension NearByControllerViewController: UITableViewDataSource,UITableViewDeleg
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1{
-            return 205
+            return 367
         }else{
             return 205
         }
