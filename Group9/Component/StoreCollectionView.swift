@@ -8,9 +8,9 @@
 import UIKit
 import CloudKit
 
-class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
+class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, DatabaseDelegate {
     
-    let placeModel = PlaceModel.instance
+    let placeModel = PlaceModel()
     
     public var categoryName: String = ""
     
@@ -19,8 +19,6 @@ class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet var wrapper: UIView!
-    
-    var places = [CKRecord]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,25 +32,35 @@ class StoreCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDat
         
         collectionView.isPagingEnabled = true
         
-        self.placeModel.fetchAll { (records) in
-            self.places = records
-            self.collectionView.reloadData()
-        }
-        
+        placeModel.delegate = self
+        placeModel.get()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func didFetchRecords() {
+        print(placeModel.places)
+        collectionView.reloadData()
+    }
+    
+    func willFetchRecord() {
+        print("start")
+    }
+    
+    func errorConection(error: Error) {
+        print(error)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return places.count
+        return placeModel.places.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storeCell", for:  indexPath) as! StoreCollectionCell
         
-        cell.nameLabel.text = (places[indexPath.row].value(forKey: "name") as! String)
+        cell.nameLabel.text = placeModel.places[indexPath.row].name
         
         return cell
     }

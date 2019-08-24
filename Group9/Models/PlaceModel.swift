@@ -10,54 +10,58 @@
 import CloudKit
 import UIKit
 
-enum CategoryPlace: String, CustomStringConvertible {
+import CloudKit
+import UIKit
+
+enum PlaceCategory: String, CustomStringConvertible {
     case store = "store", repair = "repair", food = "food", comunity = "community"
     
     var description: String {
         switch self {
         case .store:
-            return "Store"
+            return "Grocery Store"
         case .repair:
             return "Repair Store"
         case .food:
             return "Foods & Drinks"
         case .comunity:
-            return "Comunity"
+            return "Comunities"
         }
     }
 }
 
-struct Place {
-    let id: Int
-    let name: Int
-    let address: String
-    let category: CategoryPlace
+struct Place{
+    let id: String
+    let name: String?
+    let address: String?
+    let featrueImg: UIImage?
+    let location: CLLocation?
 }
 
-class PlaceModel {
-    
-    static let instance = PlaceModel()
-    
-    private let database = CKContainer.default().publicCloudDatabase
-    
-    private let query = CKQuery(recordType: RecordType.place.description, predicate: .init(value: true))
-    
-    init() {}
+class PlaceModel: DBModel {
     
     var places = [Place]()
     
-    var records = [CKRecord]()
+    override init() {
+        super.init()
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: .init(value: true))
+    }
     
-    func fetchAll( callback: ((_ result: [CKRecord]) -> Void)? ) {
-        
-        self.database.perform(self.query, inZoneWith: nil) { (records, error) in
-            guard let records = records else { return }
-                self.records = records
-            
-            DispatchQueue.main.async {
-                callback!(self.records)
-            }
+    func get() {
+        guard let query = self.query else { return }
+        self.fetch(scope: .public, byQuery: query)
+    }
+    
+    override func passingData(records: [CKRecord]) {
+        for record in records {
+            self.recordToPlace(record)
         }
+    }
+    
+    private func recordToPlace(_ record: CKRecord) {
+        let name: String? = (record.value(forKey: "name") as! String)
+        let address: String? = (record.value(forKey: "address") as! String)
+        self.places.append(.init(id: record.recordID.recordName, name: name, address: address, featrueImg: nil, location: nil))
     }
     
 }
