@@ -27,19 +27,16 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI(){
-        if let article = article{
-            articleLabel.text =  article.title
-            articleImage.image = article.image
-        }else{
-            articleLabel.text =  article.title
-            articleImage.image = article.image
-        }
+        articleLabel.text =  article.title
+        articleImage.image = article.image
         
         transparentView?.layer.cornerRadius = 10.0
         transparentView?.layer.masksToBounds = true
-
+        
         articleImage?.layer.cornerRadius = 10.0
         articleImage?.layer.masksToBounds = true
     }
+    
+
 
 }

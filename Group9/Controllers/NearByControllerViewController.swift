@@ -21,10 +21,7 @@ class NearByControllerViewController: UIViewController {
         self.nearbyTableView.register(UINib.init(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "articleTableViewCell")
         self.nearbyTableView.register(UINib.init(nibName: "RecomendedTableViewCell", bundle: nil), forCellReuseIdentifier: "recomendedTableViewCell")
         
-        
-        
         nearbyTableView.delegate = self
-        
         
         //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -44,29 +41,30 @@ class NearByControllerViewController: UIViewController {
 
 extension NearByControllerViewController: UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 1{
-            
+        if indexPath.row == 0{
+            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
+            cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
+            return cell
+        }else if indexPath.row == 1{
             let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
             return cell
         }else{
-            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
-            return cell
+            return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1{
-            return 367
-        }else{
+        if indexPath.row == 0{
             return 205
+        }else if indexPath.row == 1{
+            return 280
+        }else{
+            return 100
         }
     }
-    
-    
-    
     
 }

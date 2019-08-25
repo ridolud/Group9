@@ -63,12 +63,13 @@
                 <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wci-cj-OLV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="335" height="189"/>
+            <size key="customSize" width="344" height="189"/>
             <connections>
                 <outlet property="articleImage" destination="vDA-E8-3ov" id="fBy-yT-2kx"/>
                 <outlet property="articleLabel" destination="RoO-9t-Vm8" id="lVn-n0-RDO"/>
+                <outlet property="transparentView" destination="GR0-JE-DQ2" id="1SC-ep-PYZ"/>
             </connections>
-            <point key="canvasLocation" x="337.68115942028987" y="191.18303571428569"/>
+            <point key="canvasLocation" x="343.47826086956525" y="191.18303571428569"/>
         </collectionViewCell>
     </objects>
     <resources>

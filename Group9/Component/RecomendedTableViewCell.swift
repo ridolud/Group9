@@ -46,9 +46,8 @@ extension RecomendedTableViewCell: UICollectionViewDataSource,UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recomendedCollectionViewCell", for: indexPath) as! RecomendedCollectionViewCell
         
         let spot = spots[indexPath.item]
-        
         cell.spot = spot
-        
+                
         return cell
     }
     

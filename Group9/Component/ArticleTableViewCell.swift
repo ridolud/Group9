@@ -50,7 +50,6 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
         let article = articles[indexPath.item]
         
         cell.article = article
-        
         return cell
     }
     

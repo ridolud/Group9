@@ -31,6 +31,13 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
         recommendedTitle.text = spot.title
         recommendedImage.image = spot.image
         recommendedDescription.text = spot.description
+        
+        transparentBackground?.layer.cornerRadius = 10.0
+        transparentBackground?.layer.masksToBounds = true
+        
+        recommendedImage?.layer.cornerRadius = 10.0
+        recommendedImage?.layer.masksToBounds = true
     }
+    
 
 }
