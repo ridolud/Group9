@@ -31,8 +31,11 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
         articlePageControl.numberOfPages = articles.count
         articlePageControl.currentPage = 0
         
+        articleCollectionView.layer.masksToBounds = true
+        articleCollectionView.layer.cornerRadius = 10.0
+        
         DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         } //change article automatically
     }
 
