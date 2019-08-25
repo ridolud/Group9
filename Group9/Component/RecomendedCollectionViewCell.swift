@@ -10,7 +10,8 @@ import UIKit
 
 class RecomendedCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var transparentBackground: UIView!
+   
+    @IBOutlet weak var gradientBackground: UIImageView!
     @IBOutlet weak var recommendedImage: UIImageView!
     @IBOutlet weak var recommendedTitle: UILabel!
     @IBOutlet weak var recommendedDescription: UILabel!
@@ -32,8 +33,8 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
         recommendedImage.image = spot.image
         recommendedDescription.text = spot.description
         
-        transparentBackground?.layer.cornerRadius = 10.0
-        transparentBackground?.layer.masksToBounds = true
+        gradientBackground?.layer.cornerRadius = 10.0
+        gradientBackground?.layer.masksToBounds = true
         
         recommendedImage?.layer.cornerRadius = 10.0
         recommendedImage?.layer.masksToBounds = true

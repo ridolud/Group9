@@ -22,10 +22,13 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img4" translatesAutoresizingMaskIntoConstraints="NO" id="vDA-E8-3ov">
                         <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
                     </imageView>
-                    <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR0-JE-DQ2">
+                    <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR0-JE-DQ2">
                         <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-bl-UhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mel-ch-Zzb" userLabel="BottomContainer">
                         <rect key="frame" x="0.0" y="72" width="354" height="89"/>
                         <subviews>
@@ -50,29 +53,35 @@
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="vDA-E8-3ov" secondAttribute="trailing" id="1Xa-Tn-HeV"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2c5-TB-w4U"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="58u-Ek-Cin"/>
                 <constraint firstItem="vDA-E8-3ov" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7kC-VU-LfZ"/>
-                <constraint firstAttribute="bottom" secondItem="GR0-JE-DQ2" secondAttribute="bottom" id="Att-zS-M2F"/>
+                <constraint firstAttribute="trailing" secondItem="7Kd-bl-UhZ" secondAttribute="trailing" id="Cp9-0M-LN8"/>
                 <constraint firstAttribute="bottom" secondItem="Mel-ch-Zzb" secondAttribute="bottom" id="DhX-bo-rbh"/>
                 <constraint firstItem="vDA-E8-3ov" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KN5-GX-EbC"/>
-                <constraint firstItem="GR0-JE-DQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LpK-ug-YIM"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YWO-cx-uiU"/>
                 <constraint firstItem="Mel-ch-Zzb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="72" id="azX-PF-6fr"/>
-                <constraint firstAttribute="trailing" secondItem="GR0-JE-DQ2" secondAttribute="trailing" id="dbO-HM-PB6"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eY0-ee-Aew"/>
+                <constraint firstAttribute="bottom" secondItem="GR0-JE-DQ2" secondAttribute="bottom" id="fAE-Pg-ZaQ"/>
                 <constraint firstItem="Mel-ch-Zzb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="laU-KA-Q8b"/>
                 <constraint firstAttribute="bottom" secondItem="vDA-E8-3ov" secondAttribute="bottom" id="oXO-cw-Qlk"/>
+                <constraint firstAttribute="trailing" secondItem="GR0-JE-DQ2" secondAttribute="trailing" id="uaj-kT-2E7"/>
+                <constraint firstAttribute="bottom" secondItem="7Kd-bl-UhZ" secondAttribute="bottom" id="uuL-0B-0Kb"/>
                 <constraint firstAttribute="trailing" secondItem="Mel-ch-Zzb" secondAttribute="trailing" id="vUf-Or-SjR"/>
-                <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wci-cj-OLV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="344" height="189"/>
             <connections>
                 <outlet property="articleImage" destination="vDA-E8-3ov" id="fBy-yT-2kx"/>
                 <outlet property="articleLabel" destination="RoO-9t-Vm8" id="lVn-n0-RDO"/>
-                <outlet property="transparentView" destination="GR0-JE-DQ2" id="1SC-ep-PYZ"/>
+                <outlet property="greenTransparent" destination="7Kd-bl-UhZ" id="aVG-iz-d5n"/>
+                <outlet property="transparentView" destination="GR0-JE-DQ2" id="sGc-AV-Sxa"/>
             </connections>
             <point key="canvasLocation" x="343.47826086956525" y="191.18303571428569"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="GradientBackgroundLandscape" width="708" height="322"/>
         <image name="img4" width="4032" height="3024"/>
     </resources>
 </document>

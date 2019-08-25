@@ -13,7 +13,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleLabel: UILabel!
     @IBOutlet weak var transparentView: UIView!
-    
+    @IBOutlet weak var greenTransparent: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +35,9 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         
         articleImage?.layer.cornerRadius = 10.0
         articleImage?.layer.masksToBounds = true
+        
+        greenTransparent?.layer.cornerRadius = 10.0
+        greenTransparent?.layer.masksToBounds = true
         
         
     }

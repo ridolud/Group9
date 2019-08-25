@@ -33,7 +33,7 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
         
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
-        }
+        } //change article automatically
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
