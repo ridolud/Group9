@@ -72,10 +72,9 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBAction func favoriteButtonAction(_ sender: UIButton) {
         isFavorite = !isFavorite
         if isFavorite {
-            favoriteButtonOutlet.backgroundColor = .blue
+            favoriteButtonOutlet.setTitle("♥︎", for: .normal)
         } else {
-            favoriteButtonOutlet.backgroundColor = .white
-        
+            favoriteButtonOutlet.setTitle("♡", for: .normal)
         }
     }
     
