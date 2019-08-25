@@ -13,35 +13,72 @@
         <!--Nearby-->
         <scene sceneID="Kfe-9i-4EG">
             <objects>
-                <viewController id="v8C-1L-d4J" customClass="NearByControllerViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nearByViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v8C-1L-d4J" customClass="NearByControllerViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8f-9m-iwf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-JY-JO9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="187"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2KJ-qv-8gB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="187" id="hia-nX-48a"/>
-                                </constraints>
-                            </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CpY-ik-vRb">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CpY-ik-vRb" id="DAf-BO-OgH">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="v8C-1L-d4J" id="YaW-s1-CnW"/>
+                                    <outlet property="delegate" destination="v8C-1L-d4J" id="JPA-oM-Ysb"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="gMM-JY-JO9" firstAttribute="top" secondItem="pbL-ZB-nfj" secondAttribute="top" id="IDk-3r-KvF"/>
-                            <constraint firstItem="gMM-JY-JO9" firstAttribute="leading" secondItem="pbL-ZB-nfj" secondAttribute="leading" id="XUY-hM-pXV"/>
-                            <constraint firstItem="gMM-JY-JO9" firstAttribute="trailing" secondItem="pbL-ZB-nfj" secondAttribute="trailing" id="eea-8d-1BS"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pbL-ZB-nfj"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="X4O-MP-G4m"/>
                     <connections>
-                        <outlet property="storeCollection" destination="gMM-JY-JO9" id="oEE-Iy-ppS"/>
+                        <outlet property="nearbyTableView" destination="2KJ-qv-8gB" id="IVe-Vw-Mqm"/>
+                        <segue destination="4dW-Gq-Xqj" kind="show" identifier="webViewSegue" id="UPL-9E-t8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgm-Fn-Zee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239.1304347826087" y="-38.169642857142854"/>
+            <point key="canvasLocation" x="1183" y="-38"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="xsJ-y5-8by">
+            <objects>
+                <viewController storyboardIdentifier="webViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4dW-Gq-Xqj" customClass="WebViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kzc-QQ-a8w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-RP-rHg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DRL-5y-X1u"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="EDg-RP-rHg" id="wOY-4A-Rwh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dll-e1-0nQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186.9565217391305" y="-38.169642857142854"/>
         </scene>
         <!--Near By-->
         <scene sceneID="aXf-Cm-4cu">
