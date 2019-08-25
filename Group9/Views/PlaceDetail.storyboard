@@ -44,7 +44,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="402" height="345"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-o8-vFM">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="344" height="84.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="360" height="84.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coq-Xl-vWX">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="71" height="36"/>
@@ -67,8 +67,8 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX2-IU-znd">
-                                                                                <rect key="frame" x="356" y="0.0" width="46" height="30"/>
-                                                                                <state key="normal" title="Button"/>
+                                                                                <rect key="frame" x="372" y="0.0" width="30" height="30"/>
+                                                                                <state key="normal" title="❤️"/>
                                                                                 <connections>
                                                                                     <action selector="favoriteButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="75D-cz-ODb"/>
                                                                                     <action selector="favoriteButtonHaptic:" destination="vMn-m6-8Nu" eventType="touchDown" id="lEi-mg-RRi"/>
