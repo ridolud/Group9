@@ -27,7 +27,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-bl-UhZ">
-                        <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="161.00000000000006"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mel-ch-Zzb" userLabel="BottomContainer">
                         <rect key="frame" x="0.0" y="72" width="354" height="89"/>
