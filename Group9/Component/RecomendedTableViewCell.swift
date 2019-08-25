@@ -30,6 +30,7 @@ class RecomendedTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
     }
     
 }
@@ -49,6 +50,10 @@ extension RecomendedTableViewCell: UICollectionViewDataSource,UICollectionViewDe
         cell.spot = spot
                 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     

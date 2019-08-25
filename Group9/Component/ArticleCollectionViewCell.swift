@@ -35,8 +35,10 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         
         articleImage?.layer.cornerRadius = 10.0
         articleImage?.layer.masksToBounds = true
+        
+        
     }
     
-
+    
 
 }

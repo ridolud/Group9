@@ -39,5 +39,5 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
         recommendedImage?.layer.masksToBounds = true
     }
     
-
+    
 }
