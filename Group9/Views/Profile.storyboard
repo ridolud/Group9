@@ -30,7 +30,7 @@
         <scene sceneID="RiF-Iv-2An">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hps-zU-Mlz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Vtd-It-tBh"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-tab" id="Vtd-It-tBh"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z9B-2H-iWi">
@@ -47,4 +47,7 @@
             <point key="canvasLocation" x="63.768115942028992" y="-151.33928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile-tab" width="30" height="29"/>
+    </resources>
 </document>

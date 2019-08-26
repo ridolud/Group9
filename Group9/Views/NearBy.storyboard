@@ -84,7 +84,7 @@
         <scene sceneID="aXf-Cm-4cu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6pg-Hs-Cww" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Near By" id="7ue-TR-JW0"/>
+                    <tabBarItem key="tabBarItem" title="Near By" image="nearby-tab" id="7ue-TR-JW0"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dnh-bV-pTo">
@@ -101,4 +101,7 @@
             <point key="canvasLocation" x="144.92753623188406" y="-38.169642857142854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nearby-tab" width="27" height="27"/>
+    </resources>
 </document>

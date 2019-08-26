@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="1134.7826086956522" y="134.59821428571428"/>
         </scene>
-        <!--Search-->
+        <!--Discover-->
         <scene sceneID="FKP-eP-jec">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uR8-Ye-H15" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="Gch-KZ-3sZ"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover-tab" id="Gch-KZ-3sZ"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3FN-4E-CSU">
@@ -47,4 +47,7 @@
             <point key="canvasLocation" x="224.63768115942031" y="134.59821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="discover-tab" width="27" height="27"/>
+    </resources>
 </document>
