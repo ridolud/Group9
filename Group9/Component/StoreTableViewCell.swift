@@ -53,7 +53,8 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
         self.categoryPlace.text = self.category?.description
         
         // Fetching Data
-        placeModel.get()
+        placeModel.get(ByCategory: category)
+        
     }
     
 }
@@ -73,8 +74,14 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         cell.isLoading = isLoading
         
         if !isLoading {
-        cell.nameLabel.text = placeModel.places[indexPath.row].name
-//        cell.addressLabel.text = placeModel.places[indexPath.row].address
+            cell.nameLabel.text = placeModel.places[indexPath.row].name
+            cell.addressLabel.text = "1.8 km - \(placeModel.places[indexPath.row].kecamatan!), \(placeModel.places[indexPath.row].kota!) "
+            
+//            DispatchQueue.main.async {
+//                self.placeModel.getImage(ByPlace: self.placeModel.places[indexPath.row])
+//                cell.imagePlace.loadFromUrl(self.placeModel.places[indexPath.row].featureImgUrl!)
+//            }
+            
         }
         
         return cell

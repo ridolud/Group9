@@ -14,7 +14,7 @@ import CloudKit
 import UIKit
 
 enum PlaceCategory: String, CustomStringConvertible {
-    case store = "store", repair = "repair", food = "food", comunity = "community"
+    case store = "store", repair = "repair", food = "food", community = "community", refill="refill"
     
     var description: String {
         switch self {
@@ -24,18 +24,28 @@ enum PlaceCategory: String, CustomStringConvertible {
             return "Repair Store"
         case .food:
             return "Foods & Drinks"
-        case .comunity:
+        case .community:
             return "Comunities"
+        case .refill:
+            return "Water Refill Spot"
         }
     }
 }
 
-struct Place{
+struct Place {
     let id: String
     let name: String?
     let address: String?
-    let featrueImg: UIImage?
+    let kelurahan: String?
+    let kecamatan: String?
+    let kota: String?
+    var featureImgUrl: URL?
     let location: CLLocation?
+    let category: PlaceCategory
+    
+    mutating func changeImageURL( url : URL){
+        self.featureImgUrl = url
+    }
 }
 
 class PlaceModel: DBModel {
@@ -52,17 +62,99 @@ class PlaceModel: DBModel {
         self.fetch(scope: .public, byQuery: query)
     }
     
+    func getImage(ByPlace place: Place) {
+        guard let query = self.query else { return }
+        let filter = place.id
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "recordName == %@", filter))
+        self.fetchImage(scope: .public, byQuery: query)
+    }
+    
+    func get(ByCategory category: PlaceCategory) {
+        let filter = category.rawValue
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
+        guard let query = self.query else { return }
+        self.fetch(scope: .public, byQuery: query)
+    }
+    
     override func passingData(records: [CKRecord]) {
         for record in records {
             self.recordToPlace(record)
         }
     }
     
-    private func recordToPlace(_ record: CKRecord) {
-        let name: String? = (record.value(forKey: "name") as! String)
-        let address: String? = (record.value(forKey: "address") as! String)
-        self.places.append(.init(id: record.recordID.recordName, name: name, address: address, featrueImg: nil, location: nil))
+    override func passingData(record: CKRecord) {
+        self.places.append(
+            .init(
+                id: record.recordID.recordName,
+                name: self.checkString("name", record: record),
+                address: self.checkString("kelurahan", record: record),
+                kelurahan: self.checkString("kelurahan", record: record),
+                kecamatan: self.checkString("kecamatan", record: record),
+                kota: self.checkString("kota", record: record),
+                featureImgUrl: URL(string: "default-img"),
+                location: nil,
+                category: self.checkCategory(record: record)
+            )
+        )
     }
+    
+    override func passingImage(record : CKRecord, img: CKAsset) {
+        for i in 0...places.count-1 {
+            if places[i].id == record.recordID.recordName{
+                    self.places[i].changeImageURL(url: self.checkUrl("feature_img", record: record))
+            }
+        }
+    }
+    
+    private func recordToPlace(_ record: CKRecord) {
+        self.places.append(
+            .init(
+                id: record.recordID.recordName,
+                name: self.checkString("name", record: record),
+                address: self.checkString("kelurahan", record: record),
+                kelurahan: self.checkString("kelurahan", record: record),
+                kecamatan: self.checkString("kecamatan", record: record),
+                kota: self.checkString("kota", record: record),
+                featureImgUrl: self.checkUrl("feature_img", record: record),
+                location: nil,
+                category: self.checkCategory(record: record)
+            )
+        )
+    }
+    
+    private func checkString(_ field: String, record: CKRecord) -> String {
+            return (record.value(forKey: field)) != nil ? (record.value(forKey: field) as! String) : ""
+    }
+    
+    private func checkCategory(record: CKRecord) -> PlaceCategory {
+        let categoryRaw = self.checkString("category", record: record)
+        switch categoryRaw {
+        case PlaceCategory.store.rawValue:
+            return PlaceCategory.store
+        default:
+            return PlaceCategory.community
+        }
+    }
+    
+    private func checkUrl(_ field: String, record: CKRecord) -> URL {
+//        
+        if let recordFile = record.value(forKey: field) {
+            let file = recordFile as! CKAsset
+            print(#function, file.fileURL!)
+            if UIApplication.shared.canOpenURL(file.fileURL!) {
+                return file.fileURL!
+            }else{
+                print(#function, "url cant be opened")
+                return URL(string: "default-img")!
+            }
+        }else{
+            return URL(string: "default-img")!
+        }
+
+        return URL(string: "default-img")!
+    }
+    
+    
     
 }
 
