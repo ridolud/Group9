@@ -21,6 +21,8 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
     var timer = Timer()
     var link = ""
     
+    var articleDelegate: ArticleTableViewCellDelegate?
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -93,22 +95,11 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
         let article = articles[indexPath.item]
         let url = article.link
         
-        let nearByStoryBoard:UIStoryboard = UIStoryboard(name: "NearBy", bundle: nil)
-        let nearByController = nearByStoryBoard.instantiateViewController(withIdentifier: "nearByViewController") as! NearByControllerViewController
-        let webViewController = nearByStoryBoard.instantiateViewController(withIdentifier: "webViewController") as! WebViewController
-        
-        webViewController.url = url
-        //print(url)
-        link = url
-        
-        nearByController.navigationController?.pushViewController(webViewController, animated: true)
-        //kok ga bisa ya :(
-        
-        
+        articleDelegate?.didSelectedArticle(url: url)
     }
     
-    func getUrl() -> String{
-        return link
-    }
-    
+}
+
+@objc protocol ArticleTableViewCellDelegate {
+    @objc func didSelectedArticle(url: String)
 }
