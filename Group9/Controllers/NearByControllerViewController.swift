@@ -23,7 +23,6 @@ class NearByControllerViewController: UIViewController {
         
         nearbyTableView.delegate = self
         
-        //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
@@ -37,6 +36,10 @@ class NearByControllerViewController: UIViewController {
         
         
     }
+    
+    
+    
+    
 
 }
 
@@ -53,6 +56,7 @@ extension NearByControllerViewController: UITableViewDataSource,UITableViewDeleg
             return cell
         }else if indexPath.row == 1{
             let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
+            
             return cell
         }else{
             return UITableViewCell()
@@ -69,4 +73,16 @@ extension NearByControllerViewController: UITableViewDataSource,UITableViewDeleg
         }
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        let articleTableViewCell:UITableViewCell = UITableViewCell.init(style: .default, reuseIdentifier: "articleTableViewCell")
+//        let articleCell = articleTableViewCe
+        if indexPath.row == 0 {
+            //print(articleTableViewCell.)
+        }
+    }
+    
+    
+    
 }
+
+

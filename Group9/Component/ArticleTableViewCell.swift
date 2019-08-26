@@ -19,6 +19,7 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
     var articles = Article.fetchArticle()
     var currentPage = 0
     var timer = Timer()
+    var link = ""
     
 
     override func awakeFromNib() {
@@ -97,12 +98,17 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
         let webViewController = nearByStoryBoard.instantiateViewController(withIdentifier: "webViewController") as! WebViewController
         
         webViewController.url = url
-        print(url)
+        //print(url)
+        link = url
         
         nearByController.navigationController?.pushViewController(webViewController, animated: true)
         //kok ga bisa ya :(
         
+        
     }
     
+    func getUrl() -> String{
+        return link
+    }
     
 }
