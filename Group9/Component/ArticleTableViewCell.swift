@@ -20,6 +20,8 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
     var currentPage = 0
     var timer = Timer()
     
+    var articleDelegate: ArticleTableViewCellDelegate?
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +33,11 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
         articlePageControl.numberOfPages = articles.count
         articlePageControl.currentPage = 0
         
+        articleCollectionView.layer.masksToBounds = true
+        articleCollectionView.layer.cornerRadius = 10.0
+        
         DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         } //change article automatically
     }
 
@@ -89,17 +94,11 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
         let article = articles[indexPath.item]
         let url = article.link
         
-        let nearByStoryBoard:UIStoryboard = UIStoryboard(name: "NearBy", bundle: nil)
-        let nearByController = nearByStoryBoard.instantiateViewController(withIdentifier: "nearByViewController") as! NearByControllerViewController
-        let webViewController = nearByStoryBoard.instantiateViewController(withIdentifier: "webViewController") as! WebViewController
-        
-        webViewController.url = url
-        print(url)
-        
-        nearByController.navigationController?.pushViewController(webViewController, animated: true)
-        //kok ga bisa ya :(
-        
+        articleDelegate?.didSelectedArticle(url: url)
     }
     
-    
+}
+
+@objc protocol ArticleTableViewCellDelegate {
+    @objc func didSelectedArticle(url: String)
 }

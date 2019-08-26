@@ -24,6 +24,8 @@ class NearByControllerViewController: UIViewController {
         
         nearbyTableView.delegate = self
         
+        
+        //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
@@ -33,7 +35,8 @@ class NearByControllerViewController: UIViewController {
 }
 
 
-extension NearByControllerViewController: UITableViewDataSource,UITableViewDelegate{
+extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate, ArticleTableViewCellDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedPlaceCategory.count + 2
     }
@@ -41,8 +44,12 @@ extension NearByControllerViewController: UITableViewDataSource,UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0{
-            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
+            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! ArticleTableViewCell
+            
+            cell.articleDelegate = self
+            
             cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
+            
             return cell
         }else if indexPath.row == 1{
             let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
@@ -63,6 +70,20 @@ extension NearByControllerViewController: UITableViewDataSource,UITableViewDeleg
             return 280
         }else{
             return 308
+        }
+    }
+    
+    func didSelectedArticle(url: String) {
+        
+        performSegue(withIdentifier: "webViewSegue", sender: url)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "webViewSegue" {
+            let viewController: WebViewController = segue.destination as! WebViewController
+            
+            viewController.url = sender as! String
+
         }
     }
     
