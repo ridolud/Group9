@@ -11,8 +11,9 @@ import UIKit
 
 class NearByControllerViewController: UIViewController {
     
-    @IBOutlet weak var storeCollection: UIView!
     @IBOutlet weak var nearbyTableView: UITableView!
+    
+    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .community]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +29,9 @@ class NearByControllerViewController: UIViewController {
         
         //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
-        
-        
-    
-        //ridho
-//        let wrapper = StoreCollectionView.instance
-//        wrapper.categoryName = "Bulk Store"
-        //storeCollection.addSubview(wrapper.wrapper!)
-        
         
     }
     
@@ -56,13 +49,14 @@ class NearByControllerViewController: UIViewController {
 }
 
 
-extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate, ArticleTableViewCellDelegate{
+extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return selectedPlaceCategory.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row == 0{
             let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! ArticleTableViewCell
             
@@ -75,7 +69,13 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             
             return cell
         }else{
-            return UITableViewCell()
+            let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
+            let currentIndex = indexPath.row - 2
+            
+            cell.delegate = self
+            cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
+            
+            return cell
         }
     }
     
@@ -85,24 +85,36 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }else if indexPath.row == 1{
             return 280
         }else{
-            return 100
+            return 308
         }
     }
+    
+}
+
+extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate {
+    
+    func didSelectedPlace(place: Place) {
+        performSegue(withIdentifier: "placeDetail", sender: place)
+    }
+    
     
     func didSelectedArticle(url: String) {
         performSegue(withIdentifier: "webViewSegue", sender: url)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "webViewSegue" {
             let viewController: WebViewController = segue.destination as! WebViewController
             
             viewController.url = sender as! String
-
         }
+        
+//        if segue.identifier == "placeDetail" {
+//            let viewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+//
+//            viewController.place = sender as? Place
+//        }
     }
-    
-    
     
 }
 
