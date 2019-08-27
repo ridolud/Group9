@@ -51,11 +51,20 @@
                     <connections>
                         <outlet property="nearbyTableView" destination="oyV-gU-2qg" id="olq-dt-3ae"/>
                         <segue destination="KEZ-cI-kLj" kind="show" identifier="webViewSegue" id="pOL-dd-EZV"/>
+                        <segue destination="7My-hG-54E" kind="show" identifier="placeDetail" id="pHl-Gk-nhF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anZ-5M-yYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2468.1159420289855" y="404.46428571428572"/>
+        </scene>
+        <!--PlaceDetail-->
+        <scene sceneID="EY2-kZ-nTI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlaceDetail" id="7My-hG-54E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vKw-SF-aze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695" y="871"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ZoM-5Z-mFs">
@@ -63,7 +72,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" id="iCj-nR-RPW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGg-gc-fcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="863"/>
+            <point key="canvasLocation" x="2217" y="871"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="zlZ-5e-shk">

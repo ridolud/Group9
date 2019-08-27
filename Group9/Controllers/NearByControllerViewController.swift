@@ -49,7 +49,7 @@ class NearByControllerViewController: UIViewController {
 }
 
 
-extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate, ArticleTableViewCellDelegate{
+extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedPlaceCategory.count + 2
@@ -70,9 +70,11 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             return cell
         }else{
             let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
-            
             let currentIndex = indexPath.row - 2
+            
+            cell.delegate = self
             cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
+            
             return cell
         }
     }
@@ -87,20 +89,32 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }
     }
     
+}
+
+extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate {
+    
+    func didSelectedPlace(place: Place) {
+        performSegue(withIdentifier: "placeDetail", sender: place)
+    }
+    
+    
     func didSelectedArticle(url: String) {
         performSegue(withIdentifier: "webViewSegue", sender: url)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "webViewSegue" {
             let viewController: WebViewController = segue.destination as! WebViewController
             
             viewController.url = sender as! String
-
         }
+        
+//        if segue.identifier == "placeDetail" {
+//            let viewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+//
+//            viewController.place = sender as? Place
+//        }
     }
-    
-    
     
 }
 

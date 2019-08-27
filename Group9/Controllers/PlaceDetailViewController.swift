@@ -21,6 +21,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var mapOutlet: MKMapView!
     @IBOutlet weak var reviewButtonOutlet: UIButton!
     @IBOutlet weak var similarPlaceView: UIView!
+
+    var place: Place?
     
     var isFavorite = false
     var currentLocation : CLLocation?
@@ -29,12 +31,15 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        setupPlace()
+//        setupPlace()
 //        setupSimilarPlace()
     }
     
-    func setupPlace(){
-        placeNameLabel.text = "Lulu Hypermart"
+    
+    
+    func setupPlace(place: Place){
+        self.place = place
+        placeNameLabel.text = place.name
         placeTypeLabel.text = "Bulk Store"
         placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
         placeAddressLabel.text = "Jln.Pagedangan no. 99"

@@ -20,6 +20,8 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     var isLoading = true
     
+    var delegate: StoreTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -82,4 +84,14 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !isLoading {
+            delegate?.didSelectedPlace(place: placeModel.places[indexPath.row])
+        }
+    }
+    
+}
+
+protocol StoreTableViewCellDelegate {
+    func didSelectedPlace(place: Place)
 }
