@@ -15,7 +15,7 @@ import UIKit
 
 enum PlaceCategory: String, CustomStringConvertible {
     case store = "store", repair = "repair", food = "food", community = "community", refill="refill"
-    var temp : String?
+    
     var description: String {
         switch self {
         case .store:
@@ -51,7 +51,7 @@ struct Place {
 class PlaceModel: DBModel {
     
     var places = [Place]()
-    
+    var temp : String?
     override init() {
         super.init()
         self.query = .init(recordType: RecordType.place.rawValue, predicate: .init(value: true))
