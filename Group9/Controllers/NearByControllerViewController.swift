@@ -33,14 +33,6 @@ class NearByControllerViewController: UIViewController {
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
         
-        
-    
-        //ridho
-//        let wrapper = StoreCollectionView.instance
-//        wrapper.categoryName = "Bulk Store"
-        //storeCollection.addSubview(wrapper.wrapper!)
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
