@@ -28,6 +28,8 @@
 		7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */; };
 		7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8A9A1230E88C200EA1C71 /* RecordType.swift */; };
 		BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B573231029AD0000AA27 /* LocationManager.swift */; };
+		BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B575231117CB0000AA27 /* SearchViewController.swift */; };
+		BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreCollectionCell.xib; sourceTree = "<group>"; };
 		7FF8A9A1230E88C200EA1C71 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		BE94B573231029AD0000AA27 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BE94B575231117CB0000AA27 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewLocationViewController.swift; sourceTree = "<group>"; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +204,8 @@
 		7FC35848230C06A000EA761D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE94B575231117CB0000AA27 /* SearchViewController.swift */,
+				BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */,
 				7FC3584B230C0AE100EA761D /* MainTabBarController.swift */,
 				7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */,
 			);
@@ -384,9 +390,11 @@
 				BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				7FF8A97A230E41CD00EA1C71 /* StoreCollectionView.swift in Sources */,
+				BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */,
 				2FDB7985230FEF5A004789F9 /* Article.swift in Sources */,
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
 				7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */,
+				BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */,
 				7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
 			);
@@ -566,7 +574,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = YF2M6C4WM8;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,7 +595,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = YF2M6C4WM8;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
