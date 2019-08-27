@@ -48,6 +48,12 @@
 		BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B573231029AD0000AA27 /* LocationManager.swift */; };
 		BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B575231117CB0000AA27 /* SearchViewController.swift */; };
 		BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */; };
+		DC2AE11E231536EC00867085 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE11D231536EC00867085 /* AccountViewController.swift */; };
+		DC2AE1202315370C00867085 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE11F2315370C00867085 /* MyAccountViewController.swift */; };
+		DC2AE1222315371B00867085 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1212315371B00867085 /* SignInViewController.swift */; };
+		DC2AE1242315372600867085 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1232315372600867085 /* SignUpViewController.swift */; };
+		DC2AE1262315373700867085 /* MyFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1252315373700867085 /* MyFavoritesViewController.swift */; };
+		DC2AE12823154D4100867085 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE12723154D4100867085 /* ViewBorder.swift */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 		DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490FD231050D800288143 /* ReviewTableViewCell.swift */; };
@@ -120,6 +126,12 @@
 		BE94B573231029AD0000AA27 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BE94B575231117CB0000AA27 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewLocationViewController.swift; sourceTree = "<group>"; };
+		DC2AE11D231536EC00867085 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		DC2AE11F2315370C00867085 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		DC2AE1212315371B00867085 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		DC2AE1232315372600867085 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DC2AE1252315373700867085 /* MyFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewController.swift; sourceTree = "<group>"; };
+		DC2AE12723154D4100867085 /* ViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewBorder.swift; path = Group9/Controllers/ViewBorder.swift; sourceTree = SOURCE_ROOT; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 		DCE490FD231050D800288143 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -249,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				BE94B575231117CB0000AA27 /* SearchViewController.swift */,
+				DC2AE1252315373700867085 /* MyFavoritesViewController.swift */,
 				BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */,
 				7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */,
 				2F4E192B2312AE93003A016C /* WebViewController.swift */,
@@ -256,6 +269,10 @@
 				47797659231291C200E11725 /* PlaceReviewTableViewController.swift */,
 				4779765B231291E100E11725 /* PlaceNewReviewViewController.swift */,
 				7F7AC3C5231529440070C488 /* MainNavigationController.swift */,
+				DC2AE11D231536EC00867085 /* AccountViewController.swift */,
+				DC2AE11F2315370C00867085 /* MyAccountViewController.swift */,
+				DC2AE1212315371B00867085 /* SignInViewController.swift */,
+				DC2AE1232315372600867085 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				7F7AC3C32313C22E0070C488 /* ImageHandler.swift */,
+				DC2AE12723154D4100867085 /* ViewBorder.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -455,11 +473,16 @@
 				DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */,
 				7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */,
 				7FCFB8752311CCD0007B3DC9 /* DatabaseEnv.swift in Sources */,
+				DC2AE12823154D4100867085 /* ViewBorder.swift in Sources */,
 				7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */,
 				BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */,
 				2F29864C231131F200A0DC9B /* RecomendedCollectionViewCell.swift in Sources */,
 				4779765F231294F400E11725 /* StarTableViewCell.swift in Sources */,
+				DC2AE11E231536EC00867085 /* AccountViewController.swift in Sources */,
+				DC2AE1262315373700867085 /* MyFavoritesViewController.swift in Sources */,
 				4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */,
+				DC2AE1222315371B00867085 /* SignInViewController.swift in Sources */,
+				DC2AE1202315370C00867085 /* MyAccountViewController.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				2F29865523116C0800A0DC9B /* Spot.swift in Sources */,
 				BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */,
@@ -472,6 +495,7 @@
 				2F2986522311442500A0DC9B /* RecomendedTableViewCell.swift in Sources */,
 				47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */,
 				BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */,
+				DC2AE1242315372600867085 /* SignUpViewController.swift in Sources */,
 				7FCFB8732311CCA9007B3DC9 /* DBModel.swift in Sources */,
 				2F4E192C2312AE93003A016C /* WebViewController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
@@ -654,7 +678,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = 4H65A594JP;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -675,7 +699,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = 4H65A594JP;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
