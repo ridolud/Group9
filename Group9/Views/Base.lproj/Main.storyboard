@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="2247" y="-397"/>
         </scene>
-        <!--Profile-->
+        <!--Storyboard Reference-->
         <scene sceneID="kic-lX-CYa">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="Xer-e1-IhQ" sceneMemberID="viewController">
+                <viewControllerPlaceholder id="Xer-e1-IhQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RvN-Db-zah"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlk-W0-zag" userLabel="First Responder" sceneMemberID="firstResponder"/>

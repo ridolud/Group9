@@ -23,7 +23,7 @@ class SearchViewController: UIViewController, parsingCityNameProtocol {
         
         navigationItem.title = cityName
         
-        setTheWrapper()
+//        setTheWrapper()
         setTheSearchbar()
     
         
@@ -127,21 +127,21 @@ class SearchViewController: UIViewController, parsingCityNameProtocol {
     
     
     //MARK : Function Collection
-    func setTheWrapper() {
-        
-        //let wrapper = StoreCollectionView.instance
-        let wrapper = StoreCollectionView()
-        wrapper.categoryName = "Popular Store"
-        
-        popularView.addSubview(wrapper.wrapper!)
-        
-        //the data that we need
-        PlaceModel.instance.fetchAll(callback: { (ckrRecord) in
-            wrapper.places = ckrRecord
-            wrapper.collectionView.reloadData()
-        })
-     
-    }
+//    func setTheWrapper() {
+//
+//        //let wrapper = StoreCollectionView.instance
+//        let wrapper = StoreCollectionView()
+//        wrapper.categoryName = "Popular Store"
+//
+//        popularView.addSubview(wrapper.wrapper!)
+//
+//        //the data that we need
+//        PlaceModel.instance.fetchAll(callback: { (ckrRecord) in
+//            wrapper.places = ckrRecord
+//            wrapper.collectionView.reloadData()
+//        })
+//
+//    }
     
     
     func setTheSearchbar(){

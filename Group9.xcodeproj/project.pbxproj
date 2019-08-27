@@ -465,7 +465,6 @@
 				4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				2F29865523116C0800A0DC9B /* Spot.swift in Sources */,
-				7FF8A97A230E41CD00EA1C71 /* StoreCollectionView.swift in Sources */,
 				BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */,
 				2FDB7985230FEF5A004789F9 /* Article.swift in Sources */,
 				DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */,
@@ -475,7 +474,6 @@
 				2F2986402310F43200A0DC9B /* ArticleCollectionViewCell.swift in Sources */,
 				2F2986522311442500A0DC9B /* RecomendedTableViewCell.swift in Sources */,
 				47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */,
-				7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */,
 				BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */,
 				7FC3584C230C0AE100EA761D /* MainTabBarController.swift in Sources */,
 				7FCFB8732311CCA9007B3DC9 /* DBModel.swift in Sources */,
@@ -660,7 +658,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YF2M6C4WM8;
+				DEVELOPMENT_TEAM = UUHXR699G4;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -681,7 +679,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YF2M6C4WM8;
+				DEVELOPMENT_TEAM = UUHXR699G4;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
