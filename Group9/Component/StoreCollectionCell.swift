@@ -18,6 +18,8 @@ class StoreCollectionCell: UICollectionViewCell {
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var place: Place!
+    
     var isLoading = false {
         didSet{
             if self.isLoading {
@@ -37,5 +39,11 @@ class StoreCollectionCell: UICollectionViewCell {
         imagePlace.layer.cornerRadius = 12
     }
     
+    func loadPlace(place: Place) {
+        self.place = place
+        nameLabel.text = self.place.name
+        addressLabel.text = "1.8 km - \(self.place.kecamatan), \(self.place.kota) "
+        imagePlace.loadFromUrl(self.place.featureImgUrl)
+    }
 
 }

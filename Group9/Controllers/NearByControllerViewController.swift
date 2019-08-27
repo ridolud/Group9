@@ -103,17 +103,19 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "webViewSegue" {
-            let viewController: WebViewController = segue.destination as! WebViewController
+            let webViewController: WebViewController = segue.destination as! WebViewController
             
-            viewController.url = sender as! String
+            webViewController.url = sender as! String
+        }
+
+        if segue.identifier == "placeDetail" {
+            let placeDetailViewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+            placeDetailViewController.currentPlace = sender as? Place
+            
         }
         
-//        if segue.identifier == "placeDetail" {
-//            let viewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
-//
-//            viewController.place = sender as? Place
-//        }
     }
     
 }

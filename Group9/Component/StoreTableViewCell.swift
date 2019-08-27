@@ -76,9 +76,7 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         cell.isLoading = isLoading
         
         if !isLoading {
-            cell.nameLabel.text = placeModel.places[indexPath.row].name
-            cell.addressLabel.text = "1.8 km - \(placeModel.places[indexPath.row].kecamatan!), \(placeModel.places[indexPath.row].kota!) "
-            cell.imagePlace.loadFromUrl(placeModel.places[indexPath.row].featureImgUrl)
+            cell.loadPlace(place: placeModel.places[indexPath.row])
         }
         
         return cell
@@ -87,6 +85,7 @@ extension StoreTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !isLoading {
             delegate?.didSelectedPlace(place: placeModel.places[indexPath.row])
+            
         }
     }
     
