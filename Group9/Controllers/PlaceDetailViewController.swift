@@ -30,7 +30,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         super.viewDidLoad()
         setupNavigationBar()
         setupPlace()
-        setupSimilarPlace()
+//        setupSimilarPlace()
     }
     
     func setupPlace(){
@@ -51,14 +51,14 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         setNeedsStatusBarAppearanceUpdate()
     }
     
-    func setupSimilarPlace(){
-        let wrapper = StoreCollectionView()
-        wrapper.backgroundColor = .white
-        wrapper.categoryName = "Similar Places"
-        similarPlaceView.addSubview(wrapper.wrapper!)
-        view.setNeedsLayout()
-    }
-    
+//    func setupSimilarPlace(){
+//        let wrapper = StoreCollectionView()
+//        wrapper.backgroundColor = .white
+//        wrapper.categoryName = "Similar Places"
+//        similarPlaceView.addSubview(wrapper.wrapper!)
+//        view.setNeedsLayout()
+//    }
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
