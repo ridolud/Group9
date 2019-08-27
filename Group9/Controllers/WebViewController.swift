@@ -25,11 +25,14 @@ class WebViewController:UIViewController{
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         webView = WKWebView(frame: self.view.frame)
+        
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.isUserInteractionEnabled = true
         webView.navigationDelegate = self as? WKNavigationDelegate
+        
         self.view.addSubview(self.webView)
         let request = URLRequest(url: url!)
+        
         webView.load(request)
         
         // add loadingIndicator

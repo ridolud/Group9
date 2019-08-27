@@ -14,6 +14,8 @@ class RecomendedTableViewCell: UITableViewCell {
     
     var spots = Spot.fetchData()
     
+    var recommendedDelegate:RecommendedTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -53,8 +55,12 @@ extension RecomendedTableViewCell: UICollectionViewDataSource,UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        recommendedDelegate?.didSelectedRecommended(param: "test")
         
     }
     
-    
+}
+
+@objc protocol RecommendedTableViewCellDelegate{
+    @objc func didSelectedRecommended(param: String)
 }
