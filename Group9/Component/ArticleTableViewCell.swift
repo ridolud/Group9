@@ -19,6 +19,7 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
     var articles = Article.fetchArticle()
     var currentPage = 0
     var timer = Timer()
+    var link = ""
     
     var articleDelegate: ArticleTableViewCellDelegate?
     

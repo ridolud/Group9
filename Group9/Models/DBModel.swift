@@ -30,77 +30,19 @@ class DBModel {
     }
     
     func fetch(scope: CKDatabase.Scope, byQuery query: CKQuery) {
-        // start fetching data
-        self.delegate?.willFetchRecords?()
-        
         let database = self.setScopeDatabase(scope: scope)
-        let queryOperation = CKQueryOperation()
-        
-        queryOperation.query = query
-        queryOperation.resultsLimit = 5
-        queryOperation.qualityOfService  = .userInteractive
-        queryOperation.desiredKeys = ["name", "address", "kelurahan", "kecamatan", "kota", "category"]
-        
-        queryOperation.recordFetchedBlock = { tempRecord in
+        database.perform(query, inZoneWith: nil, completionHandler: {
+            (records, error) in
+
+            guard let records = records else { return }
+
             DispatchQueue.main.async {
-                print(#function, "quesry fetch record block")
-                
-                self.passingData(record: tempRecord)
-            }
-        }
-        queryOperation.queryCompletionBlock =  { queryCursor,error in
-            DispatchQueue.main.async {
-                print(#function, "quesry completition block")
-                //self.passingData(record: record!)
+                self.passingData(records: records)
+
                 // finish fetching data
                 self.delegate?.didFetchRecords?()
             }
-        }
-        database.add(queryOperation)
-
-    }
-    
-    func fetchImage(scope: CKDatabase.Scope, byQuery query: CKQuery) {
-        // start fetching data
-        self.delegate?.willFetchRecords?()
-        
-        let database = self.setScopeDatabase(scope: scope)
-        let queryImageOperation = CKQueryOperation()
-        
-        queryImageOperation.query = query
-        queryImageOperation.resultsLimit = 5
-        queryImageOperation.qualityOfService = .background
-        queryImageOperation.desiredKeys = ["feature_img"]
-
-        queryImageOperation.recordFetchedBlock = { tempRecord in
-            DispatchQueue.main.async {
-                if let img = tempRecord.object(forKey: "feature_img") as? CKAsset {
-                    self.passingImage(record : tempRecord, img : img )
-                }
-            }
-        }
-        queryImageOperation.queryCompletionBlock =  { queryCursor,error in
-            
-        }
-        
-        database.add(queryImageOperation)
-
-        
-        
-        
-//
-//        database.perform(query, inZoneWith: nil, completionHandler: {
-//            (records, error) in
-//
-//            guard let records = records else { return }
-//
-//            DispatchQueue.main.async {
-//                self.passingData(records: records)
-//
-//                // finish fetching data
-//                self.delegate?.didFetchRecords?()
-//            }
-//        })
+        })
     }
     
     private func setScopeDatabase(scope: CKDatabase.Scope) -> CKDatabase {
@@ -115,13 +57,6 @@ class DBModel {
     }
     
     func passingData(records: [CKRecord]) {
-        return
-    }
-    
-    func passingData(record: CKRecord) {
-        return
-    }
-    func passingImage(record: CKRecord, img: CKAsset) {
         return
     }
     

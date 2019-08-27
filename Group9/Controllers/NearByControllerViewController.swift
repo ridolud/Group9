@@ -23,19 +23,33 @@ class NearByControllerViewController: UIViewController {
         self.nearbyTableView.register(UINib.init(nibName: "RecomendedTableViewCell", bundle: nil), forCellReuseIdentifier: "recomendedTableViewCell")
         
         nearbyTableView.delegate = self
+        self.tabBarController?.tabBar.isHidden = false
+        
         
         
         //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
-
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+    }
+    
+    
+    
+    
 
 }
 
 
-extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate, ArticleTableViewCellDelegate{
+extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedPlaceCategory.count + 2
@@ -47,18 +61,20 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! ArticleTableViewCell
             
             cell.articleDelegate = self
-            
             cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
             
             return cell
         }else if indexPath.row == 1{
             let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
+            
             return cell
         }else{
             let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
-            
             let currentIndex = indexPath.row - 2
+            
+            cell.delegate = self
             cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
+            
             return cell
         }
     }
@@ -73,18 +89,33 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }
     }
     
-    func didSelectedArticle(url: String) {
-        
-        performSegue(withIdentifier: "webViewSegue", sender: url)
+}
+
+extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate {
+    
+    func didSelectedPlace(place: Place) {
+        performSegue(withIdentifier: "placeDetail", sender: place)
     }
     
+    
+    func didSelectedArticle(url: String) {
+        performSegue(withIdentifier: "webViewSegue", sender: url)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "webViewSegue" {
             let viewController: WebViewController = segue.destination as! WebViewController
             
             viewController.url = sender as! String
-
         }
+        
+//        if segue.identifier == "placeDetail" {
+//            let viewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+//
+//            viewController.place = sender as? Place
+//        }
     }
     
 }
+
+

@@ -62,13 +62,6 @@ class PlaceModel: DBModel {
         self.fetch(scope: .public, byQuery: query)
     }
     
-    func getImage(ByPlace place: Place) {
-        guard let query = self.query else { return }
-        let filter = place.id
-        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "recordName == %@", filter))
-        self.fetchImage(scope: .public, byQuery: query)
-    }
-    
     func get(ByCategory category: PlaceCategory) {
         let filter = category.rawValue
         self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
@@ -79,30 +72,6 @@ class PlaceModel: DBModel {
     override func passingData(records: [CKRecord]) {
         for record in records {
             self.recordToPlace(record)
-        }
-    }
-    
-    override func passingData(record: CKRecord) {
-        self.places.append(
-            .init(
-                id: record.recordID.recordName,
-                name: self.checkString("name", record: record),
-                address: self.checkString("kelurahan", record: record),
-                kelurahan: self.checkString("kelurahan", record: record),
-                kecamatan: self.checkString("kecamatan", record: record),
-                kota: self.checkString("kota", record: record),
-                featureImgUrl: URL(string: "default-img"),
-                location: nil,
-                category: self.checkCategory(record: record)
-            )
-        )
-    }
-    
-    override func passingImage(record : CKRecord, img: CKAsset) {
-        for i in 0...places.count-1 {
-            if places[i].id == record.recordID.recordName{
-                    self.places[i].changeImageURL(url: self.checkUrl("feature_img", record: record))
-            }
         }
     }
     
@@ -136,22 +105,15 @@ class PlaceModel: DBModel {
         }
     }
     
-    private func checkUrl(_ field: String, record: CKRecord) -> URL {
-//        
+    private func checkUrl(_ field: String, record: CKRecord) -> URL? {
         if let recordFile = record.value(forKey: field) {
-            let file = recordFile as! CKAsset
-            print(#function, file.fileURL!)
-            if UIApplication.shared.canOpenURL(file.fileURL!) {
-                return file.fileURL!
-            }else{
-                print(#function, "url cant be opened")
-                return URL(string: "default-img")!
+            if let file: CKAsset = (recordFile as! CKAsset) {
+                print(#function, file.fileURL)
+                return file.fileURL
             }
         }else{
-            return URL(string: "default-img")!
+            return nil
         }
-
-        return URL(string: "default-img")!
     }
     
     
