@@ -76,12 +76,7 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         if !isLoading {
             cell.nameLabel.text = placeModel.places[indexPath.row].name
             cell.addressLabel.text = "1.8 km - \(placeModel.places[indexPath.row].kecamatan!), \(placeModel.places[indexPath.row].kota!) "
-            
-//            DispatchQueue.main.async {
-//                self.placeModel.getImage(ByPlace: self.placeModel.places[indexPath.row])
-//                cell.imagePlace.loadFromUrl(self.placeModel.places[indexPath.row].featureImgUrl!)
-//            }
-            
+            cell.imagePlace.loadFromUrl(placeModel.places[indexPath.row].featureImgUrl)
         }
         
         return cell
