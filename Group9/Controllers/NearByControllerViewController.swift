@@ -13,7 +13,7 @@ class NearByControllerViewController: UIViewController {
     
     @IBOutlet weak var nearbyTableView: UITableView!
     
-    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .community]
+    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +42,11 @@ class NearByControllerViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
-    
-    
-    
 
+    
 }
 
-
-extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate, ArticleTableViewCellDelegate{
+extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedPlaceCategory.count + 2
@@ -70,9 +67,11 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             return cell
         }else{
             let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
-            
             let currentIndex = indexPath.row - 2
+            
+            cell.delegate = self
             cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
+            
             return cell
         }
     }
@@ -87,19 +86,59 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }
     }
     
+}
+
+extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate {
+    
+    func didSelectedPlace(place: Place) {
+        performSegue(withIdentifier: "placeDetail", sender: place)
+    }
+    
+    
     func didSelectedArticle(url: String) {
         performSegue(withIdentifier: "webViewSegue", sender: url)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "webViewSegue" {
-            let viewController: WebViewController = segue.destination as! WebViewController
-            
-            viewController.url = sender as! String
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "webViewSegue" {
+            let webViewController: WebViewController = segue.destination as! WebViewController
+            
+            webViewController.url = sender as! String
         }
+
+        if segue.identifier == "placeDetail" {
+            let placeDetailViewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+            placeDetailViewController.currentPlace = sender as? Place
+            
+        }
+        
+        if segue.identifier == "newSearchLocation" {
+            let nav = segue.destination as! UINavigationController
+            let destinationVC = nav.topViewController as! SearchNewLocationViewController
+            
+            print(#function, "test")
+            
+            destinationVC.parsingDelegate = self
+        }
+        
     }
     
+}
+
+extension NearByControllerViewController: parsingCityNameProtocol {
+    
+    @IBAction func checngeLocationAction(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "newSearchLocation", sender: nil)
+        
+    }
+    
+    func parsingCityName(with name: String, isFromSearchVC: Bool) {
+        print(#function, name)
+        
+        self.title = name
+    }
     
     
 }

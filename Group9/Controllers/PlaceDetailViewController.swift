@@ -22,6 +22,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var reviewButtonOutlet: UIButton!
     @IBOutlet weak var similarPlaceView: UIView!
     
+    var currentPlace: Place!
+    
     var isFavorite = false
     var currentLocation : CLLocation?
     let locationManager = LocationManager.instance
@@ -29,20 +31,24 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        setupPlace()
-//        setupSimilarPlace()
-    }
-    
-    func setupPlace(){
-        placeNameLabel.text = "Lulu Hypermart"
-        placeTypeLabel.text = "Bulk Store"
-        placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
-        placeAddressLabel.text = "Jln.Pagedangan no. 99"
         locationManager.allowAccess()
         locationManager.locationDelegate = self
-        locationManager.checkCurrentLocation(viewController: self)
+        setupPlace()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.view.backgroundColor = .white
+    }
+    
+    func setupPlace() {
+        placeNameLabel.text = currentPlace.name
+        placeTypeLabel.text = "Bulk Store"
+        placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
+        placeAddressLabel.text = currentPlace.address
+        locationManager.checkCurrentLocation(viewController: self)
+    }
+
     func setupNavigationBar(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
