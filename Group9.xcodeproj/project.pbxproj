@@ -480,7 +480,6 @@
 				2F2986462310F58800A0DC9B /* ArticleTableViewCell.swift in Sources */,
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
 				2F6EC4D923150CE400A7EDC4 /* UIImage.swift in Sources */,
-				7FF8A9A2230E88C200EA1C71 /* RecordType.swift in Sources */,
 				2F2986402310F43200A0DC9B /* ArticleCollectionViewCell.swift in Sources */,
 				2F2986522311442500A0DC9B /* RecomendedTableViewCell.swift in Sources */,
 				47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */,
