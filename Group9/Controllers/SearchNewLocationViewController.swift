@@ -111,10 +111,7 @@ class SearchNewLocationViewController: UIViewController {
         for i in 0..<dummyDaya.count{
             arrayOfCity.append(dummyDaya[i])
         }
-        
     }
-    
-    
     
 }
 
