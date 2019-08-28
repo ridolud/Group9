@@ -25,6 +25,9 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     var isFavorite = false
     var currentLocation : CLLocation?
     let locationManager = LocationManager.instance
+    var place : Place?
+    let store = EKEventStore()
+    var event : EKEvent?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +116,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         UIApplication.shared.open(number)
     }
     
-    @IBAction func callendarButtonAction(_ sender: Any) {
+    @IBAction func calendarButtonAction(_ sender: Any) {
+        addEventView()
     }
     
     @IBAction func reviewButtonAction(_ sender: Any) {
@@ -124,4 +128,52 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         print(#function, currentLocation)
     }
     
+}
+
+import EventKitUI
+extension PlaceDetailViewController : EKEventEditViewDelegate{
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        switch action {
+        case .canceled:
+            dismiss(animated: true, completion: nil)
+        default:
+            do{
+                try store.save(event!, span: .thisEvent)
+                dismiss(animated: true, completion: nil)
+            }catch{
+                print("error save")
+            }
+        }
+    }
+    
+    func addEventView(){
+        let vc = EKEventEditViewController()
+        vc.editViewDelegate = self
+        vc.eventStore = store
+        vc.event = EKEvent(eventStore: store)
+        vc.event?.location = "Jakarta"
+        let location = CLLocation(latitude: 25.0340, longitude: 121.5645)
+        let structuredLocation = EKStructuredLocation(title: "rumah")
+        structuredLocation.geoLocation = location
+        vc.event!.structuredLocation = structuredLocation
+        event = vc.event
+        
+        switch EKEventStore.authorizationStatus(for: .event) {
+        case .authorized:
+            self.present(vc, animated: true, completion: nil)
+        case .denied:
+            print("Access denied")
+        case .notDetermined:
+            store.requestAccess(to: .event, completion:
+                {(granted: Bool, error: Error?) -> Void in
+                    if granted {
+                        self.present(vc, animated: true, completion: nil)
+                    } else {
+                        print("Access denied")
+                    }
+            })
+        default:
+            print("Case default")
+        }
+    }
 }
