@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SearchNewLocation-->
+        <scene sceneID="jQ9-Yf-8PQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchNewLocation" id="4tB-ei-vTv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mll-8S-Pk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2275" y="964"/>
+        </scene>
         <!--Nearby-->
         <scene sceneID="4hk-Qf-wiK">
             <objects>
@@ -42,9 +50,15 @@
                         <viewLayoutGuide key="safeArea" id="2zC-A0-Cuo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="5M4-15-RGh">
+                        <barButtonItem key="leftBarButtonItem" title="Change Location" id="TYc-Oa-1RE">
+                            <connections>
+                                <action selector="checngeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
+                                <segue destination="4tB-ei-vTv" kind="show" identifier="newSearchLocation" id="g7E-rU-Cuw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="😳" id="0QP-Bf-jYo">
                             <connections>
-                                <segue destination="iCj-nR-RPW" kind="show" id="5y5-C3-GGM"/>
+                                <segue destination="iCj-nR-RPW" kind="show" identifier="profile" id="5y5-C3-GGM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -64,7 +78,7 @@
                 <viewControllerPlaceholder storyboardName="PlaceDetail" referencedIdentifier="PlaceDetailViewController" id="7My-hG-54E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKw-SF-aze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2695" y="871"/>
+            <point key="canvasLocation" x="2508" y="889"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ZoM-5Z-mFs">

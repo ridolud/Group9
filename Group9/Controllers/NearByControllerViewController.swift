@@ -42,10 +42,12 @@ class NearByControllerViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
+    @IBAction func checngeLocationAction(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "newSearchLocation", sender: nil)
+        
+    }
     
-    
-    
-
 }
 
 
