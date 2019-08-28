@@ -21,6 +21,7 @@
 		2F6EC4DA23150CE400A7EDC4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EC4D723150CE300A7EDC4 /* UIColor.swift */; };
 		2F6EC4DB23150CE400A7EDC4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EC4D823150CE300A7EDC4 /* UIViewController.swift */; };
 		2FDB7985230FEF5A004789F9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDB7984230FEF5A004789F9 /* Article.swift */; };
+		4726384C231678E700C5A0AC /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4726384B231678E700C5A0AC /* CalendarEvent.swift */; };
 		4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47797659231291C200E11725 /* PlaceReviewTableViewController.swift */; };
 		4779765C231291E100E11725 /* PlaceNewReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779765B231291E100E11725 /* PlaceNewReviewViewController.swift */; };
 		4779765F231294F400E11725 /* StarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4779765D231294F400E11725 /* StarTableViewCell.swift */; };
@@ -90,6 +91,7 @@
 		2F6EC4D723150CE300A7EDC4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		2F6EC4D823150CE300A7EDC4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		2FDB7984230FEF5A004789F9 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		4726384B231678E700C5A0AC /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		47797659231291C200E11725 /* PlaceReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceReviewTableViewController.swift; sourceTree = "<group>"; };
 		4779765B231291E100E11725 /* PlaceNewReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNewReviewViewController.swift; sourceTree = "<group>"; };
 		4779765D231294F400E11725 /* StarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarTableViewCell.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				BE94B573231029AD0000AA27 /* LocationManager.swift */,
 				7FCFB8742311CCD0007B3DC9 /* DatabaseEnv.swift */,
 				2F29865423116C0800A0DC9B /* Spot.swift */,
+				4726384B231678E700C5A0AC /* CalendarEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				4779765F231294F400E11725 /* StarTableViewCell.swift in Sources */,
 				4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
+				4726384C231678E700C5A0AC /* CalendarEvent.swift in Sources */,
 				2F29865523116C0800A0DC9B /* Spot.swift in Sources */,
 				2F6EC4DA23150CE400A7EDC4 /* UIColor.swift in Sources */,
 				BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */,

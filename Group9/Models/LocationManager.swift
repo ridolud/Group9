@@ -13,6 +13,7 @@ import CoreLocation
 class LocationManager : NSObject, CLLocationManagerDelegate{
     
     static let instance = LocationManager()
+    
     var manager = CLLocationManager()
     var currentLocation: CLLocation?
     var currentCity : String?
@@ -27,8 +28,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
         manager.requestWhenInUseAuthorization()
     }
     
-    func checkCurrentLocation(viewController : UIViewController){
-        self.viewController = viewController
+    func checkCurrentLocation(){
         manager.startUpdatingLocation()
     }
     
@@ -39,6 +39,10 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
             self.locationDelegate?.reloadView?()
             manager.stopUpdatingLocation()
         }
+    }
+    
+    func calculateDistance(location : CLLocation) -> CLLocationDistance{
+        return (currentLocation?.distance(from: location))!
     }
     
     func changeCityName(_ location: CLLocation){
