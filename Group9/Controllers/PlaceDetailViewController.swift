@@ -115,7 +115,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         
         let navigate = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let aMaps = UIAlertAction(title: "Navigate with Maps", style: .default) { _ in
-            let coordinate = CLLocationCoordinate2DMake(40,40)
+            let coordinate = self.currentPlace.location!.coordinate
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
             mapItem.name = "Target location"
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
@@ -123,7 +123,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         let gMaps = UIAlertAction(title: "Navigate with Google Maps", style: .default) { _ in
             let testURL = URL(string: "comgooglemaps-x-callback://")
             if UIApplication.shared.canOpenURL(testURL!) {
-                let directionRequest = "comgooglemaps-x-callback://" + "?daddr=\(40),\(40)&directionsmode=driving"
+                let directionRequest = "comgooglemaps-x-callback://" + "?daddr=\(self.currentPlace.location!.coordinate.latitude),\(self.currentPlace.location!.coordinate.longitude)&directionsmode=driving"
                 UIApplication.shared.openURL(URL(string: directionRequest)!)
                 
             } else {
