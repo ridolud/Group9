@@ -29,6 +29,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     let locationManager = LocationManager.instance
     let store = EKEventStore()
     var event : EKEvent?
+    var distance = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +49,11 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         setupNavigationBarCancel()
     }
     func setupPlace() {
+        locationManager.checkCurrentLocation()
         placeNameLabel.text = currentPlace.name
         placeTypeLabel.text = currentPlace.category.description
         placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
-        placeAddressLabel.text = currentPlace.address
-        locationManager.checkCurrentLocation(viewController: self)
+        placeAddressLabel.text = "\(distance), \(currentPlace.address)"
     }
     
     func setupMap(){
@@ -67,8 +68,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     }
     
     func setupSimilarPlace(){
-//        let tableView = UITableView(frame: similarPlaceView.frame)
-//        similarPlaceView.addSubview(tableView)
         similarPlaceView.register(UINib.init(nibName: "StoreTableViewCell", bundle: nil), forCellReuseIdentifier: "storeTableViewCell")
         similarPlaceView.delegate = self
         similarPlaceView.dataSource = self
@@ -154,7 +153,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     func reloadView() {
         currentLocation = locationManager.currentLocation
-        print(#function, currentLocation)
+        distance = Int((currentLocation?.distance(from: currentPlace.location!))!)
+        placeAddressLabel.text = "\(distance/1000) km, \(currentPlace.address)"
     }
     
 }
