@@ -41,7 +41,7 @@ class DBModel {
         queryOperation.desiredKeys = ["name", "address", "kelurahan", "kecamatan", "kota", "category"]
         
         queryOperation.recordFetchedBlock = { tempRecord in
-            DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
                 self.passingData(record: tempRecord)
             }
         }
@@ -50,7 +50,7 @@ class DBModel {
                 self.delegate?.didFetchRecords?()
             }
         }
-        print(#function)
+        print(#function, query)
         database.add(queryOperation)
 
     }
@@ -68,6 +68,8 @@ class DBModel {
 
         queryImageOperation.recordFetchedBlock = { tempRecord in
             DispatchQueue.global(qos: .background).async {
+                print(#function, tempRecord)
+
                 if let img = tempRecord.object(forKey: "feature_img") as? CKAsset {
                     self.passingImage(record : tempRecord, img : img )
                 }
@@ -78,7 +80,6 @@ class DBModel {
                 self.delegate?.didFetchImage?()
             }
         }
-        print(#function)
         database.add(queryImageOperation)
     }
     

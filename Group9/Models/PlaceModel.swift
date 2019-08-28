@@ -50,20 +50,27 @@ struct Place {
 
 class PlaceModel: DBModel {
     
+    static var instance = PlaceModel()
     var places = [Place]()
     var temp : String?
     
     override init() {
         super.init()
-        //emptyPlaces()
         self.query = .init(recordType: RecordType.place.rawValue, predicate: .init(value: true))
     }
     
     func emptyPlaces(){
-        places.removeAll()
+//        places.removeAll()
     }
     
     func get() {
+        guard let query = self.query else { return }
+        self.fetch(scope: .public, byQuery: query)
+    }
+    
+    func get(ByCity city : String ){
+        let filter = city
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "self contains %@", filter))
         guard let query = self.query else { return }
         self.fetch(scope: .public, byQuery: query)
     }
@@ -90,7 +97,7 @@ class PlaceModel: DBModel {
             .init(
                 id: record.recordID.recordName,
                 name: self.checkString("name", record: record),
-                address: self.checkString("kelurahan", record: record),
+                address: self.checkString("address", record: record),
                 kelurahan: self.checkString("kelurahan", record: record),
                 kecamatan: self.checkString("kecamatan", record: record),
                 kota: self.checkString("kota", record: record),
@@ -100,7 +107,7 @@ class PlaceModel: DBModel {
             )
         )
         
-        //print(#function, places)
+        print(#function, places)
         
         DispatchQueue.global(qos: .background).async {
             self.getImage(ByRecord: record)

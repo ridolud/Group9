@@ -14,15 +14,12 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     @IBOutlet weak var storeCollection: UICollectionView!
     
-    let placeModel = PlaceModel()
-    
+    let placeModel = PlaceModel.instance
     var category: PlaceCategory?
-    
     var isLoading = true
-    
     var isLoadingImage = true
-    
     var delegate: StoreTableViewCellDelegate?
+    var tempArr = [Place]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,8 +27,8 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
         // Delegation
         storeCollection.delegate = self
         storeCollection.dataSource = self
-        placeModel.delegate = self
-        placeModel.emptyPlaces()
+//        placeModel.delegate = self
+//        placeModel.emptyPlaces()
         
         let nibName = UINib(nibName: "StoreCollectionCell", bundle:nil)
         storeCollection.register(nibName, forCellWithReuseIdentifier: "storeCell")
@@ -48,13 +45,17 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
         // see all places collection
     }
     
-    func didFetchRecords() {
+    func didFetchRecords(places : [Place]) {
         isLoading = false
+        tempArr = places
+        print(tempArr)
         storeCollection.reloadData()
     }
     
-    func didFetchImage() {
+    func didFetchImage(places : [Place]) {
         isLoadingImage = false
+        tempArr = places
+        print(tempArr)
         storeCollection.reloadData()
     }
     
@@ -63,7 +64,7 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
         self.categoryPlace.text = self.category?.description
         
         // Fetching Data
-        placeModel.get(ByCategory: category)
+//        placeModel.get(ByCategory: category)
         
     }
     
@@ -75,7 +76,7 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         if isLoading {
             return 2
         }
-        return placeModel.places.count
+        return tempArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,20 +85,20 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         cell.isLoading = isLoading
         cell.isLoadingImage = isLoadingImage
         if !isLoading {
-            cell.nameLabel.text = placeModel.places[indexPath.row].name
-            cell.addressLabel.text = "1.8 km - \(placeModel.places[indexPath.row].kecamatan!), \(placeModel.places[indexPath.row].kota!) "
+            cell.nameLabel.text = tempArr[indexPath.row].name
+            cell.addressLabel.text = "1.8 km - \(tempArr[indexPath.row].kecamatan!), \(tempArr[indexPath.row].kota!) "
         }
-        
-        if !isLoadingImage {            cell.imagePlace.loadFromUrl(placeModel.places[indexPath.row].featureImgUrl)
+
+        if !isLoadingImage {            cell.imagePlace.loadFromUrl(tempArr[indexPath.row].featureImgUrl)
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !isLoading {
-            delegate?.didSelectedPlace(place: placeModel.places[indexPath.row])
-        }
+//        if !isLoading {
+//            delegate?.didSelectedPlace(place: placeModel.places[indexPath.row])
+//        }
     }
     
 }
