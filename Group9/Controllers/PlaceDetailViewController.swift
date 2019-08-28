@@ -227,6 +227,11 @@ extension PlaceDetailViewController : UITableViewDelegate, UITableViewDataSource
 
 extension PlaceDetailViewController: StoreTableViewCellDelegate {
     
+    func didSelectedPlaceCategory(category: PlaceCategory) {
+        //
+    }
+    
+    
     func didSelectedPlace(place: Place) {
         performSegue(withIdentifier: "placeDetail", sender: place)
     }
