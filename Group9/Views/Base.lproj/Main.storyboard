@@ -53,7 +53,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Change Location" id="TYc-Oa-1RE">
                             <connections>
                                 <action selector="checngeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
-                                <segue destination="4tB-ei-vTv" kind="show" identifier="newSearchLocation" id="g7E-rU-Cuw"/>
+                                <segue destination="4tB-ei-vTv" kind="presentation" identifier="newSearchLocation" id="g7E-rU-Cuw"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="😳" id="0QP-Bf-jYo">
