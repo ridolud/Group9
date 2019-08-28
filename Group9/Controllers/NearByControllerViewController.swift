@@ -98,6 +98,11 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
     func didSelectedArticle(url: String) {
         performSegue(withIdentifier: "webViewSegue", sender: url)
     }
+    
+    func didSelectedPlaceCategory(category: PlaceCategory) {
+        performSegue(withIdentifier: "seeAllByCategory", sender: nil)
+//        print(#function, category)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

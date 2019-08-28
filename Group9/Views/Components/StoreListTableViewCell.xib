@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Emo-rY-tA6">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-img" translatesAutoresizingMaskIntoConstraints="NO" id="Emo-rY-tA6">
                         <rect key="frame" x="16" y="10.5" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="MuF-UA-tTf"/>
@@ -33,8 +34,9 @@
                             <constraint firstAttribute="height" constant="15" id="g1f-tM-rmc"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-chevron-right-30" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-Hp-KnG">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-Hp-KnG">
                         <rect key="frame" x="378" y="10" width="20" height="20"/>
+                        <color key="tintColor" name="westly green"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="ITv-w1-Vmt"/>
                             <constraint firstAttribute="width" constant="20" id="akC-ww-Qs9"/>
@@ -90,7 +92,6 @@
                     <constraint firstItem="rnm-of-VJM" firstAttribute="top" secondItem="03n-OF-95b" secondAttribute="bottom" constant="5" id="GZu-hC-yES"/>
                     <constraint firstAttribute="bottom" secondItem="LMM-LU-VMa" secondAttribute="bottom" constant="10.5" id="M1q-AL-729"/>
                     <constraint firstAttribute="trailing" secondItem="bcN-Hp-KnG" secondAttribute="trailing" constant="16" id="P4s-s4-EVW"/>
-                    <constraint firstItem="Emo-rY-tA6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Vr6-Is-Bca"/>
                     <constraint firstAttribute="bottom" secondItem="yB3-bx-rQe" secondAttribute="bottom" constant="10.5" id="VvR-t2-r0t"/>
                     <constraint firstItem="8WT-qc-Bpl" firstAttribute="leading" secondItem="yB3-bx-rQe" secondAttribute="trailing" constant="3" id="WtP-WF-YgO"/>
                     <constraint firstItem="oPM-rB-dmn" firstAttribute="leading" secondItem="Emo-rY-tA6" secondAttribute="trailing" constant="10" id="Ypq-yb-oyv"/>
@@ -116,7 +117,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icons8-chevron-right-30" width="30" height="30"/>
+        <image name="Chevron" width="13" height="21"/>
+        <image name="default-img" width="370" height="290"/>
         <image name="icons8-star-30" width="30" height="30"/>
+        <namedColor name="westly green">
+            <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

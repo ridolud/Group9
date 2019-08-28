@@ -42,7 +42,11 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     }
     
     @IBAction func seeAllAction(_ sender: UIButton) {
-        // see all places collection
+        if let category = category {
+            if !isLoading{
+                self.delegate?.didSelectedPlaceCategory(category: category)
+            }
+        }
     }
     
     func didFetchRecords() {
@@ -92,5 +96,9 @@ extension StoreTableViewCell: UICollectionViewDataSource {
 }
 
 protocol StoreTableViewCellDelegate {
+    
     func didSelectedPlace(place: Place)
+    
+    func didSelectedPlaceCategory(category: PlaceCategory)
+    
 }
