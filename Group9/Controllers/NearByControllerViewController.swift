@@ -79,13 +79,13 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
 //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0{
-            return 205
-        }else if indexPath.row == 1{
-            return 280
-        }else{
+//        if indexPath.row == 0{
+//            return 205
+//        }else if indexPath.row == 1{
+//            return 280
+//        }else{
             return 308
-        }
+//        }
     }
     
 }
