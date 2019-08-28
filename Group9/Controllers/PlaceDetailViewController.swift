@@ -27,7 +27,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     var isFavorite = false
     var currentLocation : CLLocation?
     let locationManager = LocationManager.instance
-    var place : Place?
     let store = EKEventStore()
     var event : EKEvent?
     
@@ -46,7 +45,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     func setupPlace() {
         placeNameLabel.text = currentPlace.name
-        placeTypeLabel.text = "Bulk Store"
+        placeTypeLabel.text = currentPlace.category.description
         placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
         placeAddressLabel.text = currentPlace.address
         locationManager.checkCurrentLocation(viewController: self)
@@ -158,9 +157,8 @@ extension PlaceDetailViewController : EKEventEditViewDelegate{
         vc.eventStore = store
         vc.event = EKEvent(eventStore: store)
         vc.event?.location = "Jakarta"
-        let location = CLLocation(latitude: 25.0340, longitude: 121.5645)
-        let structuredLocation = EKStructuredLocation(title: "rumah")
-        structuredLocation.geoLocation = location
+        let structuredLocation = EKStructuredLocation(title: currentPlace.name)
+        structuredLocation.geoLocation = currentPlace.location
         vc.event!.structuredLocation = structuredLocation
         event = vc.event
         
