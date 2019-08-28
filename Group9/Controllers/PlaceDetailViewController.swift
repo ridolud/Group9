@@ -161,7 +161,7 @@ extension PlaceDetailViewController : EKEventEditViewDelegate{
         structuredLocation.geoLocation = currentPlace.location
         vc.event!.structuredLocation = structuredLocation
         event = vc.event
-        
+        print(#function, event?.structuredLocation)
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
             self.present(vc, animated: true, completion: nil)

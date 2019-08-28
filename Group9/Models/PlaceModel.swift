@@ -85,7 +85,7 @@ class PlaceModel: DBModel {
                 kecamatan: self.checkString("kecamatan", record: record),
                 kota: self.checkString("kota", record: record),
                 featureImgUrl: self.checkUrl("feature_img", record: record),
-                location: nil,
+                location: checkLocation(record : record),
                 category: self.checkCategory(record: record)
             )
         )
@@ -94,7 +94,10 @@ class PlaceModel: DBModel {
     private func checkString(_ field: String, record: CKRecord) -> String {
             return (record.value(forKey: field)) != nil ? (record.value(forKey: field) as! String) : ""
     }
-    
+    private func checkLocation(record: CKRecord) -> CLLocation{
+        let loc = CLLocation()
+        return record.value(forKey: "location") != nil ? record.value(forKey: "location") as! CLLocation : loc
+    }
     private func checkCategory(record: CKRecord) -> PlaceCategory {
         let categoryRaw = self.checkString("category", record: record)
         switch categoryRaw {
