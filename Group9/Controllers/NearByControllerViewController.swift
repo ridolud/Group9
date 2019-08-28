@@ -13,7 +13,7 @@ class NearByControllerViewController: UIViewController {
     
     @IBOutlet weak var nearbyTableView: UITableView!
     
-    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .community]
+    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
     
     override func viewDidLoad() {
         super.viewDidLoad()
