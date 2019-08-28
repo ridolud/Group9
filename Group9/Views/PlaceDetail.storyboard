@@ -206,7 +206,9 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="n7v-yC-Wnk" firstAttribute="leading" secondItem="SNK-MD-j8g" secondAttribute="leading" id="1TP-7J-kKR"/>
                                                     <constraint firstItem="BzZ-gR-gsO" firstAttribute="leading" secondItem="SNK-MD-j8g" secondAttribute="leading" constant="12" id="Jbg-4I-1m2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n7v-yC-Wnk" secondAttribute="trailing" id="QiX-Ac-7TS"/>
                                                     <constraint firstItem="n7v-yC-Wnk" firstAttribute="width" secondItem="SNK-MD-j8g" secondAttribute="width" id="kRy-yb-7Ft"/>
                                                     <constraint firstAttribute="trailing" secondItem="BzZ-gR-gsO" secondAttribute="trailing" constant="12" id="tNV-A5-QGE"/>
                                                 </constraints>

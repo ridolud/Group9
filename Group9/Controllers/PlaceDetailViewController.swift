@@ -32,17 +32,19 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         locationManager.allowAccess()
         locationManager.locationDelegate = self
         setupPlace()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.view.backgroundColor = .white
+        super.viewWillAppear(animated)
+        setupNavigationBar()
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setupNavigationBarCancel()
+    }
     func setupPlace() {
         placeNameLabel.text = currentPlace.name
         placeTypeLabel.text = currentPlace.category.description
@@ -55,9 +57,19 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.view.backgroundColor = .clear
         setNeedsStatusBarAppearanceUpdate()
     }
+    func setupNavigationBarCancel(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.view.backgroundColor = .white
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
     
 //    func setupSimilarPlace(){
 //        let wrapper = StoreCollectionView()
