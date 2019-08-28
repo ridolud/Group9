@@ -34,11 +34,11 @@ enum PlaceCategory: String, CustomStringConvertible {
 
 struct Place {
     let id: String
-    let name: String?
-    let address: String?
-    let kelurahan: String?
-    let kecamatan: String?
-    let kota: String?
+    let name: String
+    let address: String
+    let kelurahan: String
+    let kecamatan: String
+    let kota: String
     var featureImgUrl: URL?
     let location: CLLocation?
     let category: PlaceCategory

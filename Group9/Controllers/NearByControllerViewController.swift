@@ -42,10 +42,12 @@ class NearByControllerViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
+    @IBAction func checngeLocationAction(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "newSearchLocation", sender: nil)
+        
+    }
     
-    
-    
-
 }
 
 
@@ -103,18 +105,19 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "webViewSegue" {
-            let viewController: WebViewController = segue.destination as! WebViewController
+            let webViewController: WebViewController = segue.destination as! WebViewController
             
-            viewController.url = sender as! String
+            webViewController.url = sender as! String
+        }
+
+        if segue.identifier == "placeDetail" {
+            let placeDetailViewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+            placeDetailViewController.currentPlace = sender as? Place
             
         }
         
-//        if segue.identifier == "placeDetail" {
-//            let viewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
-//
-//            viewController.place = sender as? Place
-//        }
     }
     
     
