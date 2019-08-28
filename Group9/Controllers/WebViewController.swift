@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class WebViewController:UIViewController{
+class WebViewController:UIViewController, WKNavigationDelegate{
     
     @IBOutlet var webView: WKWebView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -19,24 +19,21 @@ class WebViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: self.url)
+//        webView = WKWebView(frame: self.view.frame)
         
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2671571672, green: 0.4517241716, blue: 0.221950233, alpha: 1)
         
-        webView = WKWebView(frame: self.view.frame)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.isUserInteractionEnabled = true
-        webView.navigationDelegate = self as? WKNavigationDelegate
-        self.view.addSubview(self.webView)
-        let request = URLRequest(url: url!)
-        webView.load(request)
+        webView = WKWebView()
+        webView.navigationDelegate = self
+        view = webView
         
-        // add loadingIndicator
-        self.webView.addSubview(self.loadingIndicator)
-        self.loadingIndicator.startAnimating()
-        self.webView.navigationDelegate = self as? WKNavigationDelegate
-        self.loadingIndicator.hidesWhenStopped = true
+        let url = URL(string: self.url)!
+        webView.load(URLRequest(url: url))
+        
+        
         
     }
     
@@ -44,15 +41,10 @@ class WebViewController:UIViewController{
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        loadingIndicator.stopAnimating()
-    }
-    
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        loadingIndicator.stopAnimating()
-    }
-    
-    
+
+//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//        title = webView.title
+//    }
     
     
     
