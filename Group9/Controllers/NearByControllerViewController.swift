@@ -25,8 +25,6 @@ class NearByControllerViewController: UIViewController {
         nearbyTableView.delegate = self
         self.tabBarController?.tabBar.isHidden = false
         
-        
-        
         //azis
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -36,10 +34,7 @@ class NearByControllerViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+        // code
     }
     
 

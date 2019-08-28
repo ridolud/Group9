@@ -8,31 +8,63 @@
 
 import UIKit
 
-class PlaceCategoryController: UITableViewController {
+class PlaceCategoryController: UITableViewController, DatabaseDelegate {
     
     var category: PlaceCategory!
+    
+    var placeModel = PlaceModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.placeModel.delegate = self
+        self.placeModel.get(ByCategory: category)
+        
         self.title = category.description
+        
+        self.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+    
+    @objc func refreshTable(_ sender: Any) {
+        self.placeModel.get(ByCategory: category)
+    }
+    
+    
+    func didFetchRecords() {
+        print(#function, "execute")
+        self.refreshControl?.endRefreshing()
+        self.tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 2
+        return placeModel.places.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("StoreListTableViewCell", owner: self, options: nil)?.first as! StoreListTableViewCell
         
+        let place = placeModel.places[indexPath.row]
+        
+        cell.storeName.text = place.name
+        cell.storeImage.loadFromUrl(place.featureImgUrl)
+        cell.storeAddress.text = "1.8 km - \(place.kecamatan), \(place.kota)"
+        
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = placeModel.places[indexPath.row]
+        print(#function, place)
+        performSegue(withIdentifier: "placeCategoryToDetailPlace", sender: place)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "placeCategoryToDetailPlace" {
+            let placeDetailViewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+            placeDetailViewController.currentPlace = sender as? Place
+        }
     }
 
 }

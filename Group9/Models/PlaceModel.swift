@@ -58,11 +58,13 @@ class PlaceModel: DBModel {
     }
     
     func get() {
+        self.clearData()
         guard let query = self.query else { return }
         self.fetch(scope: .public, byQuery: query)
     }
     
     func get(ByCategory category: PlaceCategory) {
+        self.clearData()
         let filter = category.rawValue
         self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
         guard let query = self.query else { return }
@@ -113,6 +115,10 @@ class PlaceModel: DBModel {
             }
         }
         return nil
+    }
+    
+    private func clearData() {
+        self.places = []
     }
     
     

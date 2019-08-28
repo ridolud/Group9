@@ -17,13 +17,13 @@
                 <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchNewLocation" id="4tB-ei-vTv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mll-8S-Pk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="964"/>
+            <point key="canvasLocation" x="3296" y="169"/>
         </scene>
         <!--Category-->
         <scene sceneID="7XV-8q-quc">
             <objects>
                 <tableViewController title="Category" id="yZh-k8-TS2" customClass="PlaceCategoryController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXk-3s-KdP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXk-3s-KdP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,10 +42,16 @@
                             <outlet property="delegate" destination="yZh-k8-TS2" id="Lam-86-dfo"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gNL-2V-Wze">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="7My-hG-54E" kind="show" identifier="placeCategoryToDetailPlace" id="DYB-Ld-eDg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ya-4k-D8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3325" y="-502"/>
+            <point key="canvasLocation" x="3419" y="-316"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="4hk-Qf-wiK">
@@ -108,7 +114,7 @@
                 <viewControllerPlaceholder storyboardName="PlaceDetail" referencedIdentifier="PlaceDetailViewController" id="7My-hG-54E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKw-SF-aze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="889"/>
+            <point key="canvasLocation" x="3324" y="113"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ZoM-5Z-mFs">
@@ -116,7 +122,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" id="iCj-nR-RPW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGg-gc-fcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="871"/>
+            <point key="canvasLocation" x="3238" y="222"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="zlZ-5e-shk">
@@ -174,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDg-uz-Sm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3325" y="404"/>
+            <point key="canvasLocation" x="3419" y="591"/>
         </scene>
     </scenes>
     <resources>
@@ -182,4 +188,7 @@
             <color red="0.21176470588235294" green="0.3843137254901961" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DYB-Ld-eDg"/>
+    </inferredMetricsTieBreakers>
 </document>

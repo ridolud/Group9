@@ -43,9 +43,7 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     @IBAction func seeAllAction(_ sender: UIButton) {
         if let category = category {
-            if !isLoading{
-                self.delegate?.didSelectedPlaceCategory(category: category)
-            }
+            self.delegate?.didSelectedPlaceCategory(category: category)
         }
     }
     
@@ -89,7 +87,6 @@ extension StoreTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !isLoading {
             delegate?.didSelectedPlace(place: placeModel.places[indexPath.row])
-            
         }
     }
     
