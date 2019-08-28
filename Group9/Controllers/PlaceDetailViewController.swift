@@ -35,6 +35,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         locationManager.allowAccess()
         locationManager.locationDelegate = self
         setupPlace()
+        setupMap()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +53,18 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         placeAddressLabel.text = currentPlace.address
         locationManager.checkCurrentLocation(viewController: self)
     }
+    
+    func setupMap(){
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = currentPlace.location!.coordinate
+        annotation.title = currentPlace.name
+        let regionRadius :CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegion(center: currentPlace.location!.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapOutlet.setRegion(coordinateRegion, animated: true)
+        mapOutlet.showsUserLocation = true
+        mapOutlet.addAnnotation(annotation)
+    }
+    
 
     func setupNavigationBar(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
