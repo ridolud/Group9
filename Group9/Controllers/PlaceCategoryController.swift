@@ -9,9 +9,13 @@
 import UIKit
 
 class PlaceCategoryController: UITableViewController {
+    
+    var category: PlaceCategory!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = category.description
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

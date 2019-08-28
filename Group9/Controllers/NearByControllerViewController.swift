@@ -100,8 +100,7 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
     }
     
     func didSelectedPlaceCategory(category: PlaceCategory) {
-        performSegue(withIdentifier: "seeAllByCategory", sender: nil)
-//        print(#function, category)
+        performSegue(withIdentifier: "seeAllByCategory", sender: category)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -125,6 +124,13 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
             print(#function, "test")
             
             destinationVC.parsingDelegate = self
+        }
+        
+        if segue.identifier == "seeAllByCategory" {
+            let categoryVC = segue.destination as! PlaceCategoryController
+            if let category: PlaceCategory = sender as? PlaceCategory {
+                categoryVC.category = category
+            }
         }
         
     }

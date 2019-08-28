@@ -107,13 +107,12 @@ class PlaceModel: DBModel {
     
     private func checkUrl(_ field: String, record: CKRecord) -> URL? {
         if let recordFile = record.value(forKey: field) {
-            if let file: CKAsset = (recordFile as! CKAsset) {
-                print(#function, file.fileURL)
+            if let file: CKAsset = recordFile as? CKAsset {
+                print(#function, file.fileURL as Any)
                 return file.fileURL
             }
-        }else{
-            return nil
         }
+        return nil
     }
     
     
