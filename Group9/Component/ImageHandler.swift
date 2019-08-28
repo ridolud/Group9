@@ -12,10 +12,16 @@ import UIKit
 extension UIImageView {
     
     func loadFromUrl(_ url: URL?) {
-        if let url = url {
-            if let data = NSData(contentsOf: url) {
-                self.image = UIImage(data: data as Data)
+        do{
+            let data = try Data(contentsOf: url!)
+            if let image = UIImage(data: data){
+                self.image = image
             }
+            else{
+                print ("couldnt decode image")
+            }
+        }catch{
+            print("url not found")
         }
     }
     

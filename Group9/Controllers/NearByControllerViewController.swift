@@ -52,32 +52,31 @@ class NearByControllerViewController: UIViewController {
 extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedPlaceCategory.count + 2
+        return selectedPlaceCategory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0{
-            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! ArticleTableViewCell
-            
-            cell.articleDelegate = self
-            cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
-            
-            return cell
-        }else if indexPath.row == 1{
-            let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
-            
-            return cell
-        }else{
+//        if indexPath.row == 0{
+//            let cell = Bundle.main.loadNibNamed("ArticleTableViewCell", owner: self, options: nil)?.first as! ArticleTableViewCell
+//
+//            cell.articleDelegate = self
+//            cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
+//
+//            return cell
+//        }else if indexPath.row == 1{
+//            let cell = Bundle.main.loadNibNamed("RecomendedTableViewCell", owner: self, options: nil)?.first as! UITableViewCell
+//
+//            return cell
+//        }else{
             let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
-            let currentIndex = indexPath.row - 2
+            let currentIndex = indexPath.row
             
             cell.delegate = self
-            cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
-            
+            cell.buildUpView(PlaceCategory: self.selectedPlaceCategory[currentIndex])
             return cell
         }
-    }
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{

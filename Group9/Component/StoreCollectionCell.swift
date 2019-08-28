@@ -30,6 +30,8 @@ class StoreCollectionCell: UICollectionViewCell {
         }
     }
     
+    var isLoadingImage = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

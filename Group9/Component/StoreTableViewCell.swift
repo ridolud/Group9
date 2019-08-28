@@ -20,6 +20,8 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     var isLoading = true
     
+    var isLoadingImage = true
+    
     var delegate: StoreTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -29,6 +31,7 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
         storeCollection.delegate = self
         storeCollection.dataSource = self
         placeModel.delegate = self
+        placeModel.emptyPlaces()
         
         let nibName = UINib(nibName: "StoreCollectionCell", bundle:nil)
         storeCollection.register(nibName, forCellWithReuseIdentifier: "storeCell")
@@ -47,6 +50,11 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     func didFetchRecords() {
         isLoading = false
+        storeCollection.reloadData()
+    }
+    
+    func didFetchImage() {
+        isLoadingImage = false
         storeCollection.reloadData()
     }
     
@@ -74,11 +82,13 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         let cell = storeCollection.dequeueReusableCell(withReuseIdentifier: "storeCell", for:  indexPath) as! StoreCollectionCell
         
         cell.isLoading = isLoading
-        
+        cell.isLoadingImage = isLoadingImage
         if !isLoading {
             cell.nameLabel.text = placeModel.places[indexPath.row].name
             cell.addressLabel.text = "1.8 km - \(placeModel.places[indexPath.row].kecamatan!), \(placeModel.places[indexPath.row].kota!) "
-            cell.imagePlace.loadFromUrl(placeModel.places[indexPath.row].featureImgUrl)
+        }
+        
+        if !isLoadingImage {            cell.imagePlace.loadFromUrl(placeModel.places[indexPath.row].featureImgUrl)
         }
         
         return cell

@@ -21,6 +21,8 @@ import UIKit
     
     @objc optional func errorConection(error: Error)
     
+    @objc optional func didFetchImage()
+    
 }
 
 enum RecordType: String {

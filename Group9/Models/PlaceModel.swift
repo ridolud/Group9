@@ -25,7 +25,7 @@ enum PlaceCategory: String, CustomStringConvertible {
         case .food:
             return "Foods & Drinks"
         case .community:
-            return "Comunities"
+            return "Communities"
         case .refill:
             return "Water Refill Spot"
         }
@@ -52,14 +52,28 @@ class PlaceModel: DBModel {
     
     var places = [Place]()
     var temp : String?
+    
     override init() {
         super.init()
+        //emptyPlaces()
         self.query = .init(recordType: RecordType.place.rawValue, predicate: .init(value: true))
+    }
+    
+    func emptyPlaces(){
+        places.removeAll()
     }
     
     func get() {
         guard let query = self.query else { return }
         self.fetch(scope: .public, byQuery: query)
+    }
+    
+    func getImage(ByRecord record: CKRecord) {
+        let filter = checkString("name", record: record)
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "name == %@", filter))
+        guard let query = self.query else { return }
+        print(#function, query)
+        self.fetchImage(scope: .public, byQuery: query)
     }
     
     func get(ByCategory category: PlaceCategory) {
@@ -69,13 +83,9 @@ class PlaceModel: DBModel {
         self.fetch(scope: .public, byQuery: query)
     }
     
-    override func passingData(records: [CKRecord]) {
-        for record in records {
-            self.recordToPlace(record)
-        }
-    }
-    
-    private func recordToPlace(_ record: CKRecord) {
+    override func passingData(record: CKRecord) {
+        print(#function, record.value(forKey: "name")!)
+        
         self.places.append(
             .init(
                 id: record.recordID.recordName,
@@ -84,11 +94,26 @@ class PlaceModel: DBModel {
                 kelurahan: self.checkString("kelurahan", record: record),
                 kecamatan: self.checkString("kecamatan", record: record),
                 kota: self.checkString("kota", record: record),
-                featureImgUrl: self.checkUrl("feature_img", record: record),
+                featureImgUrl: URL(string: "default-img"),
                 location: nil,
                 category: self.checkCategory(record: record)
             )
         )
+        
+        //print(#function, places)
+        
+        DispatchQueue.global(qos: .background).async {
+            self.getImage(ByRecord: record)
+        }
+    }
+    
+    override func passingImage(record : CKRecord, img: CKAsset) {
+        print(#function, record)
+        for i in 0...places.count-1 {
+            if places[i].id == record.recordID.recordName{
+                    self.places[i].changeImageURL(url: self.checkUrl("feature_img", record: record))
+            }
+        }
     }
     
     private func checkString(_ field: String, record: CKRecord) -> String {
@@ -100,23 +125,27 @@ class PlaceModel: DBModel {
         switch categoryRaw {
         case PlaceCategory.store.rawValue:
             return PlaceCategory.store
+        case PlaceCategory.food.rawValue:
+            return PlaceCategory.food
+        case PlaceCategory.refill.rawValue:
+            return PlaceCategory.refill
+        case PlaceCategory.repair.rawValue:
+            return PlaceCategory.repair
         default:
             return PlaceCategory.community
         }
     }
     
-    private func checkUrl(_ field: String, record: CKRecord) -> URL? {
+    private func checkUrl(_ field: String, record: CKRecord) -> URL {
         if let recordFile = record.value(forKey: field) {
-            if let file: CKAsset = (recordFile as! CKAsset) {
-                print(#function, file.fileURL)
-                return file.fileURL
-            }
+            let file = recordFile as! CKAsset
+            print(#function, file.fileURL!)
+            return file.fileURL!
         }else{
-            return nil
+            print(#function, "url cant be opened")
+            return URL(string: "default-img")!
         }
     }
-    
-    
     
 }
 
