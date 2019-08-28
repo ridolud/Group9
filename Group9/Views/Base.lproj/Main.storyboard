@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="2468.1159420289855" y="404.46428571428572"/>
         </scene>
-        <!--PlaceDetail-->
+        <!--Profile-->
         <scene sceneID="ZoM-5Z-mFs">
             <objects>
-                <viewControllerPlaceholder storyboardName="PlaceDetail" id="iCj-nR-RPW" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="iCj-nR-RPW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGg-gc-fcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2467" y="863"/>
