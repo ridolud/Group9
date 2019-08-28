@@ -107,6 +107,7 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
             let viewController: WebViewController = segue.destination as! WebViewController
             
             viewController.url = sender as! String
+            
         }
         
 //        if segue.identifier == "placeDetail" {
@@ -115,6 +116,8 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
 //            viewController.place = sender as? Place
 //        }
     }
+    
+    
     
 }
 
