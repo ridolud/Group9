@@ -20,7 +20,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var favoriteButtonOutlet: UIButton!
     @IBOutlet weak var mapOutlet: MKMapView!
     @IBOutlet weak var reviewButtonOutlet: UIButton!
-    @IBOutlet weak var similarPlaceView: UIView!
+    @IBOutlet weak var similarPlaceView: UITableView!
     
     var currentPlace: Place!
     
@@ -36,6 +36,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         locationManager.locationDelegate = self
         setupPlace()
         setupMap()
+        setupSimilarPlace()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,13 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         mapOutlet.addAnnotation(annotation)
     }
     
+    func setupSimilarPlace(){
+//        let tableView = UITableView(frame: similarPlaceView.frame)
+//        similarPlaceView.addSubview(tableView)
+        similarPlaceView.register(UINib.init(nibName: "StoreTableViewCell", bundle: nil), forCellReuseIdentifier: "storeTableViewCell")
+        similarPlaceView.delegate = self
+        similarPlaceView.dataSource = self
+    }
 
     func setupNavigationBar(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -82,15 +90,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.view.backgroundColor = .white
         setNeedsStatusBarAppearanceUpdate()
     }
-    
-    
-//    func setupSimilarPlace(){
-//        let wrapper = StoreCollectionView()
-//        wrapper.backgroundColor = .white
-//        wrapper.categoryName = "Similar Places"
-//        similarPlaceView.addSubview(wrapper.wrapper!)
-//        view.setNeedsLayout()
-//    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -186,7 +185,6 @@ extension PlaceDetailViewController : EKEventEditViewDelegate{
         structuredLocation.geoLocation = currentPlace.location
         vc.event!.structuredLocation = structuredLocation
         event = vc.event
-        print(#function, event?.structuredLocation)
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
             self.present(vc, animated: true, completion: nil)
@@ -205,4 +203,42 @@ extension PlaceDetailViewController : EKEventEditViewDelegate{
             print("Case default")
         }
     }
+}
+
+extension PlaceDetailViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
+        
+        cell.delegate = self
+        cell.buildUpView(PlaceCategory: currentPlace.category)
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 308
+    }
+}
+
+
+extension PlaceDetailViewController: StoreTableViewCellDelegate {
+    
+    func didSelectedPlace(place: Place) {
+        performSegue(withIdentifier: "placeDetail", sender: place)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "placeDetail" {
+            let placeDetailViewController: PlaceDetailViewController = segue.destination as! PlaceDetailViewController
+            placeDetailViewController.currentPlace = sender as? Place
+            
+        }
+        
+    }
+    
 }
