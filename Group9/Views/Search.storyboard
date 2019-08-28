@@ -134,7 +134,7 @@
         <!--Search Location-->
         <scene sceneID="Kvc-tp-c8a">
             <objects>
-                <viewController storyboardIdentifier="SearchNewLocation" modalPresentationStyle="overFullScreen" id="jbv-ZW-Xdd" customClass="SearchNewLocationViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="jbv-ZW-Xdd" customClass="SearchNewLocationViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dpZ-or-Yo6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Dx9-Bg-fYa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Syz-9v-JaZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchNewLocation" automaticallyAdjustsScrollViewInsets="NO" id="Syz-9v-JaZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X0w-P9-9Zn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -139,10 +139,9 @@ extension SearchNewLocationViewController: UITableViewDelegate, UITableViewDataS
         
         //parsing the data to previus controller with protocol
         
-        parsingDelegate.parsingCityName(with: arrayOfFilteredCity[indexPath.row], isFromSearchVC: true)
-        
-        
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.parsingDelegate.parsingCityName(with: self.arrayOfFilteredCity[indexPath.row], isFromSearchVC: true)
+        }
     }
     
     

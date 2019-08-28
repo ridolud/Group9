@@ -13,7 +13,7 @@ class NearByControllerViewController: UIViewController {
     
     @IBOutlet weak var nearbyTableView: UITableView!
     
-    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .community]
+    let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +42,9 @@ class NearByControllerViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
-    @IBAction func checngeLocationAction(_ sender: UIBarButtonItem) {
-        
-        performSegue(withIdentifier: "newSearchLocation", sender: nil)
-        
-    }
+
     
 }
-
 
 extension NearByControllerViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -118,7 +113,33 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
             
         }
         
+        if segue.identifier == "newSearchLocation" {
+            let nav = segue.destination as! UINavigationController
+            let destinationVC = nav.topViewController as! SearchNewLocationViewController
+            
+            print(#function, "test")
+            
+            destinationVC.parsingDelegate = self
+        }
+        
     }
+    
+}
+
+extension NearByControllerViewController: parsingCityNameProtocol {
+    
+    @IBAction func checngeLocationAction(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "newSearchLocation", sender: nil)
+        
+    }
+    
+    func parsingCityName(with name: String, isFromSearchVC: Bool) {
+        print(#function, name)
+        
+        self.title = name
+    }
+    
     
     
     
