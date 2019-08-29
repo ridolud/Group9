@@ -58,9 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-gU-2qg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-gU-2qg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nearbyTableViewCell" id="1I3-6r-8HM">
@@ -79,6 +78,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oyV-gU-2qg" firstAttribute="top" secondItem="u3a-QO-mdf" secondAttribute="top" id="6fS-KZ-J46"/>
+                            <constraint firstAttribute="bottom" secondItem="oyV-gU-2qg" secondAttribute="bottom" id="U8a-EV-mTz"/>
+                            <constraint firstItem="oyV-gU-2qg" firstAttribute="leading" secondItem="2zC-A0-Cuo" secondAttribute="leading" id="Xsw-H2-O0g"/>
+                            <constraint firstItem="oyV-gU-2qg" firstAttribute="trailing" secondItem="2zC-A0-Cuo" secondAttribute="trailing" id="cdT-ac-oQY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2zC-A0-Cuo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="5M4-15-RGh">
@@ -88,7 +93,7 @@
                                 <segue destination="4tB-ei-vTv" kind="presentation" identifier="newSearchLocation" id="g7E-rU-Cuw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Contact" id="0QP-Bf-jYo">
+                        <barButtonItem key="rightBarButtonItem" image="Fill 5" id="0QP-Bf-jYo">
                             <connections>
                                 <segue destination="iCj-nR-RPW" kind="show" identifier="profile" id="5y5-C3-GGM"/>
                             </connections>
@@ -181,12 +186,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Contact" width="31" height="31"/>
+        <image name="Fill 5" width="31" height="31"/>
         <namedColor name="westly green drak">
             <color red="0.21176470588235294" green="0.3843137254901961" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DYB-Ld-eDg"/>
+        <segue reference="pHl-Gk-nhF"/>
     </inferredMetricsTieBreakers>
 </document>
