@@ -16,6 +16,12 @@
 		2F2986522311442500A0DC9B /* RecomendedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2986502311442500A0DC9B /* RecomendedTableViewCell.swift */; };
 		2F2986532311442500A0DC9B /* RecomendedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F2986512311442500A0DC9B /* RecomendedTableViewCell.xib */; };
 		2F29865523116C0800A0DC9B /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29865423116C0800A0DC9B /* Spot.swift */; };
+		2F400B872317BCF800CBC4F5 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F400B862317BCF800CBC4F5 /* Test.storyboard */; };
+		2F400B892317C8C100CBC4F5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F400B882317C8C100CBC4F5 /* TestViewController.swift */; };
+		2F400B8C2317CC3A00CBC4F5 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F400B8A2317CC3A00CBC4F5 /* TestTableViewCell.swift */; };
+		2F400B8D2317CC3A00CBC4F5 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F400B8B2317CC3A00CBC4F5 /* TestTableViewCell.xib */; };
+		2F400B902317CD4B00CBC4F5 /* InputPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F400B8E2317CD4B00CBC4F5 /* InputPlaceTableViewCell.swift */; };
+		2F400B912317CD4B00CBC4F5 /* InputPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F400B8F2317CD4B00CBC4F5 /* InputPlaceTableViewCell.xib */; };
 		2F4E192C2312AE93003A016C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E192B2312AE93003A016C /* WebViewController.swift */; };
 		2F6EC4D923150CE400A7EDC4 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EC4D623150CE300A7EDC4 /* UIImage.swift */; };
 		2F6EC4DA23150CE400A7EDC4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EC4D723150CE300A7EDC4 /* UIColor.swift */; };
@@ -90,6 +96,12 @@
 		2F2986502311442500A0DC9B /* RecomendedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedTableViewCell.swift; sourceTree = "<group>"; };
 		2F2986512311442500A0DC9B /* RecomendedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendedTableViewCell.xib; sourceTree = "<group>"; };
 		2F29865423116C0800A0DC9B /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		2F400B862317BCF800CBC4F5 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		2F400B882317C8C100CBC4F5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2F400B8A2317CC3A00CBC4F5 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
+		2F400B8B2317CC3A00CBC4F5 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
+		2F400B8E2317CD4B00CBC4F5 /* InputPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPlaceTableViewCell.swift; sourceTree = "<group>"; };
+		2F400B8F2317CD4B00CBC4F5 /* InputPlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		2F4E192B2312AE93003A016C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2F6EC4D623150CE300A7EDC4 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		2F6EC4D723150CE300A7EDC4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -256,6 +268,7 @@
 				7FF8A978230E419F00EA1C71 /* Components */,
 				7FC35815230BCF8600EA761D /* Main.storyboard */,
 				7FC3581D230BCF8700EA761D /* LaunchScreen.storyboard */,
+				2F400B862317BCF800CBC4F5 /* Test.storyboard */,
 				7FC35863230C18C700EA761D /* Search.storyboard */,
 				7FC35865230C19AC00EA761D /* Profile.storyboard */,
 				47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */,
@@ -267,10 +280,12 @@
 			isa = PBXGroup;
 			children = (
 				BE94B575231117CB0000AA27 /* SearchViewController.swift */,
+				2F400B8A2317CC3A00CBC4F5 /* TestTableViewCell.swift */,
 				DC2AE1252315373700867085 /* MyFavoritesViewController.swift */,
 				BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */,
 				7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */,
 				2F4E192B2312AE93003A016C /* WebViewController.swift */,
+				2F400B882317C8C100CBC4F5 /* TestViewController.swift */,
 				47D2CA70230E89E0003EE10E /* PlaceDetailViewController.swift */,
 				47797659231291C200E11725 /* PlaceReviewTableViewController.swift */,
 				4779765B231291E100E11725 /* PlaceNewReviewViewController.swift */,
@@ -306,6 +321,7 @@
 				2F2986442310F58800A0DC9B /* ArticleTableViewCell.swift */,
 				2F29864A231131F200A0DC9B /* RecomendedCollectionViewCell.swift */,
 				2F2986502311442500A0DC9B /* RecomendedTableViewCell.swift */,
+				2F400B8E2317CD4B00CBC4F5 /* InputPlaceTableViewCell.swift */,
 				4779765D231294F400E11725 /* StarTableViewCell.swift */,
 			);
 			path = Component;
@@ -314,6 +330,7 @@
 		7FF8A978230E419F00EA1C71 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2F400B8B2317CC3A00CBC4F5 /* TestTableViewCell.xib */,
 				DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */,
 				7F3AAA5C2313096B00B0B158 /* StoreTableViewCell.xib */,
 				7FF8A97C230E479C00EA1C71 /* StoreCollectionCell.xib */,
@@ -323,6 +340,7 @@
 				2F29864B231131F200A0DC9B /* RecomendedCollectionViewCell.xib */,
 				2F2986512311442500A0DC9B /* RecomendedTableViewCell.xib */,
 				4779765E231294F400E11725 /* StarTableViewCell.xib */,
+				2F400B8F2317CD4B00CBC4F5 /* InputPlaceTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -441,16 +459,19 @@
 			files = (
 				2F2986472310F58800A0DC9B /* ArticleTableViewCell.xib in Resources */,
 				7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */,
+				2F400B912317CD4B00CBC4F5 /* InputPlaceTableViewCell.xib in Resources */,
 				2F2986412310F43200A0DC9B /* ArticleCollectionViewCell.xib in Resources */,
 				7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */,
 				7FC3581F230BCF8700EA761D /* LaunchScreen.storyboard in Resources */,
 				DCE49100231050D800288143 /* ReviewTableViewCell.xib in Resources */,
+				2F400B872317BCF800CBC4F5 /* Test.storyboard in Resources */,
 				2F2986532311442500A0DC9B /* RecomendedTableViewCell.xib in Resources */,
 				47797660231294F400E11725 /* StarTableViewCell.xib in Resources */,
 				47D2CA6F230E83D7003EE10E /* PlaceDetail.storyboard in Resources */,
 				7FC3581C230BCF8700EA761D /* Assets.xcassets in Resources */,
 				2F29864D231131F200A0DC9B /* RecomendedCollectionViewCell.xib in Resources */,
 				7F3AAA5E2313096B00B0B158 /* StoreTableViewCell.xib in Resources */,
+				2F400B8D2317CC3A00CBC4F5 /* TestTableViewCell.xib in Resources */,
 				7FC35817230BCF8600EA761D /* Main.storyboard in Resources */,
 				7FC35864230C18C700EA761D /* Search.storyboard in Resources */,
 				DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */,
@@ -480,6 +501,7 @@
 			files = (
 				7F7AC3C6231529440070C488 /* MainNavigationController.swift in Sources */,
 				DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */,
+				2F400B902317CD4B00CBC4F5 /* InputPlaceTableViewCell.swift in Sources */,
 				7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */,
 				7FCFB8752311CCD0007B3DC9 /* DatabaseEnv.swift in Sources */,
 				DC2AE12823154D4100867085 /* ViewBorder.swift in Sources */,
@@ -490,6 +512,7 @@
 				4779765F231294F400E11725 /* StarTableViewCell.swift in Sources */,
 				DC2AE11E231536EC00867085 /* AccountViewController.swift in Sources */,
 				DC2AE1262315373700867085 /* MyFavoritesViewController.swift in Sources */,
+				2F400B8C2317CC3A00CBC4F5 /* TestTableViewCell.swift in Sources */,
 				4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */,
 				DC2AE1222315371B00867085 /* SignInViewController.swift in Sources */,
 				DC2AE1202315370C00867085 /* MyAccountViewController.swift in Sources */,
@@ -512,6 +535,7 @@
 				2F4E192C2312AE93003A016C /* WebViewController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
 				7F3AAA5D2313096B00B0B158 /* StoreTableViewCell.swift in Sources */,
+				2F400B892317C8C100CBC4F5 /* TestViewController.swift in Sources */,
 				4779765C231291E100E11725 /* PlaceNewReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,7 +714,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4H65A594JP;
+				DEVELOPMENT_TEAM = UUHXR699G4;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,7 +735,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4H65A594JP;
+				DEVELOPMENT_TEAM = UUHXR699G4;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

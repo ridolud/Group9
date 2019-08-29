@@ -10,6 +10,7 @@ import UIKit
 
 
 class NearByControllerViewController: UIViewController {
+    @IBOutlet weak var recommendButton: UIButton!
     
     @IBOutlet weak var nearbyTableView: UITableView!
     
@@ -85,6 +86,16 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             return 308
         }
     }
+    
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        recommendButton.isHidden = true
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        recommendButton.isHidden = false
+//    }
+    
+    
     
 }
 
