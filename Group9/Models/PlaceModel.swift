@@ -64,12 +64,14 @@ class PlaceModel: DBModel {
     }
     
     func get(ByCategory category: PlaceCategory) {
+        print(#function, category)
         self.clearData()
         let filter = category.rawValue
         self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
         guard let query = self.query else { return }
         self.fetch(scope: .public, byQuery: query)
     }
+   
     
     override func passingData(records: [CKRecord]) {
         for record in records {

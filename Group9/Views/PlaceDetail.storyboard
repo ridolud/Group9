@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +42,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="402" height="766"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-RI-diS">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="402" height="345"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="402" height="341"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-o8-vFM">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="340" height="76.5"/>
@@ -83,14 +84,15 @@
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PmM-LX-cm7">
-                                                                        <rect key="frame" x="0.0" y="365" width="339" height="35"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PmM-LX-cm7">
+                                                                        <rect key="frame" x="0.0" y="361" width="402" height="39"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-ss-jXf">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="104" height="35"/>
-                                                                                <color key="backgroundColor" red="0.52156862745098043" green="0.78823529411764703" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <inset key="contentEdgeInsets" minX="30" minY="8" maxX="12" maxY="9"/>
-                                                                                <state key="normal" title="Direction">
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-ss-jXf">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="118.5" height="39"/>
+                                                                                <color key="backgroundColor" name="westly green"/>
+                                                                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="9"/>
+                                                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                <state key="normal" title="Direction" image="location">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                                 <userDefinedRuntimeAttributes>
@@ -102,11 +104,12 @@
                                                                                     <action selector="directionButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="2cc-OA-E8O"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-v0-su2">
-                                                                                <rect key="frame" x="111" y="0.0" width="68" height="35"/>
-                                                                                <color key="backgroundColor" red="0.52156862745098043" green="0.78823529411764703" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <inset key="contentEdgeInsets" minX="30" minY="8" maxX="12" maxY="8"/>
-                                                                                <state key="normal" title="Call">
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-v0-su2">
+                                                                                <rect key="frame" x="125.5" y="0.0" width="77" height="39"/>
+                                                                                <color key="backgroundColor" name="westly green"/>
+                                                                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                <state key="normal" title="Call" image="call">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                                 <userDefinedRuntimeAttributes>
@@ -118,12 +121,12 @@
                                                                                     <action selector="callButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="lQZ-ru-3us"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT2-Nn-dtJ">
-                                                                                <rect key="frame" x="186" y="0.0" width="153" height="35"/>
-                                                                                <color key="backgroundColor" red="0.52156862745098043" green="0.78823529411764703" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                                                <inset key="contentEdgeInsets" minX="30" minY="8" maxX="12" maxY="8"/>
-                                                                                <state key="normal" title="Add to Calendar">
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT2-Nn-dtJ">
+                                                                                <rect key="frame" x="209.5" y="0.0" width="192.5" height="39"/>
+                                                                                <color key="backgroundColor" name="westly green"/>
+                                                                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                <state key="normal" title="Add to Calendar" image="calendar">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                                 <userDefinedRuntimeAttributes>
@@ -152,7 +155,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-oI-C2f">
+                                                                            <mapView clipsSubviews="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-oI-C2f">
                                                                                 <rect key="frame" x="0.0" y="51" width="402" height="200"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="200" id="ezC-fj-XCu"/>
@@ -184,6 +187,7 @@
                                                                 <constraints>
                                                                     <constraint firstItem="JV7-RI-diS" firstAttribute="width" secondItem="bsq-8Y-nGq" secondAttribute="width" identifier="labelWidth" id="cDN-Hq-c83"/>
                                                                     <constraint firstItem="Bfp-HR-jWM" firstAttribute="width" secondItem="bsq-8Y-nGq" secondAttribute="width" id="ckr-6h-rP7"/>
+                                                                    <constraint firstItem="PmM-LX-cm7" firstAttribute="width" secondItem="bsq-8Y-nGq" secondAttribute="width" id="dHX-gF-Dxz"/>
                                                                     <constraint firstItem="87a-M0-xIL" firstAttribute="width" secondItem="bsq-8Y-nGq" secondAttribute="width" identifier="addressWidth" id="wKm-5U-Bpg"/>
                                                                 </constraints>
                                                             </stackView>
@@ -253,6 +257,7 @@
                         <outlet property="callButtonOutlet" destination="iVn-v0-su2" id="4BE-xJ-X9G"/>
                         <outlet property="directionButtonOutlet" destination="OiY-ss-jXf" id="tvC-Hn-n6j"/>
                         <outlet property="favoriteButtonOutlet" destination="zX2-IU-znd" id="byX-6O-JSV"/>
+                        <outlet property="imageOutlet" destination="n7v-yC-Wnk" id="lju-cO-WOn"/>
                         <outlet property="mapOutlet" destination="gbZ-oI-C2f" id="czO-Nj-b33"/>
                         <outlet property="placeAddressLabel" destination="Cya-nB-LY3" id="gL1-ZB-ZtR"/>
                         <outlet property="placeNameLabel" destination="coq-Xl-vWX" id="Nq5-QX-Ibi"/>
@@ -261,6 +266,7 @@
                         <outlet property="reviewButtonOutlet" destination="WyG-dw-s2R" id="Onw-Z7-fye"/>
                         <outlet property="similarPlaceView" destination="YKh-ot-l8J" id="HGJ-uD-jnx"/>
                         <segue destination="Yr8-AG-3eJ" kind="show" identifier="placeDetail" id="LyJ-jl-W9F"/>
+                        <segue destination="tuu-AP-Oxv" kind="show" identifier="seeAllByCategory" id="FZq-8Q-dqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIK-5N-594" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -390,6 +396,14 @@
             </objects>
             <point key="canvasLocation" x="3462.3188405797105" y="-132.58928571428572"/>
         </scene>
+        <!--CategoryView-->
+        <scene sceneID="Qbk-al-uz3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="CategoryView" id="tuu-AP-Oxv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="694-ga-5T0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1675" y="564"/>
+        </scene>
         <!--PlaceDetail-->
         <scene sceneID="oug-sw-ucS">
             <objects>
@@ -400,6 +414,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" width="21" height="21"/>
+        <image name="call" width="16" height="16"/>
         <image name="joao-silas-fLEloWo0xt8-unsplash" width="3204" height="4806"/>
+        <image name="location" width="12" height="18"/>
+        <namedColor name="westly green">
+            <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

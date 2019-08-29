@@ -17,12 +17,12 @@
                 <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchNewLocation" id="4tB-ei-vTv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mll-8S-Pk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3296" y="169"/>
+            <point key="canvasLocation" x="3228" y="136"/>
         </scene>
         <!--Category-->
         <scene sceneID="7XV-8q-quc">
             <objects>
-                <tableViewController title="Category" id="yZh-k8-TS2" customClass="PlaceCategoryController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryView" title="Category" id="yZh-k8-TS2" customClass="PlaceCategoryController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXk-3s-KdP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,6 +43,7 @@
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gNL-2V-Wze">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
@@ -87,11 +88,11 @@
                     <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="5M4-15-RGh">
                         <barButtonItem key="leftBarButtonItem" title="Change Location" id="TYc-Oa-1RE">
                             <connections>
-                                <action selector="checngeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
+                                <action selector="changeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
                                 <segue destination="4tB-ei-vTv" kind="presentation" identifier="newSearchLocation" id="g7E-rU-Cuw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="😳" id="0QP-Bf-jYo">
+                        <barButtonItem key="rightBarButtonItem" image="Contact" id="0QP-Bf-jYo">
                             <connections>
                                 <segue destination="iCj-nR-RPW" kind="show" identifier="profile" id="5y5-C3-GGM"/>
                             </connections>
@@ -184,6 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Contact" width="31" height="31"/>
         <namedColor name="westly green drak">
             <color red="0.21176470588235294" green="0.3843137254901961" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

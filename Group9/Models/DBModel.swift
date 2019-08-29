@@ -30,6 +30,7 @@ class DBModel {
     }
     
     func fetch(scope: CKDatabase.Scope, byQuery query: CKQuery) {
+        print(#function, query)
         let database = self.setScopeDatabase(scope: scope)
         database.perform(query, inZoneWith: nil, completionHandler: {
             (records, error) in
@@ -44,6 +45,7 @@ class DBModel {
             }
         })
     }
+    
     
     private func setScopeDatabase(scope: CKDatabase.Scope) -> CKDatabase {
         switch scope {
