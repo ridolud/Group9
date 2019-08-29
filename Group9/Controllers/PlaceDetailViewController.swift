@@ -154,7 +154,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     func reloadView() {
         currentLocation = locationManager.currentLocation
         distance = Int((currentLocation?.distance(from: currentPlace.location!))!)
-        placeAddressLabel.text = "\(distance/1000) km, \(currentPlace.address)"
+        placeAddressLabel.text = "\(distance/1000000) km, \(currentPlace.address)"
     }
     
 }
