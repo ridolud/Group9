@@ -22,6 +22,7 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     var delegate: StoreTableViewCellDelegate?
     
+    @IBOutlet weak var seeAllButtonOutlet: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -50,15 +51,21 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     func didFetchRecords() {
         isLoading = false
         storeCollection.reloadData()
+        self.delegate?.reloadTableView()
     }
     
     func buildUpView(PlaceCategory category: PlaceCategory) {
         self.category = category
         self.categoryPlace.text = self.category?.description
-        
         // Fetching Data
         placeModel.get(ByCategory: category)
-        
+    }
+    
+    func buildUpSimilar(PlaceCategory category: PlaceCategory){
+        self.category = category
+        self.categoryPlace.text = "Similar Place"
+        // Fetching Data
+        placeModel.get(ByCategory: category)
     }
     
 }
@@ -98,4 +105,5 @@ protocol StoreTableViewCellDelegate {
     
     func didSelectedPlaceCategory(category: PlaceCategory)
     
+    func reloadTableView()
 }

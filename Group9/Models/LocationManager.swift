@@ -17,6 +17,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     var manager = CLLocationManager()
     var currentLocation: CLLocation?
     var currentCity : String?
+    var destinationCity : String?
     var navItem : UINavigationItem?
     var viewController : UIViewController?
     

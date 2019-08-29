@@ -21,6 +21,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var mapOutlet: MKMapView!
     @IBOutlet weak var reviewButtonOutlet: UIButton!
     @IBOutlet weak var similarPlaceView: UITableView!
+    @IBOutlet weak var imageOutlet: UIImageView!
     
     var currentPlace: Place!
     
@@ -33,8 +34,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.allowAccess()
-        locationManager.locationDelegate = self
         setupPlace()
         setupMap()
         setupSimilarPlace()
@@ -49,11 +48,15 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         setupNavigationBarCancel()
     }
     func setupPlace() {
-        locationManager.checkCurrentLocation()
         placeNameLabel.text = currentPlace.name
         placeTypeLabel.text = currentPlace.category.description
         placeTimeLabel.text = "Monday - Sunday, 10AM - 10PM"
-        placeAddressLabel.text = "\(distance), \(currentPlace.address)"
+
+        currentLocation = locationManager.currentLocation
+        distance = Int((currentLocation?.distance(from: currentPlace.location!))!)
+        placeAddressLabel.text = "\(distance/1000) km, \(currentPlace.address)"
+        
+        imageOutlet.loadFromUrl(currentPlace.featureImgUrl)
     }
     
     func setupMap(){
@@ -150,13 +153,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     @IBAction func reviewButtonAction(_ sender: Any) {
     }
-    
-    func reloadView() {
-        currentLocation = locationManager.currentLocation
-        distance = Int((currentLocation?.distance(from: currentPlace.location!))!)
-        placeAddressLabel.text = "\(distance/1000) km, \(currentPlace.address)"
-    }
-    
 }
 
 import EventKitUI
@@ -215,8 +211,8 @@ extension PlaceDetailViewController : UITableViewDelegate, UITableViewDataSource
         let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
         
         cell.delegate = self
-        cell.buildUpView(PlaceCategory: currentPlace.category)
-        
+        cell.buildUpSimilar(PlaceCategory: currentPlace.category)
+//        cell.seeAllButtonOutlet.isHidden = true
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -225,7 +221,17 @@ extension PlaceDetailViewController : UITableViewDelegate, UITableViewDataSource
 }
 
 
-extension PlaceDetailViewController: StoreTableViewCellDelegate {
+extension PlaceDetailViewController: StoreTableViewCellDelegate{
+    func reloadTableView() {
+//        similarPlaceView.reloadData()
+    }
+    
+    
+    func didSelectedPlaceCategory(category: PlaceCategory) {
+        performSegue(withIdentifier: "seeAllByCategory", sender: category)
+
+    }
+    
     
     func didSelectedPlaceCategory(category: PlaceCategory) {
         //
@@ -243,7 +249,12 @@ extension PlaceDetailViewController: StoreTableViewCellDelegate {
             placeDetailViewController.currentPlace = sender as? Place
             
         }
+        if segue.identifier == "seeAllByCategory" {
+            let destinationVC: PlaceCategoryController = segue.destination as! PlaceCategoryController
+            if let category: PlaceCategory = sender as? PlaceCategory {
+                destinationVC.category = category
+            }
+        }
         
     }
-    
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class StoreCollectionCell: UICollectionViewCell {
     
@@ -41,8 +42,9 @@ class StoreCollectionCell: UICollectionViewCell {
     
     func loadPlace(place: Place) {
         self.place = place
+        let distance = Int((place.location?.distance(from: LocationManager.instance.currentLocation!))!)
         nameLabel.text = self.place.name
-        addressLabel.text = "1.8 km - \(self.place.kecamatan), \(self.place.kota) "
+        addressLabel.text = "\(distance/1000) km - \(self.place.kecamatan), \(self.place.kota) "
         imagePlace.loadFromUrl(self.place.featureImgUrl)
     }
 

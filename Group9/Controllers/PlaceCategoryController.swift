@@ -19,7 +19,6 @@ class PlaceCategoryController: UITableViewController, DatabaseDelegate {
         
         self.placeModel.delegate = self
         self.placeModel.get(ByCategory: category)
-        
         self.title = category.description
         
         self.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
@@ -48,8 +47,8 @@ class PlaceCategoryController: UITableViewController, DatabaseDelegate {
         
         cell.storeName.text = place.name
         cell.storeImage.loadFromUrl(place.featureImgUrl)
-        cell.storeAddress.text = "1.8 km - \(place.kecamatan), \(place.kota)"
-        
+        let distance = Int(((LocationManager.instance.currentLocation?.distance(from: place.location!))!))
+        cell.storeAddress.text = "\(distance/1000) km - \(place.kecamatan), \(place.kota)"
         
         return cell
     }

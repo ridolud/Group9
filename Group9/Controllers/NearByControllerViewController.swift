@@ -9,15 +9,17 @@
 import UIKit
 
 
-class NearByControllerViewController: UIViewController {
+class NearByControllerViewController: UIViewController, LocationManagerDelegate {
     
     @IBOutlet weak var nearbyTableView: UITableView!
+    let locationManager = LocationManager.instance
     
     let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupNavBar()
+        setupLocation()
         
         self.nearbyTableView.register(UINib.init(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "articleTableViewCell")
         self.nearbyTableView.register(UINib.init(nibName: "RecomendedTableViewCell", bundle: nil), forCellReuseIdentifier: "recomendedTableViewCell")
@@ -27,18 +29,37 @@ class NearByControllerViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         
         //azis
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+        refreshTable()
+    }
+    
+    func refreshTable(){
+        nearbyTableView.reloadData()
+        
+    }
+    
+    func setupNavBar(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // code
+    func setupLocation(){
+        locationManager.locationDelegate = self
+        locationManager.allowAccess()
+        locationManager.checkCurrentLocation()
     }
     
-
+    func reloadView() {
+        self.title = locationManager.currentCity
+        print(#function, locationManager.currentCity)
+    }
+    
     
 }
 
@@ -56,12 +77,15 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
             
             return cell
+            
         }else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "recomendedTableViewCell") as! RecomendedTableViewCell
+            cell.recommendedDelegate = self
+            cell.buildUpView(PlaceCategory: .store
+            )
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "storeTableViewCell") as! StoreTableViewCell
-//            let cell = Bundle.main.loadNibNamed("StoreTableViewCell", owner: self, options: nil)?.first as! StoreTableViewCell
             let currentIndex = indexPath.row - 2
             
             cell.delegate = self
@@ -83,7 +107,17 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
     
 }
 
-extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate {
+extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate, RecommendedTableViewCellDelegate {
+    
+    func reloadTableView(){
+        print(#function)
+//        nearbyTableView.reloadData()
+    }
+    
+    func didSelectedRecommended(place: Place) {
+        performSegue(withIdentifier: "placeDetail", sender: place)
+    }
+    
     
     func didSelectedPlace(place: Place) {
         performSegue(withIdentifier: "placeDetail", sender: place)
@@ -134,21 +168,14 @@ extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTab
 
 extension NearByControllerViewController: parsingCityNameProtocol {
     
-    @IBAction func checngeLocationAction(_ sender: UIBarButtonItem) {
-        
+    @IBAction func changeLocationAction(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "newSearchLocation", sender: nil)
-        
     }
     
-    func parsingCityName(with name: String, isFromSearchVC: Bool) {
+    func parsingCityName(with name: String) {
         print(#function, name)
-        
-        self.title = name
+            self.title = name
     }
-    
-    
     
     
 }
-
-
