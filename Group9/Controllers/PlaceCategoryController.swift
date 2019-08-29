@@ -21,12 +21,12 @@ class PlaceCategoryController: UITableViewController, DatabaseDelegate {
         self.placeModel.get(ByCategory: category)
         self.title = category.description
         
-        self.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+       //self.refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged) //disable refresher
     }
     
-    @objc func refreshTable(_ sender: Any) {
-        self.placeModel.get(ByCategory: category)
-    }
+//    @objc func refreshTable(_ sender: Any) { //disable refresher
+//        self.placeModel.get(ByCategory: category)
+//    }
     
     
     func didFetchRecords() {

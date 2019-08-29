@@ -22,7 +22,7 @@
         <!--Category-->
         <scene sceneID="7XV-8q-quc">
             <objects>
-                <tableViewController storyboardIdentifier="CategoryView" title="Category" id="yZh-k8-TS2" customClass="PlaceCategoryController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryView" title="Category" clearsSelectionOnViewWillAppear="NO" id="yZh-k8-TS2" customClass="PlaceCategoryController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXk-3s-KdP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,10 +42,6 @@
                             <outlet property="delegate" destination="yZh-k8-TS2" id="Lam-86-dfo"/>
                         </connections>
                     </tableView>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="gNL-2V-Wze">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                     <connections>
                         <segue destination="7My-hG-54E" kind="show" identifier="placeCategoryToDetailPlace" id="DYB-Ld-eDg"/>
                     </connections>
