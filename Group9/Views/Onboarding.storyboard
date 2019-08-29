@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="zeA-gX-2qZ">
+            <objects>
+                <viewController id="b83-Ya-u0H" customClass="OnboardingViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GmV-Qh-JCU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="yjc-GT-B2S">
+                                <rect key="frame" x="0.0" y="90" width="414" height="444"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfF-DK-LMG">
+                                        <rect key="frame" x="113.5" y="0.0" width="187" height="53"/>
+                                        <string key="text">Hello! Welcome to
+Wastly</string>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.21176470589999999" green="0.38431372549999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-go-dep">
+                                        <rect key="frame" x="0.0" y="66" width="414" height="328"/>
+                                        <color key="backgroundColor" red="0.95018929240000005" green="0.55348438020000001" blue="0.066253565249999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7bO-ag-hya">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="FJw-49-9ds">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="PUr-3P-S24">
+                                        <rect key="frame" x="187.5" y="407" width="39" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.21176470589999999" green="0.38431372549999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </pageControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="444" id="e5a-dO-E94"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="wzH-02-0cL">
+                                <rect key="frame" x="100.5" y="562" width="213.5" height="297"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUQ-KV-4P0">
+                                        <rect key="frame" x="47.5" y="0.0" width="118" height="48"/>
+                                        <color key="backgroundColor" red="0.44705882352941173" green="0.61568627450980395" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="RvQ-PE-ea3"/>
+                                            <constraint firstAttribute="width" constant="118" id="yyZ-Rv-say"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInButtonTapped:" destination="b83-Ya-u0H" eventType="touchUpInside" id="xlQ-N5-r3n"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LEg-P0-zdK">
+                                        <rect key="frame" x="0.0" y="77" width="213.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have no account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y36-aj-4YV">
+                                                <rect key="frame" x="0.0" y="0.0" width="126.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.21176470589999999" green="0.38431372549999998" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIK-Hv-ap7">
+                                                <rect key="frame" x="128.5" y="0.0" width="85" height="30"/>
+                                                <state key="normal" title="register now"/>
+                                                <connections>
+                                                    <action selector="registerButtonTapped:" destination="b83-Ya-u0H" eventType="touchUpInside" id="Bvb-TP-Xl2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0x-ez-8e4">
+                                        <rect key="frame" x="13.5" y="136" width="186" height="38"/>
+                                        <color key="backgroundColor" red="0.2196078431372549" green="0.31372549019607843" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="BZx-cP-IpS"/>
+                                            <constraint firstAttribute="width" constant="186" id="FUh-oM-11p"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="    Sign in with Facebook" image="facebook_img">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInWithFacebookButtonTapped:" destination="b83-Ya-u0H" eventType="touchUpInside" id="iN4-Cn-gtC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lA-c0-Tez">
+                                        <rect key="frame" x="13.5" y="203" width="186" height="38"/>
+                                        <color key="backgroundColor" red="0.74509803921568629" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="186" id="U59-S5-5Do"/>
+                                            <constraint firstAttribute="height" constant="38" id="zwb-eJ-jG8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="    Sign in with Google" image="google_img">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInWithGoogleButtonTapped:" destination="b83-Ya-u0H" eventType="touchUpInside" id="hSb-pJ-qvY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IB-KR-m9q">
+                                        <rect key="frame" x="55.5" y="270" width="102" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="Skip and continue"/>
+                                        <connections>
+                                            <action selector="skipAndContinueButtonTapped:" destination="b83-Ya-u0H" eventType="touchUpInside" id="Hix-FO-VZb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wzH-02-0cL" firstAttribute="top" secondItem="yjc-GT-B2S" secondAttribute="bottom" constant="28" id="1Lo-8Z-LE2"/>
+                            <constraint firstItem="Uus-7w-z1Z" firstAttribute="bottom" secondItem="wzH-02-0cL" secondAttribute="bottom" constant="3" id="8V9-JY-qpo"/>
+                            <constraint firstItem="wzH-02-0cL" firstAttribute="centerX" secondItem="GmV-Qh-JCU" secondAttribute="centerX" id="9PZ-Wi-kU5"/>
+                            <constraint firstItem="yjc-GT-B2S" firstAttribute="leading" secondItem="Uus-7w-z1Z" secondAttribute="leading" id="H4o-sQ-kYS"/>
+                            <constraint firstItem="yjc-GT-B2S" firstAttribute="trailing" secondItem="Uus-7w-z1Z" secondAttribute="trailing" id="PP8-vD-pbN"/>
+                            <constraint firstItem="yjc-GT-B2S" firstAttribute="top" secondItem="Uus-7w-z1Z" secondAttribute="top" constant="46" id="XV5-W5-jRB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uus-7w-z1Z"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionViewOutlet" destination="Rdi-go-dep" id="8hc-0c-E6l"/>
+                        <outlet property="pageControlOutlet" destination="PUr-3P-S24" id="sZ6-9O-vO2"/>
+                        <outlet property="welcomeTextOutlet" destination="WfF-DK-LMG" id="b4X-EK-PjL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcF-3D-sdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook_img" width="19" height="17"/>
+        <image name="google_img" width="16" height="17"/>
+    </resources>
+</document>

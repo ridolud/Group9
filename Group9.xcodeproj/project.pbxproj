@@ -48,6 +48,11 @@
 		BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B573231029AD0000AA27 /* LocationManager.swift */; };
 		BE94B576231117CB0000AA27 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B575231117CB0000AA27 /* SearchViewController.swift */; };
 		BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */; };
+		BEDDCD072316D54F000354F0 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDDCD062316D54F000354F0 /* Onboarding.storyboard */; };
+		BEDDCD092316D581000354F0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDCD082316D581000354F0 /* OnboardingViewController.swift */; };
+		BEDDCD0B2316D628000354F0 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDCD0A2316D628000354F0 /* OnboardingModel.swift */; };
+		BEDDCD0E2316D78B000354F0 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDDCD0C2316D78B000354F0 /* OnboardingCollectionViewCell.swift */; };
+		BEDDCD0F2316D78B000354F0 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEDDCD0D2316D78B000354F0 /* OnboardingCollectionViewCell.xib */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 		DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490FD231050D800288143 /* ReviewTableViewCell.swift */; };
@@ -120,6 +125,11 @@
 		BE94B573231029AD0000AA27 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BE94B575231117CB0000AA27 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewLocationViewController.swift; sourceTree = "<group>"; };
+		BEDDCD062316D54F000354F0 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		BEDDCD082316D581000354F0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BEDDCD0A2316D628000354F0 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		BEDDCD0C2316D78B000354F0 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		BEDDCD0D2316D78B000354F0 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 		DCE490FD231050D800288143 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -228,6 +238,7 @@
 				BE94B573231029AD0000AA27 /* LocationManager.swift */,
 				7FCFB8742311CCD0007B3DC9 /* DatabaseEnv.swift */,
 				2F29865423116C0800A0DC9B /* Spot.swift */,
+				BEDDCD0A2316D628000354F0 /* OnboardingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 				7FC35863230C18C700EA761D /* Search.storyboard */,
 				7FC35865230C19AC00EA761D /* Profile.storyboard */,
 				47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */,
+				BEDDCD062316D54F000354F0 /* Onboarding.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +268,7 @@
 				47797659231291C200E11725 /* PlaceReviewTableViewController.swift */,
 				4779765B231291E100E11725 /* PlaceNewReviewViewController.swift */,
 				7F7AC3C5231529440070C488 /* MainNavigationController.swift */,
+				BEDDCD082316D581000354F0 /* OnboardingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,6 +293,7 @@
 				2F29864A231131F200A0DC9B /* RecomendedCollectionViewCell.swift */,
 				2F2986502311442500A0DC9B /* RecomendedTableViewCell.swift */,
 				4779765D231294F400E11725 /* StarTableViewCell.swift */,
+				BEDDCD0C2316D78B000354F0 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -296,6 +310,7 @@
 				2F29864B231131F200A0DC9B /* RecomendedCollectionViewCell.xib */,
 				2F2986512311442500A0DC9B /* RecomendedTableViewCell.xib */,
 				4779765E231294F400E11725 /* StarTableViewCell.xib */,
+				BEDDCD0D2316D78B000354F0 /* OnboardingCollectionViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -416,6 +431,7 @@
 				7FC35866230C19AC00EA761D /* Profile.storyboard in Resources */,
 				2F2986412310F43200A0DC9B /* ArticleCollectionViewCell.xib in Resources */,
 				7FF8A97E230E479C00EA1C71 /* StoreCollectionCell.xib in Resources */,
+				BEDDCD0F2316D78B000354F0 /* OnboardingCollectionViewCell.xib in Resources */,
 				7FC3581F230BCF8700EA761D /* LaunchScreen.storyboard in Resources */,
 				DCE49100231050D800288143 /* ReviewTableViewCell.xib in Resources */,
 				2F2986532311442500A0DC9B /* RecomendedTableViewCell.xib in Resources */,
@@ -427,6 +443,7 @@
 				7FC35817230BCF8600EA761D /* Main.storyboard in Resources */,
 				7FC35864230C18C700EA761D /* Search.storyboard in Resources */,
 				DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */,
+				BEDDCD072316D54F000354F0 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +472,7 @@
 				DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */,
 				7FF8A96D230D46F600EA1C71 /* PlaceModel.swift in Sources */,
 				7FCFB8752311CCD0007B3DC9 /* DatabaseEnv.swift in Sources */,
+				BEDDCD0B2316D628000354F0 /* OnboardingModel.swift in Sources */,
 				7FF8A97D230E479C00EA1C71 /* StoreCollectionCell.swift in Sources */,
 				BE94B574231029AD0000AA27 /* LocationManager.swift in Sources */,
 				2F29864C231131F200A0DC9B /* RecomendedCollectionViewCell.swift in Sources */,
@@ -467,6 +485,7 @@
 				DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */,
 				7F7AC3C42313C22E0070C488 /* ImageHandler.swift in Sources */,
 				2F2986462310F58800A0DC9B /* ArticleTableViewCell.swift in Sources */,
+				BEDDCD092316D581000354F0 /* OnboardingViewController.swift in Sources */,
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
 				2F2986402310F43200A0DC9B /* ArticleCollectionViewCell.swift in Sources */,
 				2F2986522311442500A0DC9B /* RecomendedTableViewCell.swift in Sources */,
@@ -476,6 +495,7 @@
 				2F4E192C2312AE93003A016C /* WebViewController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
 				7F3AAA5D2313096B00B0B158 /* StoreTableViewCell.swift in Sources */,
+				BEDDCD0E2316D78B000354F0 /* OnboardingCollectionViewCell.swift in Sources */,
 				4779765C231291E100E11725 /* PlaceNewReviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
