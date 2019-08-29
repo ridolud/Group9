@@ -10,21 +10,45 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
+    @IBOutlet weak var accountButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//        if segue.identifier == "SignInSegue"{
+//            let destination = segue.destination as! SignInViewController
+//            destination.delegate = self
+//        }
+        
+//        if segue.identifier == "SignUpSegue"{
+//            let destination = segue.destination as! SignUpViewController
+//            destination.delegate = self
+//        }
     }
-    */
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "MyAcountSegue" {
+            if currentUser() == nil{
+//                accountButton.setTitle("Sign In", for: .normal)
+                performSegue(withIdentifier: "SignInSegue", sender: self)
+                return false
+            }
+        }
+        return true
+    }
 
 }
+
+//extension AccountViewController: SignInViewControllerDelegate{
+////    func loginToRegister() {
+////        performSegue(withIdentifier: "SignUpSegue", sender: self)
+////    }
+//    func registerToLogIn() {
+//        performSegue(withIdentifier: "SignInSegue", sender: self)
+//    }
+//}

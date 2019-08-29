@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyAccountViewController: UIViewController {
+class MyAccountViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -22,6 +22,8 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var viewPhone: UIView!
     @IBOutlet weak var viewLocation: UIView!
     @IBOutlet weak var button: UIButton!
+    
+    var user: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,10 @@ class MyAccountViewController: UIViewController {
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
     }
     
+    @IBAction func logOutButton(_ sender: Any) {
+    self.navigationController?.popToRootViewController(animated: true)
+        UserDefaults.standard.set("false", forKey: "hasLogin")
+    }
     
     
    

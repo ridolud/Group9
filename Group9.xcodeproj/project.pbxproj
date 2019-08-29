@@ -54,6 +54,7 @@
 		DC2AE1242315372600867085 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1232315372600867085 /* SignUpViewController.swift */; };
 		DC2AE1262315373700867085 /* MyFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1252315373700867085 /* MyFavoritesViewController.swift */; };
 		DC2AE12823154D4100867085 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE12723154D4100867085 /* ViewBorder.swift */; };
+		DC2AE12A231693F000867085 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE129231693F000867085 /* UserData.swift */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 		DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490FD231050D800288143 /* ReviewTableViewCell.swift */; };
@@ -132,6 +133,7 @@
 		DC2AE1232315372600867085 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DC2AE1252315373700867085 /* MyFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewController.swift; sourceTree = "<group>"; };
 		DC2AE12723154D4100867085 /* ViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewBorder.swift; path = Group9/Controllers/ViewBorder.swift; sourceTree = SOURCE_ROOT; };
+		DC2AE129231693F000867085 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 		DCE490FD231050D800288143 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				BE94B573231029AD0000AA27 /* LocationManager.swift */,
 				7FCFB8742311CCD0007B3DC9 /* DatabaseEnv.swift */,
 				2F29865423116C0800A0DC9B /* Spot.swift */,
+				DC2AE129231693F000867085 /* UserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */,
 				BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */,
 				DC2AE1242315372600867085 /* SignUpViewController.swift in Sources */,
+				DC2AE12A231693F000867085 /* UserData.swift in Sources */,
 				7FCFB8732311CCA9007B3DC9 /* DBModel.swift in Sources */,
 				2F4E192C2312AE93003A016C /* WebViewController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
