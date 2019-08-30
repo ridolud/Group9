@@ -27,7 +27,7 @@ class MyAccountViewController: UIViewController, UINavigationControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
         customUIComponent()
     }
     
@@ -41,9 +41,26 @@ class MyAccountViewController: UIViewController, UINavigationControllerDelegate 
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
     }
     
-    @IBAction func logOutButton(_ sender: Any) {
+    func loadData(){
+        profilePicture.image = #imageLiteral(resourceName: "dummyPhoto")
+        name.text = "Richard"
+        email.text = "guest123@gmail.com"
+        dob.text = "1993/11/20"
+        phone.text = "084587736629"
+        location.text = "Jakarta"
+        
+    }
+    
+    @IBAction func closeAction(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func logOutButton(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "nearByViewController") as! NearByControllerViewController
+        self.navigationController?.pushViewController(newViewController, animated: false)
         UserDefaults.standard.set("false", forKey: "hasLogin")
+       
     }
     
     

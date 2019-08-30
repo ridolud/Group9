@@ -8,47 +8,27 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var accountButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupNavigationBar()
     }
     
+    func setupNavigationBar(){
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SignInSegue"{
-//            let destination = segue.destination as! SignInViewController
-//            destination.delegate = self
-//        }
-//
-////        if segue.identifier == "SignUpSegue"{
-////            let destination = segue.destination as! SignUpViewController
-////            destination.delegate = self
-////        }
-//    }
-    
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "MyAcountSegue" {
-            if currentUser() == nil{
-//                accountButton.setTitle("Sign In", for: .normal)
-                performSegue(withIdentifier: "SignInSegue", sender: self)
-                return false
-            }
+    @IBAction func accountAction(_ sender: Any) {
+        if UserDefaults.standard.string(forKey: "hasLogin") == "true" {
+            performSegue(withIdentifier: "myAccountSegue", sender: self)
+        }else{
+            performSegue(withIdentifier: "SignInSegue", sender: self)
         }
-        return true
     }
-
 }
-
-//extension AccountViewController: SignInViewControllerDelegate, SignUpViewControllerDelegate{
-//    func loginToRegister() {
-//        performSegue(withIdentifier: "SignUpSegue", sender: self)
-//    }
-//    func registerToLogIn() {
-//        performSegue(withIdentifier: "SignInSegue", sender: self)
-//    }
-//}

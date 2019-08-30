@@ -9,9 +9,6 @@
 import UIKit
 import CloudKit
 
-protocol SignUpViewControllerDelegate {
-    func registerToLogIn()
-}
 class SignUpViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameTF: UITextField!
@@ -20,68 +17,49 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var locationTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
     @IBOutlet weak var conPassTF: UITextField!
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var button: UIButton!
-    
-    var delegate: SignUpViewControllerDelegate?
-    
-    let publicDatabase = CKContainer.default().publicCloudDatabase
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        infoLabel.isHidden = true
         customUIElement()
     }
     
     func customUIElement(){
         button.layer.cornerRadius = 12
     }
-    
-//    func saveRecord(){
-//        let userRecord = CKRecord(recordType: "User")
-//        userRecord["name"] = nameTF.text! as NSString
-//        userRecord["email"] = emailTF.text! as NSString
-//        userRecord["phone"] = phoneTF.text! as NSString
-//        userRecord["location"] = locationTF.text! as NSString
-//        userRecord["password"] = passTF.text! as NSString
-//        userRecord["confirmPassword"] = conPassTF.text! as NSString
-//
-//        publicDatabase.save(userRecord) {
-//            (record, error) in
-//            if let error = error {
-//                print("LogErrorDB \(error)")
-//                DispatchQueue.main.async {
-//                    self.alert(message: "Failed : \(error)", title: "Error")
-//                }
-//                return
-//            }
-//            print("Data saved")
-//            DispatchQueue.main.async {
-//                self.alert(message: "Registered", title: "Alert")
-//            }
-//        }
-//    }
-    
+ 
     @IBAction func signUpButton(_ sender: Any) {
-//        if nameTF.text!.isEmpty || emailTF.text!.isEmpty || phoneTF.text!.isEmpty || locationTF.text!.isEmpty || passTF.text!.isEmpty || conPassTF.text!.isEmpty{
-//            DispatchQueue.main.async {
-//                self.alert(message: "All text field must be filled", title: "Alert")
-//            }
-//        } else{
-//            saveRecord()
-//        }
-//        self.navigationController?.popToRootViewController(animated: true)
-        UserDefaults.standard.set("true", forKey: "hasLogin")
-//        performSegue(withIdentifier: "DoneSignUpSegue", sender: self)
-//        self.dismiss(animated: true, completion: nil)
-        self.delegate?.registerToLogIn()
+        let name = nameTF.text!
+        let email = emailTF.text!
+        let phone = phoneTF.text!
+        let location = locationTF.text!
+        let pass = passTF.text!
+        let conPass = conPassTF.text!
+        if email.isEmpty == true || pass.isEmpty == true || name.isEmpty == true || phone.isEmpty == true || location.isEmpty == true || conPass.isEmpty == true{
+            self.infoLabel.isHidden = false
+            self.infoLabel.text = "All textfield must be filled"
+        }else{
+            if pass != conPass{
+                self.infoLabel.isHidden = false
+                self.infoLabel.text = "Password are not matching"
+            }else{
+                UserDefaults.standard.set("true", forKey: "hasLogin")
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "nearByViewController") as! NearByControllerViewController
+                self.navigationController?.pushViewController(newViewController, animated: false)
+            }
+        }
     }
     
     @IBAction func logInAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        self.delegate?.registerToLogIn()
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        self.navigationController?.pushViewController(nextVC, animated: false)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController
+        self.navigationController?.pushViewController(nextVC, animated: false)
     }
 }

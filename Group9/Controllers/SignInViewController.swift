@@ -9,10 +9,6 @@
 import UIKit
 import CloudKit
 
-protocol SignInViewControllerDelegate: class {
-    func loginToRegister()
-}
-
 class SignInViewController: UIViewController, UINavigationControllerDelegate {
    
     @IBOutlet weak var emailTF: UITextField!
@@ -20,149 +16,47 @@ class SignInViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
     
-    let publicDatabase = CKContainer.default().publicCloudDatabase
-    weak var delegate: SignInViewControllerDelegate?
-    var isNotRegistered = true
-
-    var userRecords = [CKRecord]()
-    var users = [User]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         infoLabel.isHidden = true
         setupNavigationBar()
-//        retrieve()
         customUIElement()
     }
     
     func customUIElement(){
-//        emailTF.frame.size.height = 48
-//        passTF.frame.size.height = 48
         button.layer.cornerRadius = 12
 
     }
 
-//    func retrieve(){
-//        let query = CKQuery(recordType: "UserData", predicate: NSPredicate(value: true))
-//        
-//        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-//            guard let records = records else {return} //Guard pasti return
-//            let sortRecords = records.sorted(by: {$0.creationDate! > $1.creationDate!})
-//            //            self.userRecords = sortRecords
-//            //            print(self.userRecords)
-//            
-//            for record in sortRecords{
-//                self.users.append(User(record: record))
-//            }
-//        }
-//    }
-    
-//    func checkEmailRegistered(email: String) {
-//        let predicate = NSPredicate(format: "email ==%@", email)
-//        let query = CKQuery(recordType: "User" , predicate: predicate)
-//        
-//        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            } else {
-//                guard let records = records else {return}
-//                if records.count > 0 {
-//                    print("record count \(records.count), false")
-//                    self.isNotRegistered = false
-//                } else {
-//                    print("record = 0, true")
-//                    self.isNotRegistered = true
-//                }
-//                self.login()
-//            }
-//        }
-//    }
-//    
-//    
-//    func login (){
-//        let email = emailTF.text!
-//        let password = passTF.text!
-//        if (isNotRegistered){
-//            DispatchQueue.main.async {
-//                self.infoLabel.isHidden = false
-//                self.infoLabel.text = "Email Unregistered"
-//            }
-//        } else {
-//            
-//            for user in users{
-//                if email == user.email! {
-//                    
-//                    if password == user.password! {
-//                        DispatchQueue.main.async {
-//                            self.infoLabel.text = "Login Success"
-//                            self.performSegue(withIdentifier: "myAccount", sender: self)
-//                        }
-//                        print("break...")
-//                    } else {
-//                        DispatchQueue.main.async {
-//                            self.infoLabel.text = "Wrong Password"
-//                        }
-//                    }
-//                    break
-//                }
-//            }
-//        }
-//    }
-//
-    
-    func signIn(){
-        let email = emailTF.text!
-        let password = passTF.text!
-        if email.isEmpty == true || password.isEmpty == true{
-            self.infoLabel.isHidden = false
-            self.infoLabel.text = "All text field must be filled"
-        } else {
-            if email == currentUser()?.email{
-                if password == currentUser()?.password{
-                    UserDefaults.standard.set("true", forKey: "hasLogin")
-                    self.dismiss(animated: true, completion: nil)
-                }
-                else{
-                    self.infoLabel.text = "Worng Password"
-                }
-            }
-        }
-    }
-    
     func setupNavigationBar(){
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SignUpSegue"{
-//            let destination = segue.destination as! SignUpViewController
-//            destination.delegate = self
-//        }
-//    }
-    
     @IBAction func logInButton(_ sender: Any) {
-//        checkEmailRegistered(email: emailTF.text!)
-        signIn()
-        
+        let email = emailTF.text!
+        let password = passTF.text!
+        if email.isEmpty == true || password.isEmpty == true{
+            self.infoLabel.isHidden = false
+            self.infoLabel.text = "Invalid/missing email ID or password"
+        } else{
+            if emailTF.text == "guest123@gmail.com" && passTF.text == "guest" {
+                UserDefaults.standard.set("true", forKey: "hasLogin")
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "nearByViewController") as! NearByControllerViewController
+                self.navigationController?.pushViewController(newViewController, animated: false)
+            }
+            
+        }
     }
 
     @IBAction func registerAction(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-        delegate?.loginToRegister()
+        performSegue(withIdentifier: "SignUpSegue", sender: self)
     }
+    
     @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController
+        self.navigationController?.pushViewController(nextVC, animated: false)
     }
 }
-
-//extension SignInViewController: SignUpViewControllerDelegate, SignInViewControllerDelegate{
-//    func registerToLogIn() {
-//        performSegue(withIdentifier: "SignInSegue", sender: self)
-//    }
-//    func loginToRegister() {
-//        performSegue(withIdentifier: "SignUpSegue", sender: self)
-//    }
-//}
-
