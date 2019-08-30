@@ -67,6 +67,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryPlace" destination="SQL-hm-LOx" id="XKa-Of-ppn"/>
+                <outlet property="seeAllButtonOutlet" destination="KJa-2d-3Tb" id="zB3-e0-6G2"/>
                 <outlet property="storeCollection" destination="JKJ-wy-ds8" id="Ho5-AM-6qe"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="180.80357142857142"/>

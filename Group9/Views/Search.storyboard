@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyG-cF-60F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137.68115942029" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1023" y="135"/>
         </scene>
         <!--Search Location-->
         <scene sceneID="Kvc-tp-c8a">
@@ -142,18 +143,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7iY-MC-vaI">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-xF-Rme">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mm6-xF-Rme">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="8" maxY="0.0"/>
                                         <state key="normal" title="Type Something!">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kON-md-810">
-                                        <rect key="frame" x="0.0" y="52" width="414" height="722"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchLocationCell" id="SrW-03-G9N">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchLocationCell" id="SrW-03-G9N">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SrW-03-G9N" id="6sl-Hf-Ooe">
@@ -176,19 +177,18 @@
                             <constraint firstItem="kJY-7k-hfY" firstAttribute="trailing" secondItem="7iY-MC-vaI" secondAttribute="trailing" id="oYN-ff-A8Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kJY-7k-hfY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="peM-gf-Cys" appends="YES" id="9VP-AL-GL1"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Search Location" id="yqd-d7-842">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="UKo-lM-tLj">
+                            <color key="tintColor" name="westly green"/>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="jbv-ZW-Xdd" id="7gz-rd-tok"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem id="jFo-xR-JQj"/>
-                            <barButtonItem title="Current Loc" id="9AG-PZ-Bhs">
+                            <barButtonItem title="Current Location" id="9AG-PZ-Bhs">
+                                <color key="tintColor" name="westly green"/>
                                 <connections>
                                     <action selector="useCurrentLocationItemBarButtonTapped:" destination="jbv-ZW-Xdd" id="VLZ-YV-gYf"/>
                                 </connections>
@@ -201,12 +201,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6Q-6F-oPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="peM-gf-Cys">
-                    <connections>
-                        <action selector="panGestureAction:" destination="jbv-ZW-Xdd" id="qhx-mg-XVX"/>
-                        <outlet property="delegate" destination="dpZ-or-Yo6" id="k1Z-OY-m6z"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2598.5507246376815" y="128.57142857142856"/>
         </scene>
@@ -233,7 +227,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Dx9-Bg-fYa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Syz-9v-JaZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchNewLocation" automaticallyAdjustsScrollViewInsets="NO" id="Syz-9v-JaZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X0w-P9-9Zn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -251,5 +245,8 @@
     </scenes>
     <resources>
         <image name="discover-tab" width="27" height="27"/>
+        <namedColor name="westly green">
+            <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

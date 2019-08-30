@@ -22,6 +22,7 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     
     var delegate: StoreTableViewCellDelegate?
     
+    @IBOutlet weak var seeAllButtonOutlet: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -42,21 +43,29 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     }
     
     @IBAction func seeAllAction(_ sender: UIButton) {
-        // see all places collection
+        if let category = category {
+            self.delegate?.didSelectedPlaceCategory(category: category)
+        }
     }
     
     func didFetchRecords() {
         isLoading = false
         storeCollection.reloadData()
+        self.delegate?.reloadTableView()
     }
     
     func buildUpView(PlaceCategory category: PlaceCategory) {
         self.category = category
         self.categoryPlace.text = self.category?.description
-        
         // Fetching Data
         placeModel.get(ByCategory: category)
-        
+    }
+    
+    func buildUpSimilar(PlaceCategory category: PlaceCategory){
+        self.category = category
+        self.categoryPlace.text = "Similar Place"
+        // Fetching Data
+        placeModel.get(ByCategory: category)
     }
     
 }
@@ -76,9 +85,7 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         cell.isLoading = isLoading
         
         if !isLoading {
-            cell.nameLabel.text = placeModel.places[indexPath.row].name
-            cell.addressLabel.text = "1.8 km - \(placeModel.places[indexPath.row].kecamatan!), \(placeModel.places[indexPath.row].kota!) "
-            cell.imagePlace.loadFromUrl(placeModel.places[indexPath.row].featureImgUrl)
+            cell.loadPlace(place: placeModel.places[indexPath.row])
         }
         
         return cell
@@ -93,5 +100,10 @@ extension StoreTableViewCell: UICollectionViewDataSource {
 }
 
 protocol StoreTableViewCellDelegate {
+    
     func didSelectedPlace(place: Place)
+    
+    func didSelectedPlaceCategory(category: PlaceCategory)
+    
+    func reloadTableView()
 }

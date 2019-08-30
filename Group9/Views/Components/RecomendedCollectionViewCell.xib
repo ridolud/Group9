@@ -19,23 +19,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="zvo-Cx-VuB">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default-img" translatesAutoresizingMaskIntoConstraints="NO" id="zvo-Cx-VuB">
                         <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
-                        <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="203.00000000000006"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="The highest rating store in Jakarta selatan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-XP-37r">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-XP-37r">
                         <rect key="frame" x="8" y="170" width="150" height="24"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="Ada Store " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-A0-2Vo">
-                        <rect key="frame" x="8" y="145" width="150" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-A0-2Vo">
+                        <rect key="frame" x="8" y="169" width="150" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="WNK-sj-bHN"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +45,10 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="5qR-A0-2Vo" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="125" id="1sG-4I-K2i"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="5qR-A0-2Vo" secondAttribute="trailing" constant="8" id="3cD-8Z-n3r"/>
                 <constraint firstItem="GjS-jU-ANP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7DI-V1-Ilg"/>
+                <constraint firstItem="5qR-A0-2Vo" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="8" id="NYd-22-yxJ"/>
                 <constraint firstAttribute="bottom" secondItem="GjS-jU-ANP" secondAttribute="bottom" id="NbO-eX-dEa"/>
                 <constraint firstAttribute="trailing" secondItem="GjS-jU-ANP" secondAttribute="trailing" id="bGj-Um-0ag"/>
                 <constraint firstItem="GjS-jU-ANP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hdi-YD-gaN"/>
@@ -61,6 +66,6 @@
     </objects>
     <resources>
         <image name="GradientBackgroundPotrait" width="284" height="347"/>
-        <image name="img2" width="5184" height="3456"/>
+        <image name="default-img" width="370" height="290"/>
     </resources>
 </document>
