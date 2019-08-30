@@ -8,11 +8,18 @@
 
 import UIKit
 
-class RecomendedTableViewCell: UITableViewCell {
+class RecomendedTableViewCell: UITableViewCell, DatabaseDelegate {
 
     @IBOutlet weak var recomendedCollectionView: UICollectionView!
     
-    var spots = Spot.fetchData()
+    
+    var recommendedDelegate: RecommendedTableViewCellDelegate?
+    
+    let placeModel = PlaceModel()
+    
+    var category : PlaceCategory?
+    
+    var isLoading  = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +30,7 @@ class RecomendedTableViewCell: UITableViewCell {
         recomendedCollectionView.dataSource = self
         recomendedCollectionView.delegate = self
         
+        placeModel.delegate = self
         
     }
 
@@ -33,28 +41,50 @@ class RecomendedTableViewCell: UITableViewCell {
         
     }
     
+    func didFetchRecords(){
+        isLoading = false
+        recomendedCollectionView.reloadData()
+    }
+    
+    func buildUpView(PlaceCategory category : PlaceCategory){
+        self.category = .store
+        
+        // Fetching Data
+        placeModel.get(ByCategory: category)
+    }
 }
 
 extension RecomendedTableViewCell: UICollectionViewDataSource,UICollectionViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return spots.count
+        if isLoading {
+            return 3
+        }
+        return placeModel.places.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recomendedCollectionViewCell", for: indexPath) as! RecomendedCollectionViewCell
         
-        let spot = spots[indexPath.item]
-        cell.spot = spot
-                
+        cell.isLoading = isLoading
+        
+        if !isLoading{
+            cell.loadPlace(place:placeModel.places[indexPath.row])
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if !isLoading {
+            recommendedDelegate?.didSelectedRecommended(place: placeModel.places[indexPath.row])
+        }
     }
     
-    
+}
+
+protocol RecommendedTableViewCellDelegate{
+    func didSelectedRecommended(place: Place)
 }
