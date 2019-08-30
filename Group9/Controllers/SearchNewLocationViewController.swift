@@ -100,15 +100,14 @@ extension SearchNewLocationViewController: UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.dismiss(animated: true) {
-            if self.isFiltering(){
-                self.parsingDelegate.parsingCityName(with: self.arrayOfFilteredCity[indexPath.row])
-            }
-            else {
-                self.parsingDelegate.parsingCityName(with: self.arrayOfCity[indexPath.row])
-
-            }
+        if self.isFiltering(){
+            self.parsingDelegate.parsingCityName(with: self.arrayOfFilteredCity[indexPath.row])
         }
+        else {
+            self.parsingDelegate.parsingCityName(with: self.arrayOfCity[indexPath.row])
+        }
+        searchBarController.isActive = false
+        dismiss(animated: true, completion: nil)
     }
 }
 

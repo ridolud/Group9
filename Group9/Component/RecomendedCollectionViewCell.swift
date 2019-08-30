@@ -23,9 +23,11 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
             if self.isLoading {
                 self.recommendedTitle.alpha = 0
                 self.recommendedDescription.alpha = 0
+                self.gradientBackground.alpha = 0
             }else{
                 self.recommendedTitle.alpha = 1
                 self.recommendedDescription.alpha = 1
+                self.gradientBackground.alpha = 0.8
             }
         }
     }
