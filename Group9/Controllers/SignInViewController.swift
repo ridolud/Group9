@@ -9,9 +9,9 @@
 import UIKit
 import CloudKit
 
-//protocol SignInViewControllerDelegate: class {
-//    func loginToRegister()
-//}
+protocol SignInViewControllerDelegate: class {
+    func loginToRegister()
+}
 
 class SignInViewController: UIViewController, UINavigationControllerDelegate {
    
@@ -21,7 +21,7 @@ class SignInViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var infoLabel: UILabel!
     
     let publicDatabase = CKContainer.default().publicCloudDatabase
-//    weak var delegate: SignInViewControllerDelegate?
+    weak var delegate: SignInViewControllerDelegate?
     var isNotRegistered = true
 
     var userRecords = [CKRecord]()
@@ -108,24 +108,61 @@ class SignInViewController: UIViewController, UINavigationControllerDelegate {
 //            }
 //        }
 //    }
-//    
+//
+    
+    func signIn(){
+        let email = emailTF.text!
+        let password = passTF.text!
+        if email.isEmpty == true || password.isEmpty == true{
+            self.infoLabel.isHidden = false
+            self.infoLabel.text = "All text field must be filled"
+        } else {
+            if email == currentUser()?.email{
+                if password == currentUser()?.password{
+                    UserDefaults.standard.set("true", forKey: "hasLogin")
+                    self.dismiss(animated: true, completion: nil)
+                }
+                else{
+                    self.infoLabel.text = "Worng Password"
+                }
+            }
+        }
+    }
+    
     func setupNavigationBar(){
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "SignUpSegue"{
+//            let destination = segue.destination as! SignUpViewController
+//            destination.delegate = self
+//        }
+//    }
+    
     @IBAction func logInButton(_ sender: Any) {
 //        checkEmailRegistered(email: emailTF.text!)
-        UserDefaults.standard.set("true", forKey: "hasLogin")
-        self.dismiss(animated: true, completion: nil)
+        signIn()
+        
     }
 
     @IBAction func registerAction(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
-//        delegate?.loginToRegister()
+        delegate?.loginToRegister()
     }
     @IBAction func cancelButton(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
+
+//extension SignInViewController: SignUpViewControllerDelegate, SignInViewControllerDelegate{
+//    func registerToLogIn() {
+//        performSegue(withIdentifier: "SignInSegue", sender: self)
+//    }
+//    func loginToRegister() {
+//        performSegue(withIdentifier: "SignUpSegue", sender: self)
+//    }
+//}
+

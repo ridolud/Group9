@@ -42,7 +42,7 @@ class MyAccountViewController: UIViewController, UINavigationControllerDelegate 
     }
     
     @IBAction func logOutButton(_ sender: Any) {
-    self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
         UserDefaults.standard.set("false", forKey: "hasLogin")
     }
     

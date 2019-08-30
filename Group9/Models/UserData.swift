@@ -25,6 +25,10 @@ struct User{
 //        phone = record["phone"]
 //        location = record["location"]
 //    }
+    init(name: String, email: String, password: String, dob: String, phone: String, location: String) {
+        self.name = name
+        self.email = email
+    }
 }
 
 func currentUser() -> User?{

@@ -19,17 +19,17 @@ class AccountViewController: UIViewController {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "SignInSegue"{
 //            let destination = segue.destination as! SignInViewController
 //            destination.delegate = self
 //        }
-        
-//        if segue.identifier == "SignUpSegue"{
-//            let destination = segue.destination as! SignUpViewController
-//            destination.delegate = self
-//        }
-    }
+//
+////        if segue.identifier == "SignUpSegue"{
+////            let destination = segue.destination as! SignUpViewController
+////            destination.delegate = self
+////        }
+//    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "MyAcountSegue" {
@@ -44,10 +44,10 @@ class AccountViewController: UIViewController {
 
 }
 
-//extension AccountViewController: SignInViewControllerDelegate{
-////    func loginToRegister() {
-////        performSegue(withIdentifier: "SignUpSegue", sender: self)
-////    }
+//extension AccountViewController: SignInViewControllerDelegate, SignUpViewControllerDelegate{
+//    func loginToRegister() {
+//        performSegue(withIdentifier: "SignUpSegue", sender: self)
+//    }
 //    func registerToLogIn() {
 //        performSegue(withIdentifier: "SignInSegue", sender: self)
 //    }

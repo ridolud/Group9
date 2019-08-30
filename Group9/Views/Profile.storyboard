@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daD-bv-AGt">
-                                <rect key="frame" x="18" y="75" width="108" height="36"/>
+                                <rect key="frame" x="18" y="119" width="108" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="My Account">
                                     <color key="titleColor" red="0.44993996619999999" green="0.619758904" blue="0.22342342139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0V-V6-ZwT">
-                                <rect key="frame" x="18" y="131" width="82" height="36"/>
+                                <rect key="frame" x="18" y="175" width="82" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="Favorites">
                                     <color key="titleColor" red="0.44993996619999999" green="0.619758904" blue="0.22342342139999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfK-HX-z5L">
-                                <rect key="frame" x="18" y="187" width="84" height="36"/>
+                                <rect key="frame" x="18" y="231" width="84" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <state key="normal" title="About Us">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,6 +66,7 @@
                         <outlet property="accountButton" destination="daD-bv-AGt" id="qPQ-6f-M7b"/>
                         <outlet property="favoriteButton" destination="m0V-V6-ZwT" id="NgB-jw-Nmf"/>
                         <segue destination="Ox2-tl-aC2" kind="presentation" identifier="SignInSegue" animates="NO" id="SsO-9G-Xql"/>
+                        <segue destination="9OG-P9-DoA" kind="presentation" identifier="SignUpSegue" id="d9T-KE-6yZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgP-bh-1Sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYZ-Kf-7Tm">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4oi-0r-bOf">
                                         <rect key="frame" x="35" y="175" width="344" height="430"/>
@@ -361,7 +362,7 @@
                                         </state>
                                         <connections>
                                             <action selector="registerAction:" destination="Ox2-tl-aC2" eventType="touchUpInside" id="yUC-0L-ve8"/>
-                                            <segue destination="9OG-P9-DoA" kind="show" id="rOB-YM-1Sc"/>
+                                            <segue destination="9OG-P9-DoA" kind="presentation" id="P54-fN-yoa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -390,7 +391,6 @@
                                 </state>
                                 <connections>
                                     <action selector="cancelButton:" destination="Ox2-tl-aC2" eventType="touchUpInside" id="8hN-AF-emz"/>
-                                    <segue destination="rcK-V9-5VB" kind="presentation" animates="NO" id="Sff-TE-Bku"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -535,7 +535,7 @@ Fields marked * are mandatory</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="lUd-84-6xf">
-                                <rect key="frame" x="97.5" y="737" width="219" height="30"/>
+                                <rect key="frame" x="97.5" y="786" width="219" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Already have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAu-DQ-Cpj">
                                         <rect key="frame" x="0.0" y="0.0" width="176" height="30"/>
@@ -560,7 +560,6 @@ Fields marked * are mandatory</string>
                                         <connections>
                                             <action selector="logInAction:" destination="9OG-P9-DoA" eventType="touchUpInside" id="4FK-71-dVC"/>
                                             <action selector="registerAction:" destination="Ox2-tl-aC2" eventType="touchUpInside" id="gua-1L-stX"/>
-                                            <segue destination="Ox2-tl-aC2" kind="show" id="wTj-Tp-6qs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -573,7 +572,6 @@ Fields marked * are mandatory</string>
                                 </state>
                                 <connections>
                                     <action selector="cancelButton:" destination="9OG-P9-DoA" eventType="touchUpInside" id="xE7-um-59E"/>
-                                    <segue destination="rcK-V9-5VB" kind="presentation" animates="NO" id="Uub-g1-YZt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -638,7 +636,6 @@ Fields marked * are mandatory</string>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SsO-9G-Xql"/>
-        <segue reference="Sff-TE-Bku"/>
+        <segue reference="d9T-KE-6yZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -69,16 +69,19 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate {
 //        } else{
 //            saveRecord()
 //        }
-        self.dismiss(animated: true, completion: nil)
-//        self.delegate?.registerToLogIn()
+//        self.navigationController?.popToRootViewController(animated: true)
+        UserDefaults.standard.set("true", forKey: "hasLogin")
+//        performSegue(withIdentifier: "DoneSignUpSegue", sender: self)
+//        self.dismiss(animated: true, completion: nil)
+        self.delegate?.registerToLogIn()
     }
     
     @IBAction func logInAction(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//        self.delegate?.registerToLogIn()
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.registerToLogIn()
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
