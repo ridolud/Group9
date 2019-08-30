@@ -38,6 +38,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         setupPlace()
         setupMap()
         setupSimilarPlace()
+        
+        scrollView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -159,9 +161,26 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     @IBAction func reviewButtonAction(_ sender: Any) {
     }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        
+        if (actualPosition.y > 0){
+            UIView.animate(withDuration: 0.2, animations: {
+                self.navigationController?.navigationBar.backgroundColor = .clear
+                self.navigationController?.view.backgroundColor = .clear
+            })
+        }else{
+            UIView.animate(withDuration: 0.2, animations: {
+                self.navigationController?.navigationBar.backgroundColor = .white
+                self.navigationController?.view.backgroundColor = .white
+            })
+        }
+    }
 }
 
 import EventKitUI
+
 extension PlaceDetailViewController : EKEventEditViewDelegate{
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         switch action {
