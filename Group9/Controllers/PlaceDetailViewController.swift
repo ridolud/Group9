@@ -22,6 +22,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var reviewButtonOutlet: UIButton!
     @IBOutlet weak var similarPlaceView: UITableView!
     @IBOutlet weak var imageOutlet: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var currentPlace: Place!
     
@@ -82,7 +83,10 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.prefersLargeTitles = false
         setNeedsStatusBarAppearanceUpdate()
+        scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -180).isActive = true
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     func setupNavigationBarCancel(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -90,6 +94,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        UIApplication.shared.statusBarStyle = .default
         setNeedsStatusBarAppearanceUpdate()
     }
 

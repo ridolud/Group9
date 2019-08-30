@@ -34,6 +34,7 @@
 		7F7AC3C2231387140070C488 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AC3C1231387140070C488 /* WebKit.framework */; };
 		7F7AC3C42313C22E0070C488 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7AC3C32313C22E0070C488 /* ImageHandler.swift */; };
 		7F7AC3C6231529440070C488 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7AC3C5231529440070C488 /* MainNavigationController.swift */; };
+		7F7F49192318D0C200BDB5E1 /* extension UINavigationController {    open override var preferredStatusBarStyle: UIStatusBarStyle {       return topViewController?.preferredStatusBarStyle ?? .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F49182318D0C200BDB5E1 /* extension UINavigationController {    open override var preferredStatusBarStyle: UIStatusBarStyle {       return topViewController?.preferredStatusBarStyle ?? .swift */; };
 		7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35811230BCF8600EA761D /* AppDelegate.swift */; };
 		7FC35817230BCF8600EA761D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35815230BCF8600EA761D /* Main.storyboard */; };
 		7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35818230BCF8600EA761D /* Group9.xcdatamodeld */; };
@@ -109,6 +110,7 @@
 		7F7AC3C1231387140070C488 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7F7AC3C32313C22E0070C488 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHandler.swift; path = Group9/Component/ImageHandler.swift; sourceTree = SOURCE_ROOT; };
 		7F7AC3C5231529440070C488 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		7F7F49182318D0C200BDB5E1 /* extension UINavigationController {    open override var preferredStatusBarStyle: UIStatusBarStyle {       return topViewController?.preferredStatusBarStyle ?? .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension UINavigationController {    open override var preferredStatusBarStyle: UIStatusBarStyle {       return topViewController?.preferredStatusBarStyle ?? .swift"; sourceTree = "<group>"; };
 		7FC3580E230BCF8600EA761D /* Group9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC35811230BCF8600EA761D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FC35816230BCF8600EA761D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -269,7 +271,6 @@
 		7FC35848230C06A000EA761D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE94B575231117CB0000AA27 /* SearchViewController.swift */,
 				DC2AE1252315373700867085 /* MyFavoritesViewController.swift */,
 				BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */,
 				7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */,
@@ -295,6 +296,7 @@
 				2F6EC4D823150CE300A7EDC4 /* UIViewController.swift */,
 				7F7AC3C32313C22E0070C488 /* ImageHandler.swift */,
 				DC2AE12723154D4100867085 /* ViewBorder.swift */,
+				7F7F49182318D0C200BDB5E1 /* extension UINavigationController {    open override var preferredStatusBarStyle: UIStatusBarStyle {       return topViewController?.preferredStatusBarStyle ?? .swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -498,6 +500,7 @@
 				4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */,
 				DC2AE1222315371B00867085 /* SignInViewController.swift in Sources */,
 				DC2AE1202315370C00867085 /* MyAccountViewController.swift in Sources */,
+				7F7F49192318D0C200BDB5E1 /* extension UINavigationController {    open override var preferredStatusBarStyle: UIStatusBarStyle {       return topViewController?.preferredStatusBarStyle ?? .swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				4726384C231678E700C5A0AC /* CalendarEvent.swift in Sources */,
 				2F29865523116C0800A0DC9B /* Spot.swift in Sources */,
