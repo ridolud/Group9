@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +26,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX0-93-J3e">
                                 <rect key="frame" x="0.0" y="0.0" width="42" height="46.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="westly green drak"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-qH-1lO">
@@ -34,7 +35,9 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCa-gy-Frk">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="☆"/>
+                                        <state key="normal" title="☆">
+                                            <color key="titleColor" name="westly green"/>
+                                        </state>
                                         <connections>
                                             <action selector="setStar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rd9-B5-MsW"/>
                                         </connections>
@@ -42,7 +45,9 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAn-0G-ZmP">
                                         <rect key="frame" x="38" y="0.0" width="30" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="☆"/>
+                                        <state key="normal" title="☆">
+                                            <color key="titleColor" name="westly green"/>
+                                        </state>
                                         <connections>
                                             <action selector="setStar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cqu-gg-kUa"/>
                                         </connections>
@@ -50,7 +55,9 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0p-9u-3Bg">
                                         <rect key="frame" x="76" y="0.0" width="30" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="☆"/>
+                                        <state key="normal" title="☆">
+                                            <color key="titleColor" name="westly green"/>
+                                        </state>
                                         <connections>
                                             <action selector="setStar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rya-gB-SoN"/>
                                         </connections>
@@ -58,7 +65,9 @@
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJ1-lH-Bk9">
                                         <rect key="frame" x="114" y="0.0" width="30" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="☆"/>
+                                        <state key="normal" title="☆">
+                                            <color key="titleColor" name="westly green"/>
+                                        </state>
                                         <connections>
                                             <action selector="setStar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vd3-xa-YHv"/>
                                         </connections>
@@ -66,7 +75,9 @@
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5or-v2-aWM">
                                         <rect key="frame" x="152" y="0.0" width="30" height="46.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="☆"/>
+                                        <state key="normal" title="☆">
+                                            <color key="titleColor" name="westly green"/>
+                                        </state>
                                         <connections>
                                             <action selector="setStar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z7i-2z-lY5"/>
                                         </connections>
@@ -95,4 +106,12 @@
             <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="westly green">
+            <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="westly green drak">
+            <color red="0.21176470588235294" green="0.3843137254901961" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

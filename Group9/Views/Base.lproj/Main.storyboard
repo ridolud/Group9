@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +17,38 @@
                 <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchNewLocation" id="4tB-ei-vTv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mll-8S-Pk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="964"/>
+            <point key="canvasLocation" x="3228" y="136"/>
+        </scene>
+        <!--Category-->
+        <scene sceneID="7XV-8q-quc">
+            <objects>
+                <tableViewController storyboardIdentifier="CategoryView" title="Category" clearsSelectionOnViewWillAppear="NO" id="yZh-k8-TS2" customClass="PlaceCategoryController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXk-3s-KdP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreTableViewCell" rowHeight="140" id="xSG-i0-KdF" customClass="StoreListTableViewCell" customModule="Group9" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="140"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xSG-i0-KdF" id="8xY-gb-QlV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yZh-k8-TS2" id="fLT-Hd-8rx"/>
+                            <outlet property="delegate" destination="yZh-k8-TS2" id="Lam-86-dfo"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="7My-hG-54E" kind="show" identifier="placeCategoryToDetailPlace" id="DYB-Ld-eDg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ya-4k-D8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3419" y="-316"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="4hk-Qf-wiK">
@@ -26,9 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-gU-2qg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oyV-gU-2qg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="nearbyTableViewCell" id="1I3-6r-8HM">
@@ -47,16 +78,22 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oyV-gU-2qg" firstAttribute="top" secondItem="u3a-QO-mdf" secondAttribute="top" id="6fS-KZ-J46"/>
+                            <constraint firstAttribute="bottom" secondItem="oyV-gU-2qg" secondAttribute="bottom" id="U8a-EV-mTz"/>
+                            <constraint firstItem="oyV-gU-2qg" firstAttribute="leading" secondItem="2zC-A0-Cuo" secondAttribute="leading" id="Xsw-H2-O0g"/>
+                            <constraint firstItem="oyV-gU-2qg" firstAttribute="trailing" secondItem="2zC-A0-Cuo" secondAttribute="trailing" id="cdT-ac-oQY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2zC-A0-Cuo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="5M4-15-RGh">
                         <barButtonItem key="leftBarButtonItem" title="Change Location" id="TYc-Oa-1RE">
                             <connections>
-                                <action selector="checngeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
+                                <action selector="changeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
                                 <segue destination="4tB-ei-vTv" kind="presentation" identifier="newSearchLocation" id="g7E-rU-Cuw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="😳" id="0QP-Bf-jYo">
+                        <barButtonItem key="rightBarButtonItem" image="Fill 5" id="0QP-Bf-jYo">
                             <connections>
                                 <segue destination="iCj-nR-RPW" kind="show" identifier="profile" id="5y5-C3-GGM"/>
                             </connections>
@@ -66,6 +103,7 @@
                         <outlet property="nearbyTableView" destination="oyV-gU-2qg" id="olq-dt-3ae"/>
                         <segue destination="KEZ-cI-kLj" kind="show" identifier="webViewSegue" id="pOL-dd-EZV"/>
                         <segue destination="7My-hG-54E" kind="show" identifier="placeDetail" id="pHl-Gk-nhF"/>
+                        <segue destination="yZh-k8-TS2" kind="show" identifier="seeAllByCategory" id="Dmc-Rt-Z64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anZ-5M-yYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,7 +116,7 @@
                 <viewControllerPlaceholder storyboardName="PlaceDetail" referencedIdentifier="PlaceDetailViewController" id="7My-hG-54E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKw-SF-aze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="889"/>
+            <point key="canvasLocation" x="3324" y="113"/>
         </scene>
         <!--Profile-->
         <scene sceneID="ZoM-5Z-mFs">
@@ -86,7 +124,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" id="iCj-nR-RPW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGg-gc-fcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217" y="871"/>
+            <point key="canvasLocation" x="3238" y="222"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="zlZ-5e-shk">
@@ -96,6 +134,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="joD-Ru-uDt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="westly green drak"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -143,7 +182,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDg-uz-Sm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3325" y="404"/>
+            <point key="canvasLocation" x="3419" y="591"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Fill 5" width="31" height="31"/>
+        <namedColor name="westly green drak">
+            <color red="0.21176470588235294" green="0.3843137254901961" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pHl-Gk-nhF"/>
+    </inferredMetricsTieBreakers>
 </document>

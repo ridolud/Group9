@@ -16,24 +16,24 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var recommendedTitle: UILabel!
     @IBOutlet weak var recommendedDescription: UILabel!
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        
-            }
+    var currentPlace : Place!
     
-    var spot:Spot! {
+    var isLoading = false {
         didSet{
-            self.updateUI()
+            if self.isLoading {
+                self.recommendedTitle.alpha = 0
+                self.recommendedDescription.alpha = 0
+                self.gradientBackground.alpha = 0
+            }else{
+                self.recommendedTitle.alpha = 1
+                self.recommendedDescription.alpha = 1
+                self.gradientBackground.alpha = 0.8
+            }
         }
     }
     
-    func updateUI(){
-        recommendedTitle.text = spot.title
-        recommendedImage.image = spot.image
-        recommendedDescription.text = spot.description
-        
+    override func awakeFromNib() {
+        super.awakeFromNib()
         gradientBackground?.layer.cornerRadius = 10.0
         gradientBackground?.layer.masksToBounds = true
         
@@ -44,6 +44,16 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
         [recommendedDescription .sizeToFit()]
     
 
+    }
+    
+    func loadPlace(place: Place){
+        self.currentPlace = place
+        recommendedTitle.text = currentPlace?.name
+        recommendedImage.loadFromUrl(currentPlace?.featureImgUrl)
+        let distance = Int(((LocationManager.instance.currentLocation?.distance(from: currentPlace.location!))!))
+    recommendedDescription.text = "\(distance/1000) km, \(currentPlace.kota)"
+        
+        
     }
     
     

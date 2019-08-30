@@ -18,14 +18,16 @@ class StoreListTableViewCell: UITableViewCell {
     @IBOutlet weak var storeRatingTotal: UILabel!
    
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         storeImage.layer.cornerRadius = 12
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(selected, animated: false)
 
-        // Configure the view for the selected state
+//         Configure the view for the selected state
     }
     
     
