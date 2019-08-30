@@ -19,11 +19,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="zvo-Cx-VuB">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-img" translatesAutoresizingMaskIntoConstraints="NO" id="zvo-Cx-VuB">
                         <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
-                        <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="203.00000000000006"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j18-8f-IlH">
                         <rect key="frame" x="0.0" y="109" width="166" height="94"/>
@@ -90,6 +90,6 @@
     </objects>
     <resources>
         <image name="GradientBackgroundPotrait" width="284" height="347"/>
-        <image name="img2" width="5184" height="3456"/>
+        <image name="default-img" width="370" height="290"/>
     </resources>
 </document>
