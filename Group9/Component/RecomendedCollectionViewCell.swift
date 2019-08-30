@@ -39,6 +39,11 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
         
         recommendedImage?.layer.cornerRadius = 10.0
         recommendedImage?.layer.masksToBounds = true
+        
+        [recommendedTitle .sizeToFit()]
+        [recommendedDescription .sizeToFit()]
+    
+
     }
     
     func loadPlace(place: Place){

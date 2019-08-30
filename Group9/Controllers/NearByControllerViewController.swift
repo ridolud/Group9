@@ -105,6 +105,16 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }
     }
     
+//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        recommendButton.isHidden = true
+//    }
+//
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//        recommendButton.isHidden = false
+//    }
+    
+    
+    
 }
 
 extension NearByControllerViewController: ArticleTableViewCellDelegate, StoreTableViewCellDelegate, RecommendedTableViewCellDelegate {
