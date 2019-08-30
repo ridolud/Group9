@@ -20,7 +20,8 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
+        
+            }
     
     var spot:Spot! {
         didSet{
@@ -38,6 +39,11 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
         
         recommendedImage?.layer.cornerRadius = 10.0
         recommendedImage?.layer.masksToBounds = true
+        
+        [recommendedTitle .sizeToFit()]
+        [recommendedDescription .sizeToFit()]
+    
+
     }
     
     
