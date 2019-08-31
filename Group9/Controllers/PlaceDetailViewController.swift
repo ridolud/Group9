@@ -38,7 +38,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         setupPlace()
         setupMap()
         setupSimilarPlace()
-        
         scrollView.delegate = self
     }
     
@@ -88,7 +87,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.prefersLargeTitles = false
         setNeedsStatusBarAppearanceUpdate()
         scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -180).isActive = true
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
+//        setNeedsStatusBarAppearanceUpdate()
     }
     func setupNavigationBarCancel(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -97,8 +97,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        UIApplication.shared.statusBarStyle = .default
-        setNeedsStatusBarAppearanceUpdate()
+//        UIApplication.shared.statusBarStyle = .default
+//        setNeedsStatusBarAppearanceUpdate()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -162,20 +162,17 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBAction func reviewButtonAction(_ sender: Any) {
     }
     
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if (actualPosition.y > 0){
-            UIView.animate(withDuration: 0.2, animations: {
-                self.navigationController?.navigationBar.backgroundColor = .clear
-                self.navigationController?.view.backgroundColor = .clear
-            })
-        }else{
-            UIView.animate(withDuration: 0.2, animations: {
-                self.navigationController?.navigationBar.backgroundColor = .white
-                self.navigationController?.view.backgroundColor = .white
-            })
+        let actualPosition = scrollView.contentOffset.y / 170
+        
+        if (actualPosition > 0){
+            let alpa = actualPosition > 1 ? 1 : actualPosition
+            let color = UIColor(red: 1, green: 1, blue: 1, alpha: alpa)
+            self.navigationController?.navigationBar.backgroundColor = color
+            UIApplication.shared.statusBarView?.backgroundColor = color
         }
+        
     }
 }
 
