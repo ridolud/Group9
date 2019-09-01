@@ -16,8 +16,8 @@ class NearByControllerViewController: UIViewController, LocationManagerDelegate 
     
     @IBOutlet weak var nearbyTableView: UITableView!
     let locationManager = LocationManager.instance
-    
     let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
+    var isChoosingCity = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +100,10 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "recomendedTableViewCell") as! RecomendedTableViewCell
             cell.recommendedDelegate = self
-            if locationManager.currentCity != nil{
+            if isChoosingCity {
+                cell.buildUpCity(PlaceCategory: .store, city: self.title!)
+            }
+            else if locationManager.currentCity != nil{
                 cell.buildUpView(PlaceCategory: .store)
             }
             showRecommendedView()
@@ -116,15 +119,23 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             let currentIndex = indexPath.row - 2
             
             cell.delegate = self
-            if locationManager.currentCity != nil{
+            if isChoosingCity {
+                cell.buildUpCity(PlaceCategory: selectedPlaceCategory[currentIndex], city: self.title!)
+
+            }
+            else if locationManager.currentCity != nil{
                 cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
             }
             showRecommendedView()
+            
+            
+            
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         if indexPath.row == 0{
             return 205
         }else if indexPath.row == 1{
@@ -206,7 +217,9 @@ extension NearByControllerViewController: parsingCityNameProtocol {
     
     func parsingCityName(with name: String) {
         print(#function, name)
-            self.title = name
+        isChoosingCity = true
+        self.title = name
+        nearbyTableView.reloadData()
     }
 }
 

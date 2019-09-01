@@ -320,8 +320,8 @@
 				DCE490FD231050D800288143 /* ReviewTableViewCell.swift */,
 				2F29863E2310F43200A0DC9B /* ArticleCollectionViewCell.swift */,
 				2F2986442310F58800A0DC9B /* ArticleTableViewCell.swift */,
-				2F2986502311442500A0DC9B /* RecomendedTableViewCell.swift */,
 				2F400B8E2317CD4B00CBC4F5 /* InputPlaceTableViewCell.swift */,
+				2F2986502311442500A0DC9B /* RecomendedTableViewCell.swift */,
 				2F29864A231131F200A0DC9B /* RecomendedCollectionViewCell.swift */,
 				4779765D231294F400E11725 /* StarTableViewCell.swift */,
 			);

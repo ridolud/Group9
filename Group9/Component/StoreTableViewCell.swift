@@ -64,9 +64,13 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
         self.category = category
         self.categoryPlace.text = "Similar Place"
         placeModel.get(ByCategory: category)
-
     }
     
+    func buildUpCity(PlaceCategory category: PlaceCategory, city: String){
+        self.category = category
+        self.categoryPlace.text = self.category?.description
+        placeModel.get(ByCategory: category, City : city)
+    }
 }
 
 extension StoreTableViewCell: UICollectionViewDataSource {
