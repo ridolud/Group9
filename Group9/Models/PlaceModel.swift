@@ -63,26 +63,26 @@ class PlaceModel: DBModel {
         self.fetch(scope: .public, byQuery: query)
     }
     
-    func get(ByCategory category: PlaceCategory) {
-        print(#function, category)
-        self.clearData()
-        let filter = category.rawValue
-        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
-        guard let query = self.query else { return }
-        self.fetch(scope: .public, byQuery: query)
-    }
-    
 //    func get(ByCategory category: PlaceCategory) {
 //        print(#function, category)
 //        self.clearData()
 //        let filter = category.rawValue
-//        let distance : Float = 15000
-//        let location = LocationManager.instance.currentLocation
-//        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && distanceToLocation:fromLocation:(%K,%@) < %f", filter, "location", location!, distance))
+//        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
 //        guard let query = self.query else { return }
 //        self.fetch(scope: .public, byQuery: query)
 //    }
-//
+    
+    func get(ByCategory category: PlaceCategory) {
+        print(#function, category)
+        self.clearData()
+        let filter = category.rawValue
+        let distance : Float = 15000
+        let location = LocationManager.instance.currentLocation
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && distanceToLocation:fromLocation:(%K,%@) < %f", filter, "location", location!, distance))
+        guard let query = self.query else { return }
+        self.fetch(scope: .public, byQuery: query)
+    }
+
     
     override func passingData(records: [CKRecord]) {
         for record in records {

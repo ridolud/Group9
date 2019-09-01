@@ -57,21 +57,13 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     func buildUpView(PlaceCategory category: PlaceCategory) {
         self.category = category
         self.categoryPlace.text = self.category?.description
-        // Fetching Data
-//        if LocationManager.instance.currentLocation != nil {
-//            print(#function)
-            placeModel.get(ByCategory: category)
-//        }
+        placeModel.get(ByCategory: category)
     }
     
     func buildUpSimilar(PlaceCategory category: PlaceCategory){
         self.category = category
         self.categoryPlace.text = "Similar Place"
-        // Fetching Data
-//        if LocationManager.instance.currentLocation != nil {
-
-            placeModel.get(ByCategory: category)
-//        }
+        placeModel.get(ByCategory: category)
 
     }
     

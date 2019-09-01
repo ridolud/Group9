@@ -48,9 +48,8 @@ class RecomendedTableViewCell: UITableViewCell, DatabaseDelegate {
     
     func buildUpView(PlaceCategory category : PlaceCategory){
         self.category = .store
-        
         // Fetching Data
-//        placeModel.get(ByCategory: category)
+        placeModel.get(ByCategory: category)
     }
 }
 

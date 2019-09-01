@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -39,14 +40,14 @@
                                 <color key="textColor" red="0.49019607843137253" green="0.52941176470588236" blue="0.52156862745098043" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closed, open in 20 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raj-UK-a4C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raj-UK-a4C">
                                 <rect key="frame" x="0.0" y="192.5" width="215" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.49019607840000001" green="0.52941176469999995" blue="0.52156862749999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <color key="textColor" name="westly green"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-Kp-kMJ">
-                                <rect key="frame" x="0.0" y="212" width="115.5" height="15"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalCentering" alignment="bottom" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-Kp-kMJ">
+                                <rect key="frame" x="0.0" y="211" width="102.5" height="15"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-star-30" translatesAutoresizingMaskIntoConstraints="NO" id="BEH-Dv-LIC">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -55,8 +56,8 @@
                                             <constraint firstAttribute="width" constant="15" id="aNQ-4J-YEb"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.9 (120 ratings)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dg-fX-2jK">
-                                        <rect key="frame" x="22" y="0.5" width="93.5" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 (0 ratings)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Dg-fX-2jK">
+                                        <rect key="frame" x="22" y="0.5" width="80.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.49019607840000001" green="0.52941176469999995" blue="0.52156862749999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -161,5 +162,8 @@
         <image name="default-img" width="370" height="290"/>
         <image name="icons8-star-30" width="30" height="30"/>
         <image name="love-button" width="80" height="80"/>
+        <namedColor name="westly green">
+            <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

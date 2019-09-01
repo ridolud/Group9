@@ -47,8 +47,12 @@ class NearByControllerViewController: UIViewController, LocationManagerDelegate 
     }
     
     func setupNavBar(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.backgroundColor = .white
+        self.navigationController?.view.backgroundColor = .white
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
@@ -69,6 +73,7 @@ class NearByControllerViewController: UIViewController, LocationManagerDelegate 
     func reloadView() {
         self.title = locationManager.currentCity
         print(#function, locationManager.currentCity)
+        nearbyTableView.reloadData()
     }
     
     @IBAction func inputPlaceAction(_ sender: Any) {
@@ -85,7 +90,6 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "articleTableViewCell") as! ArticleTableViewCell
             cell.articleDelegate = self
@@ -96,20 +100,25 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "recomendedTableViewCell") as! RecomendedTableViewCell
             cell.recommendedDelegate = self
-            cell.buildUpView(PlaceCategory: .store)
+            if locationManager.currentCity != nil{
+                cell.buildUpView(PlaceCategory: .store)
+            }
             showRecommendedView()
             return cell
         }else if indexPath.row == selectedPlaceCategory.count + 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "inputPlaceTableViewCell") as! InputPlaceTableViewCell
             cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width + 100 , bottom: 0, right: 0)
             hideRecommendedView()
+            cell.inputPlaceDelegate = self
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "storeTableViewCell") as! StoreTableViewCell
             let currentIndex = indexPath.row - 2
             
             cell.delegate = self
-            cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
+            if locationManager.currentCity != nil{
+                cell.buildUpView(PlaceCategory: selectedPlaceCategory[currentIndex])
+            }
             showRecommendedView()
             return cell
         }
