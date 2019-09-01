@@ -32,11 +32,13 @@
 		47D2CA6F230E83D7003EE10E /* PlaceDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */; };
 		47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2CA70230E89E0003EE10E /* PlaceDetailViewController.swift */; };
 		7F12EF21231688480086DE56 /* PlaceCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12EF20231688480086DE56 /* PlaceCategoryController.swift */; };
+		7F2E25B0231A5F530036E436 /* UIAplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2E25AF231A5F530036E436 /* UIAplication.swift */; };
 		7F3AAA5D2313096B00B0B158 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3AAA5B2313096B00B0B158 /* StoreTableViewCell.swift */; };
 		7F3AAA5E2313096B00B0B158 /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3AAA5C2313096B00B0B158 /* StoreTableViewCell.xib */; };
 		7F7AC3C2231387140070C488 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7AC3C1231387140070C488 /* WebKit.framework */; };
 		7F7AC3C42313C22E0070C488 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7AC3C32313C22E0070C488 /* ImageHandler.swift */; };
 		7F7AC3C6231529440070C488 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7AC3C5231529440070C488 /* MainNavigationController.swift */; };
+		7F7F49192318D0C200BDB5E1 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7F49182318D0C200BDB5E1 /* UINavigationController.swift */; };
 		7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35811230BCF8600EA761D /* AppDelegate.swift */; };
 		7FC35817230BCF8600EA761D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FC35815230BCF8600EA761D /* Main.storyboard */; };
 		7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FC35818230BCF8600EA761D /* Group9.xcdatamodeld */; };
@@ -61,6 +63,7 @@
 		DC2AE1242315372600867085 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1232315372600867085 /* SignUpViewController.swift */; };
 		DC2AE1262315373700867085 /* MyFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE1252315373700867085 /* MyFavoritesViewController.swift */; };
 		DC2AE12823154D4100867085 /* ViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE12723154D4100867085 /* ViewBorder.swift */; };
+		DC2AE12A231693F000867085 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2AE129231693F000867085 /* UserData.swift */; };
 		DCE490FB230FFD0F00288143 /* StoreListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */; };
 		DCE490FC230FFD0F00288143 /* StoreListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */; };
 		DCE490FF231050D800288143 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE490FD231050D800288143 /* ReviewTableViewCell.swift */; };
@@ -110,11 +113,13 @@
 		47D2CA6E230E83D7003EE10E /* PlaceDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceDetail.storyboard; sourceTree = "<group>"; };
 		47D2CA70230E89E0003EE10E /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		7F12EF20231688480086DE56 /* PlaceCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategoryController.swift; sourceTree = "<group>"; };
+		7F2E25AF231A5F530036E436 /* UIAplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAplication.swift; sourceTree = "<group>"; };
 		7F3AAA5B2313096B00B0B158 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		7F3AAA5C2313096B00B0B158 /* StoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreTableViewCell.xib; sourceTree = "<group>"; };
 		7F7AC3C1231387140070C488 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7F7AC3C32313C22E0070C488 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageHandler.swift; path = Group9/Component/ImageHandler.swift; sourceTree = SOURCE_ROOT; };
 		7F7AC3C5231529440070C488 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		7F7F49182318D0C200BDB5E1 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		7FC3580E230BCF8600EA761D /* Group9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC35811230BCF8600EA761D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FC35816230BCF8600EA761D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 		DC2AE1232315372600867085 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DC2AE1252315373700867085 /* MyFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritesViewController.swift; sourceTree = "<group>"; };
 		DC2AE12723154D4100867085 /* ViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewBorder.swift; path = Group9/Controllers/ViewBorder.swift; sourceTree = SOURCE_ROOT; };
+		DC2AE129231693F000867085 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		DCE490F9230FFD0F00288143 /* StoreListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListTableViewCell.swift; sourceTree = "<group>"; };
 		DCE490FA230FFD0F00288143 /* StoreListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreListTableViewCell.xib; sourceTree = "<group>"; };
 		DCE490FD231050D800288143 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -254,6 +260,7 @@
 				BE94B573231029AD0000AA27 /* LocationManager.swift */,
 				7FCFB8742311CCD0007B3DC9 /* DatabaseEnv.swift */,
 				2F29865423116C0800A0DC9B /* Spot.swift */,
+				DC2AE129231693F000867085 /* UserData.swift */,
 				4726384B231678E700C5A0AC /* CalendarEvent.swift */,
 			);
 			path = Models;
@@ -276,6 +283,7 @@
 		7FC35848230C06A000EA761D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F400B8A2317CC3A00CBC4F5 /* TestTableViewCell.swift */,
 				DC2AE1252315373700867085 /* MyFavoritesViewController.swift */,
 				BE94B577231125C60000AA27 /* SearchNewLocationViewController.swift */,
 				7FF8A974230D572800EA1C71 /* NearByControllerViewController.swift */,
@@ -301,6 +309,8 @@
 				2F6EC4D823150CE300A7EDC4 /* UIViewController.swift */,
 				7F7AC3C32313C22E0070C488 /* ImageHandler.swift */,
 				DC2AE12723154D4100867085 /* ViewBorder.swift */,
+				7F7F49182318D0C200BDB5E1 /* UINavigationController.swift */,
+				7F2E25AF231A5F530036E436 /* UIAplication.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -510,6 +520,7 @@
 				4779765A231291C200E11725 /* PlaceReviewTableViewController.swift in Sources */,
 				DC2AE1222315371B00867085 /* SignInViewController.swift in Sources */,
 				DC2AE1202315370C00867085 /* MyAccountViewController.swift in Sources */,
+				7F7F49192318D0C200BDB5E1 /* UINavigationController.swift in Sources */,
 				7FF8A975230D572800EA1C71 /* NearByControllerViewController.swift in Sources */,
 				4726384C231678E700C5A0AC /* CalendarEvent.swift in Sources */,
 				2F29865523116C0800A0DC9B /* Spot.swift in Sources */,
@@ -518,11 +529,14 @@
 				7F7AC3C42313C22E0070C488 /* ImageHandler.swift in Sources */,
 				2F2986462310F58800A0DC9B /* ArticleTableViewCell.swift in Sources */,
 				7FC35812230BCF8600EA761D /* AppDelegate.swift in Sources */,
+				2F6EC4D923150CE400A7EDC4 /* UIImage.swift in Sources */,
+				7F2E25B0231A5F530036E436 /* UIAplication.swift in Sources */,
 				2F2986402310F43200A0DC9B /* ArticleCollectionViewCell.swift in Sources */,
 				2F2986522311442500A0DC9B /* RecomendedTableViewCell.swift in Sources */,
 				47D2CA71230E89E0003EE10E /* PlaceDetailViewController.swift in Sources */,
 				BE94B578231125C60000AA27 /* SearchNewLocationViewController.swift in Sources */,
 				DC2AE1242315372600867085 /* SignUpViewController.swift in Sources */,
+				DC2AE12A231693F000867085 /* UserData.swift in Sources */,
 				7FCFB8732311CCA9007B3DC9 /* DBModel.swift in Sources */,
 				2F4E192C2312AE93003A016C /* WebViewController.swift in Sources */,
 				7FC3581A230BCF8600EA761D /* Group9.xcdatamodeld in Sources */,
@@ -706,7 +720,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = 4H65A594JP;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -727,7 +741,7 @@
 				CODE_SIGN_ENTITLEMENTS = Group9/Group9.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UUHXR699G4;
+				DEVELOPMENT_TEAM = 4H65A594JP;
 				INFOPLIST_FILE = Group9/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
