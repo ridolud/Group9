@@ -72,6 +72,12 @@ class PlaceModel: DBModel {
 //        self.fetch(scope: .public, byQuery: query)
 //    }
     
+    func getCity(){
+        self.clearData()
+        guard let query = self.query else { return }
+        self.fetchCity(scope: .public, byQuery: query)
+    }
+    
     func get(ByCategory category: PlaceCategory) {
         print(#function, category)
         self.clearData()
@@ -88,6 +94,23 @@ class PlaceModel: DBModel {
         for record in records {
             self.recordToPlace(record)
         }
+    }
+    
+    override func passingCityData(record : CKRecord){
+        let location = CLLocation()
+        self.places.append(
+            .init(
+                id: record.recordID.recordName,
+                name: "default",
+                address: "default",
+                kelurahan: "default",
+                kecamatan: "default",
+                kota: self.checkString("kota", record: record),
+                featureImgUrl: self.checkUrl("default-img", record: record),
+                location: location,
+                category: .store
+            )
+        )
     }
     
     private func recordToPlace(_ record: CKRecord) {

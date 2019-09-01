@@ -13,7 +13,7 @@ protocol parsingCityNameProtocol {
     func parsingCityName(with name: String)
 }
 
-class SearchNewLocationViewController: UIViewController {
+class SearchNewLocationViewController: UIViewController, DatabaseDelegate {
     let placeModel = PlaceModel()
     let locationManager = LocationManager.instance
     var arrayOfCity = [String]()
@@ -26,12 +26,13 @@ class SearchNewLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeModel.delegate = self
         typeSomethingButtonOutlet.isEnabled = false
         //testing doanng
         setupNavBar()
         setTheSearchBar()
         setTheTableView()
-        appendingDummyDataForTesting()
+        appendData()
         tableViewOutlet.reloadData()
         
     }
@@ -39,6 +40,7 @@ class SearchNewLocationViewController: UIViewController {
     func setTheTableView(){
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        placeModel.getCity()
     }
     
     func setupNavBar(){
@@ -77,6 +79,24 @@ class SearchNewLocationViewController: UIViewController {
         let dummyData = ["Jakarta Selatan", "Sleman", "Bandung", "Jakarta Pusat", "Surabaya", "Yogyakarta", "Denpasar", "Tangerang Selatan", "Depok", "Jakarta Timur", "Bekasi", "Surakarta", "Bogor"]
         for i in 0..<dummyData.count{
             arrayOfCity.append(dummyData.sorted()[i])
+        }
+    }
+    
+    func didFetchRecords() {
+        appendData()
+        tableViewOutlet.reloadData()
+    }
+    
+    func appendData(){
+        for place in placeModel.places{
+            arrayOfCity.append(place.kota)
+        }
+        let uniqueSet = Set(arrayOfCity)
+        arrayOfCity = Array(uniqueSet).sorted()
+        for i in stride(from: arrayOfCity.count - 1, to: -1, by: -1) {
+            if arrayOfCity[i] == "" {
+                arrayOfCity.remove(at: i)
+            }
         }
     }
 }
