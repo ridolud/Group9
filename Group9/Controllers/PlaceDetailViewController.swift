@@ -162,6 +162,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBAction func reviewButtonAction(_ sender: Any) {
     }
     
+
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
         
@@ -279,3 +280,4 @@ extension PlaceDetailViewController: StoreTableViewCellDelegate{
         
     }
 }
+

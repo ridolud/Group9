@@ -34,7 +34,7 @@ class DBModel {
         let database = self.setScopeDatabase(scope: scope)
         database.perform(query, inZoneWith: nil, completionHandler: {
             (records, error) in
-
+            print(records)
             guard let records = records else { return }
 
             DispatchQueue.main.async {
