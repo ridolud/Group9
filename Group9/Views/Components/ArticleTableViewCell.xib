@@ -20,25 +20,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="205.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IEC-cA-0tK">
-                        <rect key="frame" x="20" y="22" width="374" height="161"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IEC-cA-0tK">
+                        <rect key="frame" x="0.0" y="22.5" width="414" height="161"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="20" maxY="0.0"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Lz5-2N-NOF">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="161" id="XvB-eU-ZFx"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lz5-2N-NOF">
                             <size key="itemSize" width="374" height="161"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xus-xp-BBW">
-                        <rect key="frame" x="30" y="154" width="354" height="37"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xus-xp-BBW">
+                        <rect key="frame" x="0.0" y="146" width="414" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="qL9-R5-Oa2"/>
+                        </constraints>
                         <color key="pageIndicatorTintColor" name="westly green llighter"/>
                         <color key="currentPageIndicatorTintColor" name="westly green drak"/>
                     </pageControl>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="IEC-cA-0tK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2OD-2I-KR5"/>
+                    <constraint firstItem="xus-xp-BBW" firstAttribute="leading" secondItem="IEC-cA-0tK" secondAttribute="leading" id="O89-QE-Uih"/>
+                    <constraint firstAttribute="trailing" secondItem="IEC-cA-0tK" secondAttribute="trailing" id="PTu-4k-zfk"/>
+                    <constraint firstItem="IEC-cA-0tK" firstAttribute="baseline" secondItem="xus-xp-BBW" secondAttribute="firstBaseline" constant="37.5" id="ngx-RO-GVV"/>
+                    <constraint firstItem="xus-xp-BBW" firstAttribute="trailing" secondItem="IEC-cA-0tK" secondAttribute="trailing" id="q72-Ac-AJl"/>
+                    <constraint firstItem="IEC-cA-0tK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="y0q-vW-Nwx"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

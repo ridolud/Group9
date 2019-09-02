@@ -34,8 +34,11 @@ class ArticleTableViewCell: UITableViewCell, UICollectionViewDelegate {
         articlePageControl.numberOfPages = articles.count
         articlePageControl.currentPage = 0
         
-        articleCollectionView.layer.masksToBounds = true
-        articleCollectionView.layer.cornerRadius = 10.0
+        
+        //articleCollectionView.
+        
+//        articleCollectionView.layer.masksToBounds = true
+//        articleCollectionView.layer.cornerRadius = 10.0
         
         DispatchQueue.main.async {
             self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
@@ -86,6 +89,7 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
         
         let article = articles[indexPath.item]
         
+        
         cell.article = article
         return cell
     }
@@ -97,6 +101,8 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
         
         articleDelegate?.didSelectedArticle(url: url)
     }
+    
+    
     
 }
 

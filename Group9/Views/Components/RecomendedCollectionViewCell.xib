@@ -60,6 +60,7 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="j18-8f-IlH" secondAttribute="trailing" id="3yz-hN-Lrf"/>
                 <constraint firstItem="GjS-jU-ANP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7DI-V1-Ilg"/>
                 <constraint firstAttribute="trailing" secondItem="j18-8f-IlH" secondAttribute="trailing" id="Cnd-2A-QdR"/>
                 <constraint firstAttribute="bottom" secondItem="GjS-jU-ANP" secondAttribute="bottom" id="EZA-h7-gBm"/>
@@ -69,6 +70,7 @@
                 <constraint firstAttribute="bottom" secondItem="GjS-jU-ANP" secondAttribute="bottom" id="NbO-eX-dEa"/>
                 <constraint firstItem="zvo-Cx-VuB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PiF-1x-XaO"/>
                 <constraint firstAttribute="bottom" secondItem="zvo-Cx-VuB" secondAttribute="bottom" id="Y7i-r6-dJs"/>
+                <constraint firstItem="j18-8f-IlH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a6g-dB-X1t"/>
                 <constraint firstAttribute="trailing" secondItem="GjS-jU-ANP" secondAttribute="trailing" id="bGj-Um-0ag"/>
                 <constraint firstItem="j18-8f-IlH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="109" id="bPE-00-V3A"/>
                 <constraint firstAttribute="bottom" secondItem="j18-8f-IlH" secondAttribute="bottom" id="e6R-gM-REv"/>
