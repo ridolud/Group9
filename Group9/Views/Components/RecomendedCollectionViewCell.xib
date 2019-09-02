@@ -22,7 +22,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-img" translatesAutoresizingMaskIntoConstraints="NO" id="zvo-Cx-VuB">
                         <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
                         <rect key="frame" x="0.0" y="0.0" width="166" height="203.00000000000006"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j18-8f-IlH">
@@ -51,7 +51,7 @@
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Kj7-XP-37r" secondAttribute="bottom" constant="14" id="FIf-qn-ECX"/>
-                            <constraint firstItem="5qR-A0-2Vo" firstAttribute="centerX" secondItem="j18-8f-IlH" secondAttribute="centerX" id="J1i-Jt-ZUv"/>
+                            <constraint firstItem="5qR-A0-2Vo" firstAttribute="leading" secondItem="j18-8f-IlH" secondAttribute="leading" constant="8" id="Qaf-N7-bnT"/>
                             <constraint firstItem="Kj7-XP-37r" firstAttribute="top" secondItem="5qR-A0-2Vo" secondAttribute="bottom" constant="1" id="SbK-8v-jgU"/>
                             <constraint firstAttribute="trailing" secondItem="Kj7-XP-37r" secondAttribute="trailing" constant="8" id="SfJ-no-nA7"/>
                             <constraint firstItem="Kj7-XP-37r" firstAttribute="leading" secondItem="j18-8f-IlH" secondAttribute="leading" constant="8" id="uxr-1J-7Bh"/>
