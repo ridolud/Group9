@@ -51,6 +51,7 @@ struct Place {
 class PlaceModel: DBModel {
     
     var places = [Place]()
+    var distance : Float?
     
     override init() {
         super.init()
@@ -82,9 +83,9 @@ class PlaceModel: DBModel {
         print(#function, category)
         self.clearData()
         let filter = category.rawValue
-        let distance : Float = 150000
         let location = LocationManager.instance.currentLocation
-        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && distanceToLocation:fromLocation:(%K,%@) < %f", filter, "location", location!, distance))
+        distance = UserDefaults.standard.float(forKey: "distance") * 1000
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && distanceToLocation:fromLocation:(%K,%@) < %f", filter, "location", location!, distance!))
         guard let query = self.query else { return }
         self.fetch(scope: .public, byQuery: query)
     }

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //LocationManager.instance.allowAccess()
+        UserDefaults.standard.register(defaults: ["distance" : 15])
         return true
     }
 

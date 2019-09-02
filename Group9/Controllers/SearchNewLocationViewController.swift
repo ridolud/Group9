@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol parsingCityNameProtocol {
-    func parsingCityName(with name: String)
+    func parsingCityName(with name: String, isChoosingCity : Bool)
 }
 
 class SearchNewLocationViewController: UIViewController, DatabaseDelegate {
@@ -69,18 +69,12 @@ class SearchNewLocationViewController: UIViewController, DatabaseDelegate {
     
     @IBAction func useCurrentLocationItemBarButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true) {
-            self.parsingDelegate.parsingCityName(with: self.locationManager.currentCity!)
+            self.parsingDelegate.parsingCityName(with: self.locationManager.currentCity!, isChoosingCity: false)
         }
     }
 
     // MARK : - Functions/Methods Section
     
-    func appendingDummyDataForTesting(){
-        let dummyData = ["Jakarta Selatan", "Sleman", "Bandung", "Jakarta Pusat", "Surabaya", "Yogyakarta", "Denpasar", "Tangerang Selatan", "Depok", "Jakarta Timur", "Bekasi", "Surakarta", "Bogor"]
-        for i in 0..<dummyData.count{
-            arrayOfCity.append(dummyData.sorted()[i])
-        }
-    }
     
     func didFetchRecords() {
         appendData()
@@ -124,10 +118,11 @@ extension SearchNewLocationViewController: UITableViewDelegate, UITableViewDataS
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.isFiltering(){
-            self.parsingDelegate.parsingCityName(with: self.arrayOfFilteredCity[indexPath.row])
+            self.parsingDelegate.parsingCityName(with: self.arrayOfFilteredCity[indexPath.row], isChoosingCity : true)
         }
         else {
-            self.parsingDelegate.parsingCityName(with: self.arrayOfCity[indexPath.row])
+            self.parsingDelegate.parsingCityName(with:
+                self.arrayOfCity[indexPath.row], isChoosingCity : true)
         }
         searchBarController.isActive = false
         dismiss(animated: true, completion: nil)
