@@ -215,9 +215,9 @@ extension NearByControllerViewController: parsingCityNameProtocol {
         performSegue(withIdentifier: "newSearchLocation", sender: nil)
     }
     
-    func parsingCityName(with name: String) {
+    func parsingCityName(with name: String, isChoosingCity : Bool) {
         print(#function, name)
-        isChoosingCity = true
+        self.isChoosingCity = isChoosingCity
         self.title = name
         nearbyTableView.reloadData()
     }
