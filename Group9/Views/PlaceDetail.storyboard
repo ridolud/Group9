@@ -39,13 +39,13 @@
                                                         <rect key="frame" x="0.0" y="459" width="414" height="766"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bsq-8Y-nGq">
-                                                                <rect key="frame" x="12" y="0.0" width="390" height="766"/>
+                                                                <rect key="frame" x="18" y="0.0" width="378" height="766"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-RI-diS">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="341"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="436"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-o8-vFM">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="328" height="76.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="316" height="76.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coq-Xl-vWX">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="71" height="36"/>
@@ -68,7 +68,7 @@
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX2-IU-znd">
-                                                                                <rect key="frame" x="340" y="0.0" width="50" height="50"/>
+                                                                                <rect key="frame" x="328" y="0.0" width="50" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="BnT-Vi-lee"/>
                                                                                     <constraint firstAttribute="width" constant="50" id="q40-Lf-OG6"/>
@@ -85,13 +85,30 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PmM-LX-cm7">
-                                                                        <rect key="frame" x="0.0" y="361" width="390" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="456" width="378" height="39"/>
                                                                         <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-v0-su2">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="44.5" height="39"/>
+                                                                                <color key="backgroundColor" name="westly green"/>
+                                                                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
+                                                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                <state key="normal" image="call">
+                                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <integer key="value" value="17"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="callButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="lQZ-ru-3us"/>
+                                                                                </connections>
+                                                                            </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-ss-jXf">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="115" height="39"/>
+                                                                                <rect key="frame" x="51.5" y="0.0" width="121.5" height="39"/>
                                                                                 <color key="backgroundColor" name="westly green"/>
                                                                                 <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="9"/>
-                                                                                <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                                 <state key="normal" title="Direction" image="location">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
@@ -104,28 +121,11 @@
                                                                                     <action selector="directionButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="2cc-OA-E8O"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-v0-su2">
-                                                                                <rect key="frame" x="122" y="0.0" width="74.5" height="39"/>
-                                                                                <color key="backgroundColor" name="westly green"/>
-                                                                                <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
-                                                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                                <state key="normal" title="Call" image="call">
-                                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </state>
-                                                                                <userDefinedRuntimeAttributes>
-                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                        <integer key="value" value="17"/>
-                                                                                    </userDefinedRuntimeAttribute>
-                                                                                </userDefinedRuntimeAttributes>
-                                                                                <connections>
-                                                                                    <action selector="callButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="lQZ-ru-3us"/>
-                                                                                </connections>
-                                                                            </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HT2-Nn-dtJ">
-                                                                                <rect key="frame" x="203.5" y="0.0" width="186.5" height="39"/>
+                                                                                <rect key="frame" x="180" y="0.0" width="198" height="39"/>
                                                                                 <color key="backgroundColor" name="westly green"/>
                                                                                 <inset key="contentEdgeInsets" minX="12" minY="8" maxX="12" maxY="8"/>
-                                                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                                 <state key="normal" title="Add to Calendar" image="calendar">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
@@ -141,7 +141,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="87a-M0-xIL">
-                                                                        <rect key="frame" x="0.0" y="420" width="390" height="251"/>
+                                                                        <rect key="frame" x="0.0" y="515" width="378" height="251"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6O-3z-if5">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="20.5"/>
@@ -156,7 +156,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <mapView clipsSubviews="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-oI-C2f">
-                                                                                <rect key="frame" x="0.0" y="51" width="390" height="200"/>
+                                                                                <rect key="frame" x="0.0" y="51" width="378" height="200"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="200" id="ezC-fj-XCu"/>
                                                                                 </constraints>
@@ -166,11 +166,11 @@
                                                                             <constraint firstItem="gbZ-oI-C2f" firstAttribute="width" secondItem="87a-M0-xIL" secondAttribute="width" priority="750" id="A70-iw-Dma"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-HR-jWM">
-                                                                        <rect key="frame" x="0.0" y="691" width="390" height="75"/>
+                                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-HR-jWM">
+                                                                        <rect key="frame" x="0.0" y="766" width="378" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyG-dw-s2R">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="75"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
                                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="75" id="yNk-2N-z1s"/>

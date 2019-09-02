@@ -57,17 +57,20 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     func buildUpView(PlaceCategory category: PlaceCategory) {
         self.category = category
         self.categoryPlace.text = self.category?.description
-        // Fetching Data
         placeModel.get(ByCategory: category)
     }
     
     func buildUpSimilar(PlaceCategory category: PlaceCategory){
         self.category = category
         self.categoryPlace.text = "Similar Place"
-        // Fetching Data
         placeModel.get(ByCategory: category)
     }
     
+    func buildUpCity(PlaceCategory category: PlaceCategory, city: String){
+        self.category = category
+        self.categoryPlace.text = self.category?.description
+        placeModel.get(ByCategory: category, City : city)
+    }
 }
 
 extension StoreTableViewCell: UICollectionViewDataSource {

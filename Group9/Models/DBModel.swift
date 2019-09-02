@@ -34,7 +34,7 @@ class DBModel {
         let database = self.setScopeDatabase(scope: scope)
         database.perform(query, inZoneWith: nil, completionHandler: {
             (records, error) in
-
+            print(records)
             guard let records = records else { return }
 
             DispatchQueue.main.async {
@@ -46,6 +46,31 @@ class DBModel {
         })
     }
     
+    func fetchCity(scope: CKDatabase.Scope, byQuery query: CKQuery){
+        print(#function, query)
+        self.delegate?.willFetchRecords?()
+        
+        let database = self.setScopeDatabase(scope: scope)
+        let queryOperation = CKQueryOperation()
+        
+        queryOperation.query = query
+        queryOperation.qualityOfService = .userInteractive
+        queryOperation.desiredKeys = ["kota"]
+        
+        queryOperation.recordFetchedBlock = { tempRecord in
+            DispatchQueue.main.async {
+                self.passingCityData(record: tempRecord)
+            }
+        }
+        queryOperation.queryCompletionBlock =  { queryCursor,error in
+            DispatchQueue.main.async {
+                self.delegate?.didFetchRecords?()
+            }
+        }
+        print(#function, query)
+        database.add(queryOperation)
+        
+    }
     
     private func setScopeDatabase(scope: CKDatabase.Scope) -> CKDatabase {
         switch scope {
@@ -59,6 +84,10 @@ class DBModel {
     }
     
     func passingData(records: [CKRecord]) {
+        return
+    }
+    
+    func passingCityData(record: CKRecord){
         return
     }
     

@@ -13,7 +13,7 @@ protocol parsingCityNameProtocol {
     func parsingCityName(with name: String)
 }
 
-class SearchNewLocationViewController: UIViewController {
+class SearchNewLocationViewController: UIViewController, DatabaseDelegate {
     let placeModel = PlaceModel()
     let locationManager = LocationManager.instance
     var arrayOfCity = [String]()
@@ -26,12 +26,13 @@ class SearchNewLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeModel.delegate = self
         typeSomethingButtonOutlet.isEnabled = false
         //testing doanng
         setupNavBar()
         setTheSearchBar()
         setTheTableView()
-        appendingDummyDataForTesting()
+        appendData()
         tableViewOutlet.reloadData()
         
     }
@@ -39,13 +40,17 @@ class SearchNewLocationViewController: UIViewController {
     func setTheTableView(){
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
+        placeModel.getCity()
     }
     
     func setupNavBar(){
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.backgroundColor = .white
+            self.navigationController?.view.backgroundColor = .white
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
     func setTheSearchBar(){
@@ -74,6 +79,24 @@ class SearchNewLocationViewController: UIViewController {
         let dummyData = ["Jakarta Selatan", "Sleman", "Bandung", "Jakarta Pusat", "Surabaya", "Yogyakarta", "Denpasar", "Tangerang Selatan", "Depok", "Jakarta Timur", "Bekasi", "Surakarta", "Bogor"]
         for i in 0..<dummyData.count{
             arrayOfCity.append(dummyData.sorted()[i])
+        }
+    }
+    
+    func didFetchRecords() {
+        appendData()
+        tableViewOutlet.reloadData()
+    }
+    
+    func appendData(){
+        for place in placeModel.places{
+            arrayOfCity.append(place.kota)
+        }
+        let uniqueSet = Set(arrayOfCity)
+        arrayOfCity = Array(uniqueSet).sorted()
+        for i in stride(from: arrayOfCity.count - 1, to: -1, by: -1) {
+            if arrayOfCity[i] == "" {
+                arrayOfCity.remove(at: i)
+            }
         }
     }
 }

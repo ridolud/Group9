@@ -63,20 +63,54 @@ class PlaceModel: DBModel {
         self.fetch(scope: .public, byQuery: query)
     }
     
+    func get(ByCategory category: PlaceCategory, City city: String) {
+        print(#function, category)
+        self.clearData()
+        let filter = category.rawValue
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && kota == %@", filter, city))
+        guard let query = self.query else { return }
+        self.fetch(scope: .public, byQuery: query)
+    }
+    
+    func getCity(){
+        self.clearData()
+        guard let query = self.query else { return }
+        self.fetchCity(scope: .public, byQuery: query)
+    }
+    
     func get(ByCategory category: PlaceCategory) {
         print(#function, category)
         self.clearData()
         let filter = category.rawValue
-        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@", filter))
+        let distance : Float = 15000
+        let location = LocationManager.instance.currentLocation
+        self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && distanceToLocation:fromLocation:(%K,%@) < %f", filter, "location", location!, distance))
         guard let query = self.query else { return }
         self.fetch(scope: .public, byQuery: query)
     }
-   
+
     
     override func passingData(records: [CKRecord]) {
         for record in records {
             self.recordToPlace(record)
         }
+    }
+    
+    override func passingCityData(record : CKRecord){
+        let location = CLLocation()
+        self.places.append(
+            .init(
+                id: record.recordID.recordName,
+                name: "default",
+                address: "default",
+                kelurahan: "default",
+                kecamatan: "default",
+                kota: self.checkString("kota", record: record),
+                featureImgUrl: self.checkUrl("default-img", record: record),
+                location: location,
+                category: .store
+            )
+        )
     }
     
     private func recordToPlace(_ record: CKRecord) {

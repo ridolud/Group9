@@ -8,23 +8,30 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var accountButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupNavBar()
+    }
+    func setupNavBar(){
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = .white
+        self.navigationController?.view.backgroundColor = .white
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2117647059, green: 0.3843137255, blue: 0.168627451, alpha: 1)]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func accountAction(_ sender: Any) {
+        if UserDefaults.standard.string(forKey: "hasLogin") == "true" {
+            performSegue(withIdentifier: "myAccountSegue", sender: self)
+        }else{
+            performSegue(withIdentifier: "SignInSegue", sender: self)
+        }
     }
-    */
-
 }
