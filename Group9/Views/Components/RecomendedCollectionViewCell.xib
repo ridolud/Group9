@@ -22,9 +22,13 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-img" translatesAutoresizingMaskIntoConstraints="NO" id="zvo-Cx-VuB">
                         <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
-                        <rect key="frame" x="0.0" y="0.0" width="166" height="203.00000000000006"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                     </imageView>
+                    <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsm-jK-o2i">
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
+                        <color key="backgroundColor" red="0.098039215686274508" green="0.094117647058823528" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j18-8f-IlH">
                         <rect key="frame" x="0.0" y="109" width="166" height="94"/>
                         <subviews>
@@ -68,19 +72,23 @@
                 <constraint firstItem="GjS-jU-ANP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NEE-cn-MNR"/>
                 <constraint firstAttribute="bottom" secondItem="GjS-jU-ANP" secondAttribute="bottom" id="NbO-eX-dEa"/>
                 <constraint firstItem="zvo-Cx-VuB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PiF-1x-XaO"/>
+                <constraint firstAttribute="trailing" secondItem="nsm-jK-o2i" secondAttribute="trailing" id="RBB-Sm-u8m"/>
                 <constraint firstAttribute="bottom" secondItem="zvo-Cx-VuB" secondAttribute="bottom" id="Y7i-r6-dJs"/>
                 <constraint firstAttribute="trailing" secondItem="GjS-jU-ANP" secondAttribute="trailing" id="bGj-Um-0ag"/>
                 <constraint firstItem="j18-8f-IlH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="109" id="bPE-00-V3A"/>
                 <constraint firstAttribute="bottom" secondItem="j18-8f-IlH" secondAttribute="bottom" id="e6R-gM-REv"/>
                 <constraint firstItem="j18-8f-IlH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ery-1E-I5V"/>
+                <constraint firstItem="nsm-jK-o2i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fo4-x6-4C1"/>
                 <constraint firstItem="GjS-jU-ANP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hdi-YD-gaN"/>
                 <constraint firstAttribute="trailing" secondItem="GjS-jU-ANP" secondAttribute="trailing" id="n1F-Ym-9yy"/>
                 <constraint firstAttribute="trailing" secondItem="zvo-Cx-VuB" secondAttribute="trailing" id="pXl-MS-moy"/>
+                <constraint firstAttribute="bottom" secondItem="nsm-jK-o2i" secondAttribute="bottom" id="qfW-yz-PKi"/>
+                <constraint firstItem="nsm-jK-o2i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xW4-Ho-UhB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="79" height="79"/>
             <connections>
-                <outlet property="gradientBackground" destination="GjS-jU-ANP" id="GYG-q8-AB1"/>
+                <outlet property="gradientBackground" destination="nsm-jK-o2i" id="Mbq-Bh-D57"/>
                 <outlet property="recommendedDescription" destination="Kj7-XP-37r" id="ODg-hD-9Sx"/>
                 <outlet property="recommendedImage" destination="zvo-Cx-VuB" id="9tM-45-PQb"/>
                 <outlet property="recommendedTitle" destination="5qR-A0-2Vo" id="Pvk-Oo-I8F"/>

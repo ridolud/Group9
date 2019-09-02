@@ -35,7 +35,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <state key="normal" title="See All">
-                            <color key="titleColor" red="0.1887697733" green="0.69618111849999997" blue="0.19645292859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="titleColor" red="0.44705882352941173" green="0.61568627450980395" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
                         <connections>
                             <action selector="seeAllAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ncB-b0-etG"/>

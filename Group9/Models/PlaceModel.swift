@@ -82,7 +82,7 @@ class PlaceModel: DBModel {
         print(#function, category)
         self.clearData()
         let filter = category.rawValue
-        let distance : Float = 15000
+        let distance : Float = 150000
         let location = LocationManager.instance.currentLocation
         self.query = .init(recordType: RecordType.place.rawValue, predicate: NSPredicate(format: "category == %@ && distanceToLocation:fromLocation:(%K,%@) < %f", filter, "location", location!, distance))
         guard let query = self.query else { return }
