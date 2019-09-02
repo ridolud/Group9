@@ -33,11 +33,7 @@
                         <rect key="frame" x="0.0" y="72" width="354" height="89"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101 Easy Eco Friendly Zero Waste Tips" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoO-9t-Vm8">
-                                <rect key="frame" x="20" y="16" width="314" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="314" id="5Nu-qw-ALJ"/>
-                                    <constraint firstAttribute="height" constant="56" id="hA3-cv-StG"/>
-                                </constraints>
+                                <rect key="frame" x="19" y="8" width="320" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,8 +41,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RoO-9t-Vm8" firstAttribute="leading" secondItem="Mel-ch-Zzb" secondAttribute="leading" constant="20" id="wcu-yg-aht"/>
-                            <constraint firstAttribute="bottom" secondItem="RoO-9t-Vm8" secondAttribute="bottom" constant="17" id="xew-iT-a90"/>
+                            <constraint firstItem="RoO-9t-Vm8" firstAttribute="leading" secondItem="Mel-ch-Zzb" secondAttribute="leading" constant="19" id="NrT-J7-wNv"/>
+                            <constraint firstAttribute="trailing" secondItem="RoO-9t-Vm8" secondAttribute="trailing" constant="15" id="nT2-Ts-XWC"/>
+                            <constraint firstAttribute="bottom" secondItem="RoO-9t-Vm8" secondAttribute="bottom" constant="33" id="wMt-uH-34f"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,17 +53,25 @@
                 <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2c5-TB-w4U"/>
                 <constraint firstItem="7Kd-bl-UhZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="58u-Ek-Cin"/>
                 <constraint firstItem="vDA-E8-3ov" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7kC-VU-LfZ"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AJb-Ix-ZvC"/>
                 <constraint firstAttribute="trailing" secondItem="7Kd-bl-UhZ" secondAttribute="trailing" id="Cp9-0M-LN8"/>
                 <constraint firstAttribute="bottom" secondItem="Mel-ch-Zzb" secondAttribute="bottom" id="DhX-bo-rbh"/>
                 <constraint firstItem="vDA-E8-3ov" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KN5-GX-EbC"/>
+                <constraint firstAttribute="trailing" secondItem="GR0-JE-DQ2" secondAttribute="trailing" id="QCo-4J-lrL"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WeZ-e1-3Tq"/>
+                <constraint firstAttribute="bottom" secondItem="7Kd-bl-UhZ" secondAttribute="bottom" id="XeG-nd-mQT"/>
                 <constraint firstItem="7Kd-bl-UhZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YWO-cx-uiU"/>
+                <constraint firstAttribute="trailing" secondItem="7Kd-bl-UhZ" secondAttribute="trailing" id="avS-3p-OZW"/>
                 <constraint firstItem="Mel-ch-Zzb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="72" id="azX-PF-6fr"/>
                 <constraint firstItem="GR0-JE-DQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eY0-ee-Aew"/>
                 <constraint firstAttribute="bottom" secondItem="GR0-JE-DQ2" secondAttribute="bottom" id="fAE-Pg-ZaQ"/>
+                <constraint firstAttribute="bottom" secondItem="GR0-JE-DQ2" secondAttribute="bottom" id="kt2-Hf-Fon"/>
                 <constraint firstItem="Mel-ch-Zzb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="laU-KA-Q8b"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lr1-7e-Ehv"/>
                 <constraint firstAttribute="bottom" secondItem="vDA-E8-3ov" secondAttribute="bottom" id="oXO-cw-Qlk"/>
                 <constraint firstAttribute="trailing" secondItem="GR0-JE-DQ2" secondAttribute="trailing" id="uaj-kT-2E7"/>
                 <constraint firstAttribute="bottom" secondItem="7Kd-bl-UhZ" secondAttribute="bottom" id="uuL-0B-0Kb"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vGV-wq-MOd"/>
                 <constraint firstAttribute="trailing" secondItem="Mel-ch-Zzb" secondAttribute="trailing" id="vUf-Or-SjR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

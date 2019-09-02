@@ -140,6 +140,8 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             return 205
         }else if indexPath.row == 1{
             return 280
+        }else if indexPath.row == selectedPlaceCategory.count + 2{
+            return 353
         }else{
             return 308
         }
