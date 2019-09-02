@@ -26,25 +26,18 @@
                         <color key="textColor" red="0.21176470588235294" green="0.38431372549019605" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-Lj-b5V">
-                        <rect key="frame" x="0.0" y="55" width="413" height="203"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-Lj-b5V">
+                        <rect key="frame" x="0.0" y="55" width="414" height="203"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="203" id="2Fu-0Y-VD3"/>
-                        </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="rIq-ZM-Cao">
-                            <size key="itemSize" width="190" height="203"/>
+                            <size key="itemSize" width="185" height="203"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="aD3-Lj-b5V" secondAttribute="trailing" id="46p-4W-de8"/>
-                    <constraint firstAttribute="bottom" secondItem="aD3-Lj-b5V" secondAttribute="bottom" constant="21.5" id="dSn-J2-0jK"/>
-                    <constraint firstItem="aD3-Lj-b5V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="u3f-4O-Yh1"/>
-                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

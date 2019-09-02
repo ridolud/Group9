@@ -71,7 +71,8 @@
                                     <constraint firstAttribute="width" constant="32" id="jUm-Eq-doe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" image="love-button"/>
+                                <state key="normal" image="32px Icon Button"/>
+                                <state key="selected" image="Info 2"/>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22W-Ra-gcc">
                                 <rect key="frame" x="0.0" y="145" width="215" height="101"/>
@@ -159,9 +160,10 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="32px Icon Button" width="40" height="40"/>
+        <image name="Info 2" width="40" height="40"/>
         <image name="default-img" width="370" height="290"/>
         <image name="icons8-star-30" width="30" height="30"/>
-        <image name="love-button" width="80" height="80"/>
         <namedColor name="westly green">
             <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

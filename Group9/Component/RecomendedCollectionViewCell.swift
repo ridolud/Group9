@@ -10,8 +10,7 @@ import UIKit
 
 class RecomendedCollectionViewCell: UICollectionViewCell {
     
-   
-    @IBOutlet weak var gradientBackground: UIImageView!
+    @IBOutlet weak var gradientBackground: UIView!
     @IBOutlet weak var recommendedImage: UIImageView!
     @IBOutlet weak var recommendedTitle: UILabel!
     @IBOutlet weak var recommendedDescription: UILabel!
@@ -27,7 +26,7 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
             }else{
                 self.recommendedTitle.alpha = 1
                 self.recommendedDescription.alpha = 1
-                self.gradientBackground.alpha = 0.8
+                self.gradientBackground.alpha = 0.42
             }
         }
     }
