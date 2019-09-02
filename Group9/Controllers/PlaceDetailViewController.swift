@@ -114,9 +114,9 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBAction func favoriteButtonAction(_ sender: UIButton) {
         isFavorite = !isFavorite
         if isFavorite {
-            favoriteButtonOutlet.setTitle("♥︎", for: .normal)
+            favoriteButtonOutlet.setImage(UIImage(named: "Info 2"), for: .normal)
         } else {
-            favoriteButtonOutlet.setTitle("♡", for: .normal)
+            favoriteButtonOutlet.setImage(UIImage(named: "32px Icon Button"), for: .normal)
         }
     }
     

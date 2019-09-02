@@ -67,16 +67,16 @@
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX2-IU-znd">
+                                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX2-IU-znd">
                                                                                 <rect key="frame" x="328" y="0.0" width="50" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="BnT-Vi-lee"/>
                                                                                     <constraint firstAttribute="width" constant="50" id="q40-Lf-OG6"/>
                                                                                 </constraints>
-                                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                                                <state key="normal" title="♡">
+                                                                                <state key="normal" image="32px Icon Button">
                                                                                     <color key="titleColor" red="0.52156862749999999" green="0.78823529410000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 </state>
+                                                                                <state key="highlighted" image="Info 2"/>
                                                                                 <connections>
                                                                                     <action selector="favoriteButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="75D-cz-ODb"/>
                                                                                     <action selector="favoriteButtonHaptic:" destination="vMn-m6-8Nu" eventType="touchDown" id="lEi-mg-RRi"/>
@@ -415,6 +415,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="32px Icon Button" width="40" height="40"/>
+        <image name="Info 2" width="40" height="40"/>
         <image name="calendar" width="21" height="21"/>
         <image name="call" width="16" height="16"/>
         <image name="joao-silas-fLEloWo0xt8-unsplash" width="3204" height="4806"/>

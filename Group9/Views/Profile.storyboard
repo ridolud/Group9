@@ -323,13 +323,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdI-KS-sAU">
-                                <rect key="frame" x="35" y="162" width="344" height="46.5"/>
-                                <string key="text">Type in your Email ID and Password you chose for Wastely and click sign in to start sharing your journey from visiting the places to support your zero waste lifestyle!</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" red="0.20762816070000001" green="0.38672500850000002" blue="0.1685819626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfQ-d9-hNE">
                                 <rect key="frame" x="148" y="383" width="118" height="48"/>
                                 <color key="backgroundColor" red="0.44993996620178223" green="0.61975890398025513" blue="0.22342342138290405" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -343,7 +336,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ezj-Om-pDT">
-                                <rect key="frame" x="35" y="240.5" width="344" height="30.5"/>
+                                <rect key="frame" x="35" y="241" width="344" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -398,6 +391,13 @@
                                 <color key="textColor" red="0.86422675550000005" green="0.24270272540000001" blue="0.14528487400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdI-KS-sAU">
+                                <rect key="frame" x="35" y="156" width="344" height="67"/>
+                                <string key="text">Type in your Email ID and Password you chose for Wastely and click sign in to start sharing your journey from visiting the places to support your zero waste lifestyle!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20762816070000001" green="0.38672500850000002" blue="0.1685819626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -408,11 +408,9 @@
                             <constraint firstItem="cGC-6w-s7c" firstAttribute="bottom" secondItem="TNb-0S-l23" secondAttribute="bottom" constant="46" id="6ZM-gN-aSV"/>
                             <constraint firstItem="CLb-Tj-R1m" firstAttribute="leading" secondItem="cGC-6w-s7c" secondAttribute="leading" constant="35" id="6jN-Q3-n94"/>
                             <constraint firstItem="CLb-Tj-R1m" firstAttribute="top" secondItem="Ezj-Om-pDT" secondAttribute="bottom" constant="32" id="8LW-L0-qFK"/>
-                            <constraint firstItem="Ezj-Om-pDT" firstAttribute="top" secondItem="zdI-KS-sAU" secondAttribute="bottom" constant="32" id="BKh-dU-P2N"/>
                             <constraint firstItem="lfQ-d9-hNE" firstAttribute="top" secondItem="CLb-Tj-R1m" secondAttribute="bottom" constant="50" id="Fp3-7F-d5G"/>
                             <constraint firstItem="cGC-6w-s7c" firstAttribute="trailing" secondItem="CLb-Tj-R1m" secondAttribute="trailing" constant="35" id="JOy-4w-Ofd"/>
                             <constraint firstItem="cGC-6w-s7c" firstAttribute="trailing" secondItem="zdI-KS-sAU" secondAttribute="trailing" constant="35" id="KOW-Md-kk9"/>
-                            <constraint firstItem="zdI-KS-sAU" firstAttribute="top" secondItem="l48-vm-U95" secondAttribute="bottom" constant="14" id="MwJ-2C-ghL"/>
                             <constraint firstItem="zdI-KS-sAU" firstAttribute="leading" secondItem="cGC-6w-s7c" secondAttribute="leading" constant="35" id="Pb0-xP-v9E"/>
                             <constraint firstItem="Ezj-Om-pDT" firstAttribute="leading" secondItem="cGC-6w-s7c" secondAttribute="leading" constant="35" id="SGK-3x-sjz"/>
                             <constraint firstItem="cGC-6w-s7c" firstAttribute="trailing" secondItem="l48-vm-U95" secondAttribute="trailing" constant="35" id="a0E-qd-82W"/>
@@ -420,7 +418,9 @@
                             <constraint firstItem="QYH-4N-W9E" firstAttribute="leading" secondItem="cGC-6w-s7c" secondAttribute="leading" constant="35" id="dqU-ge-7Bb"/>
                             <constraint firstItem="cGC-6w-s7c" firstAttribute="trailing" secondItem="Ezj-Om-pDT" secondAttribute="trailing" constant="35" id="fzy-9f-ReY"/>
                             <constraint firstItem="l48-vm-U95" firstAttribute="top" secondItem="cGC-6w-s7c" secondAttribute="top" constant="30" id="hFd-au-Or2"/>
+                            <constraint firstItem="Ezj-Om-pDT" firstAttribute="top" secondItem="zdI-KS-sAU" secondAttribute="bottom" constant="18" id="liv-sw-Wqm"/>
                             <constraint firstItem="cGC-6w-s7c" firstAttribute="trailing" secondItem="QYH-4N-W9E" secondAttribute="trailing" constant="35" id="n87-sV-h0S"/>
+                            <constraint firstItem="zdI-KS-sAU" firstAttribute="top" secondItem="l48-vm-U95" secondAttribute="bottom" constant="8" id="ytk-Vp-Ejm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cGC-6w-s7c"/>
                     </view>
