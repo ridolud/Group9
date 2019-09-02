@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundPotrait" translatesAutoresizingMaskIntoConstraints="NO" id="GjS-jU-ANP">
-                        <rect key="frame" x="0.0" y="0.0" width="166" height="203.00000000000006"/>
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="203"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j18-8f-IlH">
                         <rect key="frame" x="0.0" y="109" width="166" height="94"/>

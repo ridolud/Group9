@@ -106,6 +106,17 @@ extension ArticleTableViewCell:UICollectionViewDataSource{
     
 }
 
+extension ArticleTableViewCell:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: (self.frame.width - 40)  , height: 161)
+        
+    }
+}
+
+
 @objc protocol ArticleTableViewCellDelegate {
     @objc func didSelectedArticle(url: String)
 }
