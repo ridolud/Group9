@@ -179,7 +179,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" name="westly green drak"/>
+                        <color key="tintColor" name="westly green"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -232,8 +232,8 @@
     </scenes>
     <resources>
         <image name="Fill 5" width="31" height="31"/>
-        <namedColor name="westly green drak">
-            <color red="0.21176470588235294" green="0.3843137254901961" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="westly green">
+            <color red="0.44705882352941179" green="0.61568627450980395" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
