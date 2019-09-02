@@ -21,6 +21,8 @@ class StoreCollectionCell: UICollectionViewCell {
     
     var place: Place!
     
+    var isFavorite = false
+    
     var isLoading = false {
         didSet{
             if self.isLoading {
@@ -47,5 +49,15 @@ class StoreCollectionCell: UICollectionViewCell {
         addressLabel.text = "\(distance/1000) km - \(self.place.kecamatan), \(self.place.kota) "
         imagePlace.loadFromUrl(self.place.featureImgUrl)
     }
+    
+    @IBAction func favoriteAction(_ sender: Any) {
+        isFavorite = !isFavorite
+        if isFavorite {
+            favoriteButton.setImage(UIImage(named: "Info 2"), for: .normal)
+        } else {
+            favoriteButton.setImage(UIImage(named: "32px Icon Button"), for: .normal)
+        }
+    }
+    
 
 }
