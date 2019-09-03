@@ -129,7 +129,7 @@
                         <viewLayoutGuide key="safeArea" id="2zC-A0-Cuo"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nearby" largeTitleDisplayMode="always" id="5M4-15-RGh">
-                        <barButtonItem key="leftBarButtonItem" title="Change Location" id="TYc-Oa-1RE">
+                        <barButtonItem key="leftBarButtonItem" title="Your Location" id="TYc-Oa-1RE">
                             <connections>
                                 <action selector="changeLocationAction:" destination="c9R-Gq-8BI" id="NsH-F5-KEN"/>
                                 <segue destination="4tB-ei-vTv" kind="presentation" identifier="newSearchLocation" id="g7E-rU-Cuw"/>

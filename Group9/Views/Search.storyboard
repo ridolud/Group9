@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1023" y="135"/>
         </scene>
-        <!--Search Location-->
+        <!--Change Location-->
         <scene sceneID="Kvc-tp-c8a">
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="jbv-ZW-Xdd" customClass="SearchNewLocationViewController" customModule="Group9" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +178,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kJY-7k-hfY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Location" id="yqd-d7-842">
+                    <navigationItem key="navigationItem" title="Change Location" id="yqd-d7-842">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="UKo-lM-tLj">
                             <color key="tintColor" name="westly green"/>
                             <connections>
