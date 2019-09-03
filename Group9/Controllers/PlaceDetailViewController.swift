@@ -24,6 +24,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var currentStyleStatusBar = UIStatusBarStyle.lightContent
+    
     var currentPlace: Place!
     
     var isFavorite = false
@@ -85,10 +87,8 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.view.backgroundColor = .clear
         navigationController?.navigationBar.prefersLargeTitles = false
-        setNeedsStatusBarAppearanceUpdate()
+        navigationController?.navigationBar.tintColor = .white
         scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -180).isActive = true
-//        UIApplication.shared.statusBarStyle = .lightContent
-//        setNeedsStatusBarAppearanceUpdate()
     }
     func setupNavigationBarCancel(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -96,13 +96,12 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = UIColor(red: 54/255, green: 98/255, blue: 43/255, alpha: 1)
         navigationController?.navigationBar.prefersLargeTitles = true
-//        UIApplication.shared.statusBarStyle = .default
-//        setNeedsStatusBarAppearanceUpdate()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return currentStyleStatusBar
     }
     
     
@@ -171,6 +170,10 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
             let color = UIColor(red: 1, green: 1, blue: 1, alpha: alpa)
             self.navigationController?.navigationBar.backgroundColor = color
             UIApplication.shared.statusBarView?.backgroundColor = color
+            navigationController?.navigationBar.tintColor = UIColor(red: 54/255, green: 98/255, blue: 43/255, alpha: 1)
+            currentStyleStatusBar = .default
+        }else{
+            navigationController?.navigationBar.tintColor = .white
         }
         
     }
