@@ -86,7 +86,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="GradientBackgroundLandscape" width="708" height="322"/>
+        <image name="GradientBackgroundLandscape" width="380" height="183"/>
         <image name="img4" width="4032" height="3024"/>
     </resources>
 </document>
