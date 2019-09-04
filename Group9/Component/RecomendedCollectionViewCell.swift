@@ -16,7 +16,7 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var recommendedDescription: UILabel!
     
     var currentPlace : Place!
-    
+    var isDummy = false
     var isLoading = false {
         didSet{
             if self.isLoading {
@@ -48,7 +48,11 @@ class RecomendedCollectionViewCell: UICollectionViewCell {
     func loadPlace(place: Place){
         self.currentPlace = place
         recommendedTitle.text = currentPlace?.name
-        recommendedImage.loadFromUrl(currentPlace?.featureImgUrl)
+        if isDummy {
+            recommendedImage.setDummyImage(place.category)
+        }else {
+            recommendedImage.loadFromUrl(currentPlace?.featureImgUrl)
+        }
         let distance = Int(((LocationManager.instance.currentLocation?.distance(from: currentPlace.location!))!))
     recommendedDescription.text = "\(distance/1000) km, \(currentPlace.kota)"
         

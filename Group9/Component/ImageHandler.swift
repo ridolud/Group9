@@ -20,6 +20,21 @@ extension UIImageView {
             }
         }
     }
+    
+    func setDummyImage(_ category :  PlaceCategory){
+        switch category {
+        case .refill :
+            self.image = #imageLiteral(resourceName: "Water-Refil")
+        case .store :
+            self.image = #imageLiteral(resourceName: "Traditional-Market")
+        case .repair :
+            self.image = #imageLiteral(resourceName: "Repair-Store")
+        case .food :
+            self.image = #imageLiteral(resourceName: "Bulk-Store")
+        default :
+            self.image = #imageLiteral(resourceName: "img3")
+        }
+    }
 }
 
 extension UIImage {

@@ -19,6 +19,7 @@ class StoreTableViewCell: UITableViewCell, UICollectionViewDelegate, DatabaseDel
     var category: PlaceCategory?
     
     var isLoading = true
+    var isDummy = false
     
     var delegate: StoreTableViewCellDelegate?
     
@@ -86,7 +87,7 @@ extension StoreTableViewCell: UICollectionViewDataSource {
         let cell = storeCollection.dequeueReusableCell(withReuseIdentifier: "storeCell", for:  indexPath) as! StoreCollectionCell
         
         cell.isLoading = isLoading
-        
+        cell.isDummy = isDummy
         if !isLoading {
             cell.loadPlace(place: placeModel.places[indexPath.row])
         }

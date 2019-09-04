@@ -18,6 +18,7 @@ class NearByControllerViewController: UIViewController, LocationManagerDelegate 
     let locationManager = LocationManager.instance
     let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
     var isChoosingCity = false
+    var isDummy = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +101,7 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
         }else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "recomendedTableViewCell") as! RecomendedTableViewCell
             cell.recommendedDelegate = self
+            cell.isDummy = isDummy
             if isChoosingCity {
                 cell.buildUpCity(PlaceCategory: .store, city: self.title!)
             }
@@ -119,6 +121,7 @@ extension NearByControllerViewController: UITableViewDataSource, UITableViewDele
             let currentIndex = indexPath.row - 2
             
             cell.delegate = self
+            cell.isDummy = isDummy
             if isChoosingCity {
                 cell.buildUpCity(PlaceCategory: selectedPlaceCategory[currentIndex], city: self.title!)
 
