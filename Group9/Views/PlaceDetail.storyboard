@@ -42,7 +42,7 @@
                                                                 <rect key="frame" x="18" y="0.0" width="378" height="766"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JV7-RI-diS">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="438"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="343"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-o8-vFM">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="316" height="76.5"/>
@@ -85,7 +85,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PmM-LX-cm7">
-                                                                        <rect key="frame" x="0.0" y="458" width="378" height="37"/>
+                                                                        <rect key="frame" x="0.0" y="363" width="378" height="37"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVn-v0-su2">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="75.5" height="37"/>
@@ -144,7 +144,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="87a-M0-xIL">
-                                                                        <rect key="frame" x="0.0" y="515" width="378" height="251"/>
+                                                                        <rect key="frame" x="0.0" y="420" width="378" height="251"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6O-3z-if5">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="20.5"/>
@@ -169,16 +169,23 @@
                                                                             <constraint firstItem="gbZ-oI-C2f" firstAttribute="width" secondItem="87a-M0-xIL" secondAttribute="width" priority="750" id="A70-iw-Dma"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-HR-jWM">
-                                                                        <rect key="frame" x="0.0" y="766" width="378" height="75"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bfp-HR-jWM">
+                                                                        <rect key="frame" x="0.0" y="691" width="378" height="75"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyG-dw-s2R">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="378" height="75"/>
-                                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="backgroundColor" name="westly green"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="75" id="yNk-2N-z1s"/>
                                                                                 </constraints>
-                                                                                <state key="normal" title="Button"/>
+                                                                                <state key="normal" title="Review">
+                                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                </state>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <integer key="value" value="30"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
                                                                                 <connections>
                                                                                     <action selector="reviewButtonAction:" destination="vMn-m6-8Nu" eventType="touchUpInside" id="ZmV-Dc-yYi"/>
                                                                                     <segue destination="lbc-xc-uy0" kind="show" id="EWj-dU-bex"/>
