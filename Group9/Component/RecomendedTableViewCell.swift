@@ -20,6 +20,7 @@ class RecomendedTableViewCell: UITableViewCell, DatabaseDelegate {
     var category : PlaceCategory?
     
     var isLoading  = true
+    var isDummy = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,7 +74,7 @@ extension RecomendedTableViewCell: UICollectionViewDataSource,UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "recomendedCollectionViewCell", for: indexPath) as! RecomendedCollectionViewCell
         
         cell.isLoading = isLoading
-        
+        cell.isDummy = isDummy
         if !isLoading{
             cell.loadPlace(place:placeModel.places[indexPath.row])
         }

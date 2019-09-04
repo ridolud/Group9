@@ -22,7 +22,7 @@ class StoreCollectionCell: UICollectionViewCell {
     var place: Place!
     
     var isFavorite = false
-    
+    var isDummy = false
     var isLoading = false {
         didSet{
             if self.isLoading {
@@ -47,7 +47,11 @@ class StoreCollectionCell: UICollectionViewCell {
         let distance = Int((place.location?.distance(from: LocationManager.instance.currentLocation!))!)
         nameLabel.text = self.place.name
         addressLabel.text = "\(distance/1000) km - \(self.place.kecamatan), \(self.place.kota) "
-        imagePlace.loadFromUrl(self.place.featureImgUrl)
+        if isDummy {
+            imagePlace.setDummyImage(place.category)
+        }else {
+            imagePlace.loadFromUrl(self.place.featureImgUrl)
+        }
         hourPlace.text = self.place.openHour
     }
     
