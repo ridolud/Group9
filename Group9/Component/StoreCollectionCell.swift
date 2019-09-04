@@ -48,6 +48,7 @@ class StoreCollectionCell: UICollectionViewCell {
         nameLabel.text = self.place.name
         addressLabel.text = "\(distance/1000) km - \(self.place.kecamatan), \(self.place.kota) "
         imagePlace.loadFromUrl(self.place.featureImgUrl)
+        hourPlace.text = self.place.openHour
     }
     
     @IBAction func favoriteAction(_ sender: Any) {

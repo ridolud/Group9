@@ -42,6 +42,8 @@ struct Place {
     var featureImgUrl: URL?
     let location: CLLocation?
     let category: PlaceCategory
+    let phone: String
+    let openHour: String
     
     mutating func changeImageURL( url : URL){
         self.featureImgUrl = url
@@ -109,7 +111,9 @@ class PlaceModel: DBModel {
                 kota: self.checkString("kota", record: record),
                 featureImgUrl: self.checkUrl("default-img", record: record),
                 location: location,
-                category: .store
+                category: .store,
+                phone: "default",
+                openHour: "default"
             )
         )
     }
@@ -125,7 +129,9 @@ class PlaceModel: DBModel {
                 kota: self.checkString("kota", record: record),
                 featureImgUrl: self.checkUrl("feature_img", record: record),
                 location: checkLocation(record : record),
-                category: self.checkCategory(record: record)
+                category: self.checkCategory(record: record),
+                phone: self.checkString("phone_number", record: record),
+                openHour: "\(self.checkString("open_day", record: record)), \(self.checkString("open_hour", record: record)) - \(self.checkString("close_hour", record: record))"
             )
         )
     }

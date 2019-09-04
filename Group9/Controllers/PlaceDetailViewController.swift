@@ -149,7 +149,7 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     @IBAction func callButtonAction(_ sender: Any) {
         print(#function)
-        let num = "082325014153"
+        let num = self.currentPlace.phone
         guard let number = URL(string: "tel://" + num) else { return }
         UIApplication.shared.open(number)
     }
