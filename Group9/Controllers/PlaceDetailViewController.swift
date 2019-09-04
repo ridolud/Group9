@@ -131,30 +131,30 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     @IBAction func directionButtonAction(_ sender: Any) {
         
-        let navigate = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let aMaps = UIAlertAction(title: "Navigate with Maps", style: .default) { _ in
+//        let navigate = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//        let aMaps = UIAlertAction(title: "Navigate with Maps", style: .default) { _ in
             let coordinate = self.currentPlace.location!.coordinate
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
             mapItem.name = "Target location"
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
-        }
-        let gMaps = UIAlertAction(title: "Navigate with Google Maps", style: .default) { _ in
-            let testURL = URL(string: "comgooglemaps-x-callback://")
-            if UIApplication.shared.canOpenURL(testURL!) {
-                let directionRequest = "comgooglemaps-x-callback://" + "?daddr=\(self.currentPlace.location!.coordinate.latitude),\(self.currentPlace.location!.coordinate.longitude)&directionsmode=driving"
-                UIApplication.shared.openURL(URL(string: directionRequest)!)
-                
-            } else {
-                NSLog("Can't use comgooglemaps://");
-            }
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            
-        }
-        navigate.addAction(aMaps)
-        navigate.addAction(gMaps)
-        navigate.addAction(cancel)
-        self.present(navigate, animated: true, completion: nil)
+//        }
+//        let gMaps = UIAlertAction(title: "Navigate with Google Maps", style: .default) { _ in
+//            let testURL = URL(string: "comgooglemaps-x-callback://")
+//            if UIApplication.shared.canOpenURL(testURL!) {
+//                let directionRequest = "comgooglemaps-x-callback://" + "?daddr=\(self.currentPlace.location!.coordinate.latitude),\(self.currentPlace.location!.coordinate.longitude)&directionsmode=driving"
+//                UIApplication.shared.openURL(URL(string: directionRequest)!)
+//
+//            } else {
+//                NSLog("Can't use comgooglemaps://");
+//            }
+//        }
+//        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+//
+//        }
+//        navigate.addAction(aMaps)
+//        navigate.addAction(gMaps)
+//        navigate.addAction(cancel)
+//        self.present(navigate, animated: true, completion: nil)
     }
     
     @IBAction func callButtonAction(_ sender: Any) {

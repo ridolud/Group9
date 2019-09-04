@@ -50,7 +50,7 @@ class PlaceCategoryController: UITableViewController, DatabaseDelegate {
         let distance = Int(((LocationManager.instance.currentLocation?.distance(from: place.location!))!))
         cell.storeAddress.text = "\(distance/1000) km - \(place.kecamatan), \(place.kota)"
         cell.storeTime.text = place.openHour
-        
+        cell.selectionStyle = .none
         return cell
     }
     

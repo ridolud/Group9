@@ -18,7 +18,7 @@ class NearByControllerViewController: UIViewController, LocationManagerDelegate 
     let locationManager = LocationManager.instance
     let selectedPlaceCategory: [PlaceCategory] = [.store, .repair, .refill]
     var isChoosingCity = false
-    var isDummy = true
+    var isDummy = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
