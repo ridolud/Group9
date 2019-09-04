@@ -6,8 +6,28 @@
 	<dict>
 		<key>Group9.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>7FC3580D230BCF8600EA761D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FC35824230BCF8800EA761D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FC3582F230BCF8800EA761D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
