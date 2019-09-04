@@ -17,6 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UserDefaults.standard.register(defaults: ["distance" : 15])
+        //LocationManager.instance.allowAccess()
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboardOnboarding = UIStoryboard(name: "Onboarding", bundle: nil)
+        var vc: UIViewController
+        
+        //ganti forKey dengan data yang di-inginkan (normalnya dari data UserDefault)
+        if (UserDefaults.standard.value(forKey: "onboarding") as? Bool) == false || (UserDefaults.standard.value(forKey: "onboarding") as? Bool) == nil  {
+            // show the onboarding screen
+            vc = storyboardOnboarding.instantiateViewController(withIdentifier: "onboarding")
+        } else {
+            // show the main screen
+            vc = storyboard.instantiateInitialViewController()!
+        }
+        self.window?.rootViewController = vc
+        
+        
         return true
     }
 
