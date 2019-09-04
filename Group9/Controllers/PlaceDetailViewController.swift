@@ -19,10 +19,10 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     @IBOutlet weak var calendarButtonOutlet: UIButton!
     @IBOutlet weak var favoriteButtonOutlet: UIButton!
     @IBOutlet weak var mapOutlet: MKMapView!
-    @IBOutlet weak var reviewButtonOutlet: UIButton!
     @IBOutlet weak var similarPlaceView: UITableView!
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var reviewButton: UIView!
     
     var currentStyleStatusBar = UIStatusBarStyle.lightContent
     
@@ -41,6 +41,16 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
         setupMap()
         setupSimilarPlace()
         scrollView.delegate = self
+        
+        reviewButton.layer.cornerRadius = 12
+        reviewButton.layer.masksToBounds = true
+        
+        let tapReview = UITapGestureRecognizer(target: self, action: #selector(didReviewTap(_:)))
+        reviewButton.addGestureRecognizer(tapReview)
+    }
+    
+    @objc func didReviewTap(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "reviewPage", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -156,9 +166,6 @@ class PlaceDetailViewController: UIViewController, LocationManagerDelegate {
     
     @IBAction func calendarButtonAction(_ sender: Any) {
         addEventView()
-    }
-    
-    @IBAction func reviewButtonAction(_ sender: Any) {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
