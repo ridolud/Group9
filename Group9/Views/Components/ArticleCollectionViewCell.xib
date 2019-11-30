@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="articleCollectionViewCell" id="gTV-IL-0wX" customClass="ArticleCollectionViewCell" customModule="Group9" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img4" translatesAutoresizingMaskIntoConstraints="NO" id="vDA-E8-3ov">
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+                    </imageView>
+                    <view alpha="0.34999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR0-JE-DQ2">
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GradientBackgroundLandscape" translatesAutoresizingMaskIntoConstraints="NO" id="7Kd-bl-UhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="161"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mel-ch-Zzb" userLabel="BottomContainer">
+                        <rect key="frame" x="0.0" y="72" width="354" height="89"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="101 Easy Eco Friendly Zero Waste Tips" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoO-9t-Vm8">
+                                <rect key="frame" x="19" y="8" width="320" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RoO-9t-Vm8" firstAttribute="leading" secondItem="Mel-ch-Zzb" secondAttribute="leading" constant="19" id="NrT-J7-wNv"/>
+                            <constraint firstAttribute="trailing" secondItem="RoO-9t-Vm8" secondAttribute="trailing" constant="15" id="nT2-Ts-XWC"/>
+                            <constraint firstAttribute="bottom" secondItem="RoO-9t-Vm8" secondAttribute="bottom" constant="33" id="wMt-uH-34f"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vDA-E8-3ov" secondAttribute="trailing" id="1Xa-Tn-HeV"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2c5-TB-w4U"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="58u-Ek-Cin"/>
+                <constraint firstItem="vDA-E8-3ov" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7kC-VU-LfZ"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AJb-Ix-ZvC"/>
+                <constraint firstAttribute="trailing" secondItem="7Kd-bl-UhZ" secondAttribute="trailing" id="Cp9-0M-LN8"/>
+                <constraint firstAttribute="bottom" secondItem="Mel-ch-Zzb" secondAttribute="bottom" id="DhX-bo-rbh"/>
+                <constraint firstItem="vDA-E8-3ov" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KN5-GX-EbC"/>
+                <constraint firstAttribute="trailing" secondItem="GR0-JE-DQ2" secondAttribute="trailing" id="QCo-4J-lrL"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WeZ-e1-3Tq"/>
+                <constraint firstAttribute="bottom" secondItem="7Kd-bl-UhZ" secondAttribute="bottom" id="XeG-nd-mQT"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YWO-cx-uiU"/>
+                <constraint firstAttribute="trailing" secondItem="7Kd-bl-UhZ" secondAttribute="trailing" id="avS-3p-OZW"/>
+                <constraint firstItem="Mel-ch-Zzb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="72" id="azX-PF-6fr"/>
+                <constraint firstItem="GR0-JE-DQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eY0-ee-Aew"/>
+                <constraint firstAttribute="bottom" secondItem="GR0-JE-DQ2" secondAttribute="bottom" id="fAE-Pg-ZaQ"/>
+                <constraint firstAttribute="bottom" secondItem="GR0-JE-DQ2" secondAttribute="bottom" id="kt2-Hf-Fon"/>
+                <constraint firstItem="Mel-ch-Zzb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="laU-KA-Q8b"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lr1-7e-Ehv"/>
+                <constraint firstAttribute="bottom" secondItem="vDA-E8-3ov" secondAttribute="bottom" id="oXO-cw-Qlk"/>
+                <constraint firstAttribute="trailing" secondItem="GR0-JE-DQ2" secondAttribute="trailing" id="uaj-kT-2E7"/>
+                <constraint firstAttribute="bottom" secondItem="7Kd-bl-UhZ" secondAttribute="bottom" id="uuL-0B-0Kb"/>
+                <constraint firstItem="7Kd-bl-UhZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vGV-wq-MOd"/>
+                <constraint firstAttribute="trailing" secondItem="Mel-ch-Zzb" secondAttribute="trailing" id="vUf-Or-SjR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="344" height="189"/>
+            <connections>
+                <outlet property="articleImage" destination="vDA-E8-3ov" id="fBy-yT-2kx"/>
+                <outlet property="articleLabel" destination="RoO-9t-Vm8" id="lVn-n0-RDO"/>
+                <outlet property="greenTransparent" destination="7Kd-bl-UhZ" id="aVG-iz-d5n"/>
+                <outlet property="transparentView" destination="GR0-JE-DQ2" id="sGc-AV-Sxa"/>
+            </connections>
+            <point key="canvasLocation" x="343.47826086956525" y="191.18303571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="GradientBackgroundLandscape" width="380" height="183"/>
+        <image name="img4" width="4032" height="3024"/>
+    </resources>
+</document>
